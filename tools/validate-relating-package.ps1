@@ -41,10 +41,17 @@ function Assert-ContentDoesNotContain {
 
 Assert-PathExists (Join-Path $rootPath 'src') 'Missing src.'
 Assert-PathExists (Join-Path $rootPath 'tests') 'Missing tests.'
+Assert-PathExists (Join-Path $rootPath 'bin/console') 'Missing Symfony console entrypoint.'
+Assert-PathExists (Join-Path $rootPath 'public/index.php') 'Missing Symfony public front controller.'
+Assert-PathExists (Join-Path $rootPath 'src/Kernel.php') 'Missing native Symfony Kernel.'
+Assert-PathExists (Join-Path $rootPath 'config/services.yaml') 'Missing root Symfony service wiring.'
 Assert-PathExists (Join-Path $rootPath 'config/routes/relating.yaml') 'Missing business route file.'
 Assert-PathExists (Join-Path $rootPath 'README.md') 'Missing README.md.'
 Assert-PathExists (Join-Path $rootPath 'MANIFEST.json') 'Missing MANIFEST.json.'
 
+Assert-PathMissing (Join-Path $rootPath 'src/Relating') 'Forbidden second-level src/Relating wrapper exists.'
+Assert-PathMissing (Join-Path $rootPath 'tests/Relating') 'Forbidden second-level tests/Relating wrapper exists.'
+Assert-PathMissing (Join-Path $rootPath 'runtime/standalone') 'Forbidden legacy standalone runtime path exists.'
 Assert-PathMissing (Join-Path $rootPath 'src/Domain') 'Forbidden src/Domain path exists.'
 Assert-PathMissing (Join-Path $rootPath 'migrations') 'Forbidden migrations directory exists.'
 Assert-PathMissing (Join-Path $rootPath 'vendor') 'Forbidden vendor directory exists in skeleton package.'
@@ -73,6 +80,13 @@ foreach ($file in $phpFiles) {
     if ($LASTEXITCODE -ne 0) {
         throw "PHP lint failed for $($file.FullName): $result"
     }
+
+    Assert-ContentDoesNotContain -Path $file.FullName -Forbidden @('App\Relating\', 'App\Tests\Relating\')
 }
+
+Assert-PathExists (Join-Path $rootPath 'src/Controller/BusinessHttpExceptionSubscriber.php') 'Missing business HTTP error contract subscriber.'
+Assert-PathExists (Join-Path $rootPath 'tests/RelatingBusinessHttpErrorContractTest.php') 'Missing business HTTP error contract test.'
+Assert-PathExists (Join-Path $rootPath 'tools/smoke-relating-business-http.ps1') 'Missing live business HTTP smoke wrapper.'
+Assert-PathExists (Join-Path $rootPath 'tools/smoke-relating-business-http-curl.ps1') 'Missing live business HTTP curl smoke.'
 
 Write-Host 'Relating package validation passed.'
