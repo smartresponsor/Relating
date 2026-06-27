@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Relating;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class RelatingRouteBoundaryTest extends TestCase
@@ -23,6 +24,7 @@ final class RelatingRouteBoundaryTest extends TestCase
     /**
      * @dataProvider forbiddenCrudActions
      */
+    #[DataProvider('forbiddenCrudActions')]
     public function testRouteConfigDoesNotDeclareCrudActions(string $action): void
     {
         $routeConfig = dirname(__DIR__, 2).'/config/routes/relating.yaml';
@@ -43,6 +45,7 @@ final class RelatingRouteBoundaryTest extends TestCase
     /**
      * @dataProvider forbiddenCrudActions
      */
+    #[DataProvider('forbiddenCrudActions')]
     public function testRelatingControllersDoNotUseCrudActionNames(string $action): void
     {
         $controllerDir = dirname(__DIR__, 2).'/src/Relating/Controller';

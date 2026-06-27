@@ -7,7 +7,7 @@ namespace App\Relating\View;
 use App\Relating\Enum\RelatingViewSurface;
 use App\Relating\Fixture\RelatingDemoScenario;
 
-final class DemoScenarioView extends AbstractArrayView
+final readonly class DemoScenarioView extends AbstractArrayView
 {
     public static function fromScenario(RelatingDemoScenario $scenario): self
     {

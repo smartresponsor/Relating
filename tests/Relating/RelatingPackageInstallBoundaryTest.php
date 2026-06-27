@@ -42,7 +42,7 @@ final class RelatingPackageInstallBoundaryTest extends TestCase
                 continue;
             }
 
-            self::assertStringNotEndsWith('.sql', $file->getFilename(), $file->getPathname());
+            self::assertFalse(str_ends_with($file->getFilename(), '.sql'), $file->getPathname());
         }
     }
 

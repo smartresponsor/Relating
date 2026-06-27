@@ -55,14 +55,14 @@ final class RelatingViewBoundaryTest extends TestCase
 
     public function testAbstractArrayViewRejectsObjectPayloads(): void
     {
-        $view = new class(['id' => 'rel_1']) extends AbstractArrayView {
+        $view = new readonly class(['id' => 'rel_1']) extends AbstractArrayView {
         };
 
         self::assertSame(['id' => 'rel_1'], $view->payload());
 
         $this->expectException(\InvalidArgumentException::class);
 
-        new class(['entity' => new \stdClass()]) extends AbstractArrayView {
+        new readonly class(['entity' => new \stdClass()]) extends AbstractArrayView {
         };
     }
 }

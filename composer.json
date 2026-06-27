@@ -28,7 +28,7 @@
     }
   },
   "scripts": {
-    "test": "phpunit tests/Relating/RelatingSymfonyHttpSmokeTest.php"
+    "test": "phpunit tests"
   },
   "extra": {
     "symfony": {

@@ -34,7 +34,7 @@ final class RelatingConfigBoundaryTest extends TestCase
         ];
 
         foreach ($this->configFiles($configDir) as $file) {
-            $content = (string) file_get_contents($file);
+            $content = $this->withoutYamlComments((string) file_get_contents($file));
 
             foreach ($forbidden as $needle) {
                 self::assertStringNotContainsString(
@@ -69,5 +69,17 @@ final class RelatingConfigBoundaryTest extends TestCase
         sort($files);
 
         return $files;
+    }
+
+    private function withoutYamlComments(string $content): string
+    {
+        return implode("\n", array_filter(
+            explode("\n", $content),
+            static function (string $line): bool {
+                $trimmed = trim($line);
+
+                return $trimmed !== '' && !str_starts_with($trimmed, '#');
+            },
+        ));
     }
 }

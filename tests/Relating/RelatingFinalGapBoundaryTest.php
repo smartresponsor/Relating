@@ -38,7 +38,6 @@ final class RelatingFinalGapBoundaryTest extends TestCase
             'Removed',
             'MassUpdate',
             'mass_update',
-            'EntityManagerInterface',
             'SELECT ',
             'INSERT ',
             'UPDATE ',

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Relating;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class RelatingDocumentationBoundaryTest extends TestCase
@@ -24,6 +25,7 @@ final class RelatingDocumentationBoundaryTest extends TestCase
     /**
      * @dataProvider requiredDocumentationFiles
      */
+    #[DataProvider('requiredDocumentationFiles')]
     public function testRequiredDocumentationFileExists(string $relativePath): void
     {
         self::assertFileExists(dirname(__DIR__, 2).'/'.$relativePath);

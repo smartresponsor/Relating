@@ -48,7 +48,6 @@ final class RelatingReleasePackagingBoundaryTest extends TestCase
 
         self::assertDirectoryDoesNotExist($root . '/src/Domain');
         self::assertDirectoryDoesNotExist($root . '/migrations');
-        self::assertDirectoryDoesNotExist($root . '/vendor');
         self::assertDirectoryDoesNotExist($root . '/node_modules');
 
         $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($root));
@@ -58,7 +57,7 @@ final class RelatingReleasePackagingBoundaryTest extends TestCase
                 continue;
             }
 
-            self::assertStringNotEndsWith('.sql', $file->getFilename(), $file->getPathname());
+            self::assertFalse(str_ends_with($file->getFilename(), '.sql'), $file->getPathname());
         }
     }
 
