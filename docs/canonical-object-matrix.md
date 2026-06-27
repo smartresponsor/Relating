@@ -9,7 +9,7 @@ The matrix is intentionally not a CRUD plan. It is an object and boundary map fo
 ## Hard rules
 
 ```text
-Component: App\Relating
+Component: App
 Root object: Relationship
 Market category: CRM
 Route policy: business routes only

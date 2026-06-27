@@ -62,11 +62,11 @@ The host application remains responsible for Doctrine migration generation after
 ## Next validation
 
 ```powershell
-php -l .\src\Relating\Repository\DoctrineRelationshipRepository.php
-php -l .\src\Relating\Repository\DoctrineLeadRepository.php
-php -l .\src\Relating\Repository\DoctrineOpportunityRepository.php
-php -l .\src\Relating\Service\UuidRelatingIdGenerator.php
-php -l .\src\Relating\Service\DispatchingRelatingBusinessEventRecorder.php
+php -l .\src\Repository\DoctrineRelationshipRepository.php
+php -l .\src\Repository\DoctrineLeadRepository.php
+php -l .\src\Repository\DoctrineOpportunityRepository.php
+php -l .\src\Service\UuidRelatingIdGenerator.php
+php -l .\src\Service\DispatchingRelatingBusinessEventRecorder.php
 ```
 
 After lint passes, run the host Symfony container check from the application repository that imports these files.

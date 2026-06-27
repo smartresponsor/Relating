@@ -6,7 +6,7 @@ This pack consolidates the hard rules, source-vacuum decisions, object matrix, b
 
 ## Canon
 
-- Component: `App\Relating`.
+- Component: `App`.
 - Root object: `Relationship`.
 - Market category: CRM (`Customer Relationship Management`).
 - Route prefix: `/relating`.
@@ -30,7 +30,7 @@ This pack consolidates the hard rules, source-vacuum decisions, object matrix, b
 
 ## Source-vacuum meaning
 
-Open-source CRM projects are used as reference catalogs, not code sources. Legacy design is transformed into Symfony-oriented `App\Relating` language.
+Open-source CRM projects are used as reference catalogs, not code sources. Legacy design is transformed into Symfony-oriented `App` language.
 
 - Twenty contributes modern object/view/workflow/agent thinking.
 - EspoCRM contributes metadata/entity/layout manager thinking.

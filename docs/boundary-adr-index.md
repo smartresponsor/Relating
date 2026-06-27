@@ -17,7 +17,7 @@ Decision:
 Decision:
 
 - Use `CRM` in README, UI labels, roadmap, tags, and product positioning.
-- Use `App\Relating` in PHP namespace.
+- Use `App` in PHP namespace.
 - Use `Relationship` as root object.
 
 Rationale:

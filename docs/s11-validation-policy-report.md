@@ -5,21 +5,21 @@ S11 adds business validation and policy contracts.
 ## Added code
 
 ```text
-src/Relating/Validation/*
-src/Relating/Policy/*
-src/Relating/Enum/PolicyDecision.php
-src/Relating/Enum/PolicyFailureCode.php
-src/Relating/Enum/ValidationSeverity.php
-src/Relating/Enum/PayloadFieldType.php
-src/Relating/Enum/TransitionGuardOutcome.php
-src/Relating/Service/RelatingPolicyRegistryInterface.php
-src/Relating/Service/RelatingValidationSchemaRegistryInterface.php
+src/Validation/*
+src/Policy/*
+src/Enum/PolicyDecision.php
+src/Enum/PolicyFailureCode.php
+src/Enum/ValidationSeverity.php
+src/Enum/PayloadFieldType.php
+src/Enum/TransitionGuardOutcome.php
+src/Service/RelatingPolicyRegistryInterface.php
+src/Service/RelatingValidationSchemaRegistryInterface.php
 ```
 
 ## Added tests
 
 ```text
-tests/Relating/RelatingValidationPolicyBoundaryTest.php
+tests/RelatingValidationPolicyBoundaryTest.php
 ```
 
 ## Boundary

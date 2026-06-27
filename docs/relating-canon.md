@@ -11,7 +11,7 @@
 ## Namespace
 
 ```text
-App\Relating
+App
 ```
 
 No alternative namespace is allowed.

@@ -26,10 +26,10 @@ The component does not require a custom namespace such as `Relating\\`, `SmartRe
 S19 allows one explicit optional Symfony Bundle wrapper:
 
 ```text
-Allowed: App\Relating\RelatingBundle
-Allowed: App\Relating\Relationship
-Allowed: App\Relating\Entity\Relationship
-Forbidden: App\RelatingBundle\RelatingBundle
+Allowed: AppBundle
+Allowed: App\Relationship
+Allowed: App\Entity\Relationship
+Forbidden: AppBundle\RelatingBundle
 Forbidden: App\Domain\Relating
 Forbidden: Relating\Relationship
 ```
@@ -39,7 +39,7 @@ Forbidden: Relating\Relationship
 `Relating` can now be used either as a source-level component under the host application or as a local Composer path package for standalone debugging:
 
 ```text
-src/Relating
+src
 ```
 
-The first production repository may later add package metadata, but the code namespace must remain `App\\Relating` while this component is developed inside the default Symfony app namespace.
+The first production repository may later add package metadata, but the code namespace must remain `App\\` while this component is developed inside the default Symfony app namespace.

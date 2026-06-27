@@ -12,9 +12,9 @@ This document defines the installation shape for the `Relating` / `Relationship`
 Component: Relating
 Root object: Relationship
 Market category: CRM
-Namespace: App\Relating
-Source path: src/Relating
-Test path: tests/Relating
+Namespace: App
+Source path: src
+Test path: tests
 Route file: config/routes/relating.yaml
 ```
 
@@ -23,13 +23,13 @@ Route file: config/routes/relating.yaml
 The package may install these skeleton surfaces:
 
 ```text
-src/Relating
+src
 config/routes/relating.yaml
 config/*.dist
 config/packages/*.dist
 config/services/*.dist
 docs
-tests/Relating
+tests
 tools
 MANIFEST.json
 README.md

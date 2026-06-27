@@ -25,7 +25,7 @@ tools/validate-relating-package.ps1
 ## Added test
 
 ```text
-tests/Relating/RelatingPackageInstallBoundaryTest.php
+tests/RelatingPackageInstallBoundaryTest.php
 ```
 
 ## Confirmed boundaries

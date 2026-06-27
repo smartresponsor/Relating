@@ -7,8 +7,8 @@ This checklist is used when importing the skeleton into a Symfony host applicati
 ## Required checks
 
 ```text
-[ ] src/Relating exists
-[ ] tests/Relating exists
+[ ] src exists
+[ ] tests exists
 [ ] config/routes/relating.yaml exists
 [ ] config/services/relating.yaml.dist exists
 [ ] config/packages/relating_messenger.yaml.dist exists

@@ -8,7 +8,7 @@ The Relating skeleton uses a strict inventory discipline to keep cumulative arch
 MANIFEST.json
 README.md
 docs/*
-tests/Relating/*
+tests/*
 tools/*
 ```
 
@@ -17,8 +17,8 @@ tools/*
 - Component name: `Relating`.
 - Root object: `Relationship`.
 - Market category: `CRM`.
-- Symfony namespace: `App\Relating`.
-- Test namespace: `App\Tests\Relating`.
+- Symfony namespace: `App`.
+- Test namespace: `App\Tests`.
 
 ## Forbidden release inventory
 

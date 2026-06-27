@@ -15,8 +15,8 @@ docs/messenger-routing-draft.md
 docs/route-import-notes.md
 docs/config-boundary-checklist.md
 docs/s8-wiring-report.md
-tests/Relating/RelatingConfigBoundaryTest.php
-tests/Relating/RelatingMessengerRoutingBoundaryTest.php
+tests/RelatingConfigBoundaryTest.php
+tests/RelatingMessengerRoutingBoundaryTest.php
 ```
 
 ## Corrected

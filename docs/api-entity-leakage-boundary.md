@@ -11,7 +11,7 @@ Relating API/business routes must not expose Doctrine entities.
 
 ## Forbidden
 
-- returning `App\Relating\Entity\*` from controllers
+- returning `App\Entity\*` from controllers
 - returning Doctrine entities from view builders
 - passing entity objects into `AbstractArrayView` payloads
 - using Entity objects as public API response schemas

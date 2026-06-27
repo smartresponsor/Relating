@@ -44,7 +44,7 @@ This is only for local browser/API inspection. It is not production persistence,
 
 ## Optional bundle wrapper
 
-`src/Relating/RelatingBundle.php` remains an optional package integration wrapper.
+`src/RelatingBundle.php` remains an optional package integration wrapper.
 
 The root debug app does not rely on bundle magic. It wires services directly through `config/services.yaml`.
 

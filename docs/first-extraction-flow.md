@@ -31,8 +31,8 @@ cd D:\PhpstormProjects\www\Relating
 ## PHP syntax spot-check
 
 ```powershell
-php -l .\src\Relating\Entity\Relationship.php
-php -l .\src\Relating\Application\Service\StartRelationshipApplicationService.php
+php -l .\src\Entity\Relationship.php
+php -l .\src\Application\Service\StartRelationshipApplicationService.php
 php -l .	ests\Relating\RelatingRcFreezeBoundaryTest.php
 ```
 

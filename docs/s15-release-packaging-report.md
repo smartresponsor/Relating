@@ -16,7 +16,7 @@ docs/release-checklist.md
 docs/s15-release-packaging-report.md
 tools/verify-relating-manifest.ps1
 tools/verify-relating-archive.ps1
-tests/Relating/RelatingReleasePackagingBoundaryTest.php
+tests/RelatingReleasePackagingBoundaryTest.php
 ```
 
 ## Boundary result

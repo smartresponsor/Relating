@@ -1,6 +1,6 @@
 # S8 Symfony wiring skeleton
 
-`Relating` is installed as a Symfony-oriented component under `App\Relating`.
+`Relating` is installed as a Symfony-oriented component under `App`.
 This wave adds wiring skeletons only. It does not enable persistence, migrations,
 CRUD routing, or SQL-first infrastructure.
 
@@ -22,15 +22,15 @@ service registration.
 The active service surfaces are:
 
 ```text
-App\Relating\Application\Service
-App\Relating\Service
-App\Relating\Controller
+App\Application\Service
+App\Service
+App\Controller
 ```
 
 ## Route wiring rule
 
 `config/routes/relating.yaml` imports only controllers under
-`src/Relating/Controller`, and tests enforce that controllers expose business
+`src/Controller`, and tests enforce that controllers expose business
 routes only.
 
 Allowed route examples:

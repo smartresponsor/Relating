@@ -17,7 +17,7 @@ This pass reviews the cumulative Relating skeleton before first installation int
 
 ## Result
 
-The skeleton remains a Symfony-oriented `App\Relating` package with `Relationship` as the root object.
+The skeleton remains a Symfony-oriented `App` package with `Relationship` as the root object.
 
 No CRUD route surface is introduced. No migration, SQL, Bundle, `/src/Domain/`, vendor, or node dependency tree is included.
 

@@ -39,8 +39,8 @@ function Assert-ContentDoesNotContain {
     }
 }
 
-Assert-PathExists (Join-Path $rootPath 'src/Relating') 'Missing src/Relating.'
-Assert-PathExists (Join-Path $rootPath 'tests/Relating') 'Missing tests/Relating.'
+Assert-PathExists (Join-Path $rootPath 'src') 'Missing src.'
+Assert-PathExists (Join-Path $rootPath 'tests') 'Missing tests.'
 Assert-PathExists (Join-Path $rootPath 'config/routes/relating.yaml') 'Missing business route file.'
 Assert-PathExists (Join-Path $rootPath 'README.md') 'Missing README.md.'
 Assert-PathExists (Join-Path $rootPath 'MANIFEST.json') 'Missing MANIFEST.json.'
@@ -50,7 +50,7 @@ Assert-PathMissing (Join-Path $rootPath 'migrations') 'Forbidden migrations dire
 Assert-PathMissing (Join-Path $rootPath 'vendor') 'Forbidden vendor directory exists in skeleton package.'
 Assert-PathMissing (Join-Path $rootPath 'node_modules') 'Forbidden node_modules directory exists in skeleton package.'
 
-$allowedBundle = 'src/Relating/RelatingBundle.php'
+$allowedBundle = 'src/RelatingBundle.php'
 $bundleFiles = Get-ChildItem -Path $rootPath -Recurse -File -Filter '*Bundle.php' -ErrorAction SilentlyContinue | Where-Object {
     $_.FullName.Substring($rootPath.Length + 1).Replace('\\', '/') -ne $allowedBundle
 }
@@ -67,7 +67,7 @@ if ($sqlFiles.Count -gt 0) {
 $routeFile = Join-Path $rootPath 'config/routes/relating.yaml'
 Assert-ContentDoesNotContain -Path $routeFile -Forbidden @('/create', '/read', '/update', '/delete', '/list', '/show', '/edit', '/remove')
 
-$phpFiles = Get-ChildItem -Path (Join-Path $rootPath 'src/Relating'), (Join-Path $rootPath 'tests/Relating') -Recurse -File -Filter '*.php'
+$phpFiles = Get-ChildItem -Path (Join-Path $rootPath 'src'), (Join-Path $rootPath 'tests') -Recurse -File -Filter '*.php'
 foreach ($file in $phpFiles) {
     $result = & php -l $file.FullName 2>&1
     if ($LASTEXITCODE -ne 0) {

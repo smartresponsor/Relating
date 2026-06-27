@@ -45,7 +45,7 @@ if ($sqlFiles.Count -gt 0) {
     throw "Forbidden SQL files found: $($sqlFiles -join ', ')"
 }
 
-$bundleFiles = @($actual | Where-Object { $_ -like '*Bundle.php' -and $_ -ne 'src/Relating/RelatingBundle.php' })
+$bundleFiles = @($actual | Where-Object { $_ -like '*Bundle.php' -and $_ -ne 'src/RelatingBundle.php' })
 if ($bundleFiles.Count -gt 0) {
     throw "Forbidden Bundle files found: $($bundleFiles -join ', ')"
 }

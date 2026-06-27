@@ -9,7 +9,7 @@ config/routes/relating.yaml
 The route file imports controller attributes from:
 
 ```text
-src/Relating/Controller
+src/Controller
 ```
 
 Controllers are allowed only for business operations. The existing CRUD mechanism

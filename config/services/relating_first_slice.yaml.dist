@@ -12,35 +12,35 @@
 # - no Bundle layer.
 
 services:
-    App\Relating\Repository\DoctrineRelationshipRepository:
+    App\Repository\DoctrineRelationshipRepository:
         arguments:
             $entityManager: '@doctrine.orm.entity_manager'
 
-    App\Relating\Repository\DoctrineLeadRepository:
+    App\Repository\DoctrineLeadRepository:
         arguments:
             $entityManager: '@doctrine.orm.entity_manager'
 
-    App\Relating\Repository\DoctrineOpportunityRepository:
+    App\Repository\DoctrineOpportunityRepository:
         arguments:
             $entityManager: '@doctrine.orm.entity_manager'
 
-    App\Relating\Service\UuidRelatingIdGenerator: ~
+    App\Service\UuidRelatingIdGenerator: ~
 
-    App\Relating\Service\DispatchingRelatingBusinessEventRecorder:
+    App\Service\DispatchingRelatingBusinessEventRecorder:
         arguments:
             $eventDispatcher: '@event_dispatcher'
 
-    App\Relating\Repository\RelationshipRepositoryInterface:
-        alias: App\Relating\Repository\DoctrineRelationshipRepository
+    App\Repository\RelationshipRepositoryInterface:
+        alias: App\Repository\DoctrineRelationshipRepository
 
-    App\Relating\Repository\LeadRepositoryInterface:
-        alias: App\Relating\Repository\DoctrineLeadRepository
+    App\Repository\LeadRepositoryInterface:
+        alias: App\Repository\DoctrineLeadRepository
 
-    App\Relating\Repository\OpportunityRepositoryInterface:
-        alias: App\Relating\Repository\DoctrineOpportunityRepository
+    App\Repository\OpportunityRepositoryInterface:
+        alias: App\Repository\DoctrineOpportunityRepository
 
-    App\Relating\Service\RelatingIdGeneratorInterface:
-        alias: App\Relating\Service\UuidRelatingIdGenerator
+    App\Service\RelatingIdGeneratorInterface:
+        alias: App\Service\UuidRelatingIdGenerator
 
-    App\Relating\Service\RelatingBusinessEventRecorderInterface:
-        alias: App\Relating\Service\DispatchingRelatingBusinessEventRecorder
+    App\Service\RelatingBusinessEventRecorderInterface:
+        alias: App\Service\DispatchingRelatingBusinessEventRecorder

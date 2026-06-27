@@ -30,7 +30,7 @@ Exit criteria:
 PHP lint green
 ZIP integrity green
 No CRUD route/controller/action names
-App\Relating namespace only
+App namespace only
 No /src/Domain/
 ```
 

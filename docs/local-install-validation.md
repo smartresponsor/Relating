@@ -16,7 +16,7 @@ cd D:\PhpstormProjects\www\Relating
 The script checks:
 
 ```text
-PHP syntax for src/Relating and tests/Relating
+PHP syntax for src and tests
 forbidden src/Domain path
 forbidden Bundle class
 forbidden migrations directory

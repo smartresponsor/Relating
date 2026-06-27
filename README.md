@@ -7,7 +7,7 @@ Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 It uses the market label `CRM`, but the Symfony namespace stays canonical:
 
 ```text
-App\Relating
+App
 ```
 
 Root object:
@@ -29,7 +29,7 @@ cd D:\PhpstormProjects\www\App
 Expand-Archive -Force .\relating-relationship-skeleton.zip .\var\relating-relationship-skeleton
 .\var\relating-relationship-skeleton\relating-relationship-skeleton\tools\install-relating-skeleton.ps1 -Target .
 php bin/console doctrine:migrations:diff
-php bin/phpunit tests/Relating
+php bin/phpunit tests
 ```
 
 
@@ -75,7 +75,7 @@ Forbidden examples:
 ## Namespace
 
 ```text
-src/Relating
+src
 ```
 
 No `/src/Domain/` path is used.
@@ -162,7 +162,7 @@ docs/automation-trigger-condition-action-catalog.md
 docs/ai-suggestion-lifecycle.md
 docs/messenger-message-roadmap.md
 docs/automation-security-guardrails.md
-tests/Relating/RelatingEventBoundaryTest.php
+tests/RelatingEventBoundaryTest.php
 ```
 
 This wave also removes generic CRUD-like Relating event class names:
@@ -238,12 +238,12 @@ ai-review
 Added S5 files:
 
 ```text
-src/Relating/Enum/DemoScenarioKind.php
-src/Relating/Fixture/RelatingDemoScenario.php
-src/Relating/Fixture/RelatingDemoSeed.php
-src/Relating/Fixture/RelatingDemoEntityFactory.php
-src/Relating/View/DemoScenarioView.php
-tests/Relating/RelatingDemoSeedBoundaryTest.php
+src/Enum/DemoScenarioKind.php
+src/Fixture/RelatingDemoScenario.php
+src/Fixture/RelatingDemoSeed.php
+src/Fixture/RelatingDemoEntityFactory.php
+src/View/DemoScenarioView.php
+tests/RelatingDemoSeedBoundaryTest.php
 docs/demo-seed-readiness.md
 docs/fixture-scenario-catalog.md
 docs/business-lifecycle-demo-flow.md
@@ -305,8 +305,8 @@ docs/messenger-routing-draft.md
 docs/route-import-notes.md
 docs/config-boundary-checklist.md
 docs/s8-wiring-report.md
-tests/Relating/RelatingConfigBoundaryTest.php
-tests/Relating/RelatingMessengerRoutingBoundaryTest.php
+tests/RelatingConfigBoundaryTest.php
+tests/RelatingMessengerRoutingBoundaryTest.php
 ```
 
 `CreateAiSuggestionMessage` is removed. AI suggestion lifecycle uses `RaiseAiSuggestionMessage`, `ReviewAiSuggestionMessage`, and `ApplyAiSuggestionMessage`.
@@ -389,7 +389,7 @@ docs/host-app-integration-checklist.md
 docs/no-bundle-magic-boundary.md
 docs/s14-package-install-report.md
 tools/validate-relating-package.ps1
-tests/Relating/RelatingPackageInstallBoundaryTest.php
+tests/RelatingPackageInstallBoundaryTest.php
 ```
 
 S14 keeps the same hard boundaries: no CRUD route ownership, no CRUD controllers, no Bundle magic, no migrations in the skeleton, no direct SQL files, no `src/Domain`, and no custom namespace outside `App\`.
@@ -408,7 +408,7 @@ docs/release-checklist.md
 docs/s15-release-packaging-report.md
 tools/verify-relating-manifest.ps1
 tools/verify-relating-archive.ps1
-tests/Relating/RelatingReleasePackagingBoundaryTest.php
+tests/RelatingReleasePackagingBoundaryTest.php
 ```
 
 Validation helpers:
@@ -437,7 +437,7 @@ docs/docs-link-integrity.md
 docs/preinstall-rc-checklist.md
 docs/s16-final-gap-review-report.md
 tools/validate-relating-final-gap.ps1
-tests/Relating/RelatingFinalGapBoundaryTest.php
+tests/RelatingFinalGapBoundaryTest.php
 ```
 
 Cleanup applied:

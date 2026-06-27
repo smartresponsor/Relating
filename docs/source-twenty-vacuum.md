@@ -11,12 +11,12 @@ Twenty is used as a modern CRM reference only. Relating does not copy TypeScript
 Twenty describes its CRM building blocks as objects, views, workflows, and agents. In Relating, this becomes a Symfony-first metadata and business automation layer.
 
 ```text
-Twenty object        -> App\Relating\Entity\ObjectDefinition
-Twenty field         -> App\Relating\Entity\FieldDefinition
-Twenty relation      -> App\Relating\Entity\RelationshipDefinition
-Twenty saved view    -> App\Relating\Entity\ViewDefinition + App\Relating\View\*
-Twenty workflow      -> App\Relating\Entity\AutomationRule / AutomationRun
-Twenty AI agent      -> App\Relating\Entity\AiSuggestion / AiDecisionLog
+Twenty object        -> App\Entity\ObjectDefinition
+Twenty field         -> App\Entity\FieldDefinition
+Twenty relation      -> App\Entity\RelationshipDefinition
+Twenty saved view    -> App\Entity\ViewDefinition + App\View\*
+Twenty workflow      -> App\Entity\AutomationRule / AutomationRun
+Twenty AI agent      -> App\Entity\AiSuggestion / AiDecisionLog
 ```
 
 ## Standard object normalization

@@ -21,7 +21,7 @@ docs/preinstall-rc-freeze.md
 docs/rc-immutability-checklist.md
 docs/first-extraction-flow.md
 docs/s17-preinstall-rc-freeze-report.md
-tests/Relating/RelatingRcFreezeBoundaryTest.php
+tests/RelatingRcFreezeBoundaryTest.php
 ```
 
 ## Updated

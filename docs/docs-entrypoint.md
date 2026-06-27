@@ -67,7 +67,7 @@ docs/docs-link-integrity.md
 docs/preinstall-rc-checklist.md
 docs/s16-final-gap-review-report.md
 tools/validate-relating-final-gap.ps1
-tests/Relating/RelatingFinalGapBoundaryTest.php
+tests/RelatingFinalGapBoundaryTest.php
 ```
 
-Use this path before the first extraction into a real workspace. The S16 cleanup also removes CRUD-like terms from `src/Relating` production code where they could imply ownership of generic mutation surfaces.
+Use this path before the first extraction into a real workspace. The S16 cleanup also removes CRUD-like terms from `src` production code where they could imply ownership of generic mutation surfaces.

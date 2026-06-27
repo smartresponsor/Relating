@@ -13,11 +13,11 @@ Relating must not copy foreign architecture, SQL-first design, fat controllers, 
 Relating keeps the SmartResponsor Symfony canon:
 
 ```text
-Namespace: App\Relating
+Namespace: App
 Component: Relating
 Root object: Relationship
 Market label: CRM
-Path: src/Relating
+Path: src
 Forbidden path: src/Domain
 ```
 

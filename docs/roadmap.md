@@ -40,13 +40,13 @@ A8 Audit and AI-review rules
 Deliverable:
 
 ```text
-src/Relating/Entity
-src/Relating/Value
-src/Relating/View
-src/Relating/Repository
-src/Relating/Service
-src/Relating/Event
-src/Relating/Message
+src/Entity
+src/Value
+src/View
+src/Repository
+src/Service
+src/Event
+src/Message
 ```
 
 ## Stage S - skeleton completion

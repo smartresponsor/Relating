@@ -21,7 +21,7 @@ View/NeighborReferenceView
 ## Added tests
 
 ```text
-tests/Relating/RelatingNeighborBoundaryTest.php
+tests/RelatingNeighborBoundaryTest.php
 ```
 
 ## Boundary status

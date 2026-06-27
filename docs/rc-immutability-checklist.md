@@ -16,7 +16,7 @@ relating-relationship-skeleton.zip.sha256 matches the ZIP
 ## Symfony boundary
 
 ```text
-Only App\Relating namespace
+Only App namespace
 No src/Domain path
 No Bundle classes
 No migrations

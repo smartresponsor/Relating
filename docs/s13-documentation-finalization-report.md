@@ -13,7 +13,7 @@ S13 consolidates Relating documentation into a coherent navigation and decision 
 - `docs/implementation-roadmap-final.md`
 - `docs/docs-entrypoint.md`
 - `docs/s13-documentation-finalization-report.md`
-- `tests/Relating/RelatingDocumentationBoundaryTest.php`
+- `tests/RelatingDocumentationBoundaryTest.php`
 
 ## Updated files
 

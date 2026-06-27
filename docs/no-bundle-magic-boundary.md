@@ -9,7 +9,7 @@ Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 The component is developed under the default Symfony application namespace:
 
 ```text
-App\Relating
+App
 ```
 
 A Bundle class would introduce a second registration mechanism and would weaken the explicit host-app wiring model.

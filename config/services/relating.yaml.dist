@@ -17,40 +17,40 @@ services:
         autoconfigure: true
         public: false
 
-    App\Relating\Controller\:
-        resource: '../../src/Relating/Controller/*Controller.php'
+    App\Controller\:
+        resource: '../../src/Controller/*Controller.php'
         exclude:
-            - '../../src/Relating/Controller/BusinessRequestPayload.php'
-            - '../../src/Relating/Controller/BusinessResultPayload.php'
+            - '../../src/Controller/BusinessRequestPayload.php'
+            - '../../src/Controller/BusinessResultPayload.php'
         tags: ['controller.service_arguments']
 
-    App\Relating\Application\Service\:
-        resource: '../../src/Relating/Application/Service/'
+    App\Application\Service\:
+        resource: '../../src/Application/Service/'
         tags:
             - { name: 'relating.application_service' }
 
-    App\Relating\Service\:
-        resource: '../../src/Relating/Service/'
+    App\Service\:
+        resource: '../../src/Service/'
         tags:
             - { name: 'relating.business_service' }
 
-    App\Relating\MessageHandler\:
-        resource: '../../src/Relating/MessageHandler/'
+    App\MessageHandler\:
+        resource: '../../src/MessageHandler/'
         tags:
             - { name: 'relating.business_message_handler' }
 
-    App\Relating\Fixture\:
-        resource: '../../src/Relating/Fixture/'
+    App\Fixture\:
+        resource: '../../src/Fixture/'
         tags:
             - { name: 'relating.demo_fixture' }
 
 
-    App\Relating\ReadModel\:
-        resource: '../../src/Relating/ReadModel/'
+    App\ReadModel\:
+        resource: '../../src/ReadModel/'
         tags:
             - { name: 'relating.read_model' }
 
-    App\Relating\Service\ReadModel\:
-        resource: '../../src/Relating/Service/ReadModel/'
+    App\Service\ReadModel\:
+        resource: '../../src/Service/ReadModel/'
         tags:
             - { name: 'relating.read_model_projector' }

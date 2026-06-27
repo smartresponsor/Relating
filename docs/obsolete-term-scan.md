@@ -4,13 +4,13 @@ The scan focuses on code-bearing paths, not explanatory documentation that inten
 
 ## Code paths scanned
 
-- `src/Relating`
+- `src`
 - `config`
-- `tests/Relating`
+- `tests`
 
 ## Forbidden production-code terms
 
-The following terms must not appear in `src/Relating` as class names, enum values, service names, or business method names:
+The following terms must not appear in `src` as class names, enum values, service names, or business method names:
 
 ```text
 Create
@@ -29,6 +29,6 @@ DELETE
 
 ## Result
 
-The S16 cleanup leaves `src/Relating` free from those obsolete implementation terms.
+The S16 cleanup leaves `src` free from those obsolete implementation terms.
 
 Documentation and tests may still mention forbidden terms when documenting or asserting the boundary.

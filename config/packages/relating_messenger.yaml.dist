@@ -12,20 +12,20 @@
 framework:
     messenger:
         routing:
-            App\Relating\Message\QualifyLeadMessage: async
-            App\Relating\Message\ConvertLeadMessage: async
-            App\Relating\Message\TransitionOpportunityStageMessage: async
-            App\Relating\Message\DetectLeadDuplicateMessage: async
-            App\Relating\Message\ScoreLeadMessage: async
-            App\Relating\Message\BuildRelationshipTimelineMessage: async
-            App\Relating\Message\BuildTimelineMessage: async
-            App\Relating\Message\RecalculateRelationshipHealthMessage: async
-            App\Relating\Message\RecalculateOpportunityForecastMessage: async
-            App\Relating\Message\RecalculateOpportunityRiskMessage: async
-            App\Relating\Message\RecalculateCaseSlaMessage: async
-            App\Relating\Message\CaptureCampaignResponseMessage: async
-            App\Relating\Message\RebuildCampaignPerformanceMessage: async
-            App\Relating\Message\RunRelatingAutomationMessage: async
-            App\Relating\Message\RaiseAiSuggestionMessage: async
-            App\Relating\Message\ReviewAiSuggestionMessage: async
-            App\Relating\Message\ApplyAiSuggestionMessage: async
+            App\Message\QualifyLeadMessage: async
+            App\Message\ConvertLeadMessage: async
+            App\Message\TransitionOpportunityStageMessage: async
+            App\Message\DetectLeadDuplicateMessage: async
+            App\Message\ScoreLeadMessage: async
+            App\Message\BuildRelationshipTimelineMessage: async
+            App\Message\BuildTimelineMessage: async
+            App\Message\RecalculateRelationshipHealthMessage: async
+            App\Message\RecalculateOpportunityForecastMessage: async
+            App\Message\RecalculateOpportunityRiskMessage: async
+            App\Message\RecalculateCaseSlaMessage: async
+            App\Message\CaptureCampaignResponseMessage: async
+            App\Message\RebuildCampaignPerformanceMessage: async
+            App\Message\RunRelatingAutomationMessage: async
+            App\Message\RaiseAiSuggestionMessage: async
+            App\Message\ReviewAiSuggestionMessage: async
+            App\Message\ApplyAiSuggestionMessage: async
