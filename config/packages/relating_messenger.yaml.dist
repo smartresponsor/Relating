@@ -1,0 +1,31 @@
+# Relating Messenger routing draft.
+#
+# Copy or import intentionally after the application defines the `async` transport.
+# This file is .dist on purpose. It must not force message routing before host app policy is ready.
+#
+# Boundary:
+# - business messages only;
+# - no Created/Updated/Deleted CRUD entity messages;
+# - no generic persistence messages;
+# - handlers must call business application services or projectors.
+
+framework:
+    messenger:
+        routing:
+            App\Relating\Message\QualifyLeadMessage: async
+            App\Relating\Message\ConvertLeadMessage: async
+            App\Relating\Message\TransitionOpportunityStageMessage: async
+            App\Relating\Message\DetectLeadDuplicateMessage: async
+            App\Relating\Message\ScoreLeadMessage: async
+            App\Relating\Message\BuildRelationshipTimelineMessage: async
+            App\Relating\Message\BuildTimelineMessage: async
+            App\Relating\Message\RecalculateRelationshipHealthMessage: async
+            App\Relating\Message\RecalculateOpportunityForecastMessage: async
+            App\Relating\Message\RecalculateOpportunityRiskMessage: async
+            App\Relating\Message\RecalculateCaseSlaMessage: async
+            App\Relating\Message\CaptureCampaignResponseMessage: async
+            App\Relating\Message\RebuildCampaignPerformanceMessage: async
+            App\Relating\Message\RunRelatingAutomationMessage: async
+            App\Relating\Message\RaiseAiSuggestionMessage: async
+            App\Relating\Message\ReviewAiSuggestionMessage: async
+            App\Relating\Message\ApplyAiSuggestionMessage: async

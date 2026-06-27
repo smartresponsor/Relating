@@ -1,0 +1,14 @@
+relating:
+    component: relating
+    market_category: CRM
+    root_object: relationship
+    neighbors:
+        - vendoring
+        - accessing
+        - managing
+        - producting
+        - ordering
+        - payment
+        - shipment
+        - messaging
+        - projecting

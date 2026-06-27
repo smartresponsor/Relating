@@ -1,0 +1,38 @@
+relating_wiring:
+    services_file: config/services/relating.yaml.dist
+    routes_file: config/routes/relating.yaml
+    messenger_file: config/packages/relating_messenger.yaml.dist
+    workflow_file: config/packages/relating_workflow.yaml.dist
+    boundary:
+        route_surface: business_only
+        crud_routes: forbidden
+        crud_controllers: forbidden
+        crud_yaml: forbidden
+        direct_sql: forbidden
+        migrations: generated_by_host_only
+    approved_business_routes:
+        - relating_catalog
+        - relating_relationship_start
+        - relating_lead_capture
+        - relating_lead_qualify
+        - relating_lead_convert
+        - relating_opportunity_open
+        - relating_opportunity_stage_transition
+        - relating_activity_record
+        - relating_timeline_project
+        - relating_ai_suggestion_review
+    approved_async_messages:
+        - QualifyLeadMessage
+        - ConvertLeadMessage
+        - DetectLeadDuplicateMessage
+        - BuildRelationshipTimelineMessage
+        - BuildTimelineMessage
+        - RecalculateRelationshipHealthMessage
+        - RecalculateOpportunityForecastMessage
+        - RecalculateOpportunityRiskMessage
+        - RecalculateCaseSlaMessage
+        - CaptureCampaignResponseMessage
+        - RebuildCampaignPerformanceMessage
+        - RaiseAiSuggestionMessage
+        - ReviewAiSuggestionMessage
+        - ApplyAiSuggestionMessage

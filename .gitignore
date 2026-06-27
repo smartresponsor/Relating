@@ -1,0 +1,55 @@
+# Composer dependencies
+/vendor/
+
+# Symfony runtime files
+/var/cache/
+/var/log/
+/var/sessions/
+/var/relating-debug-store.json
+
+# Symfony local web server
+/.symfony.local.yaml
+/.symfony/
+
+# Environment overrides
+/.env.local
+/.env.*.local
+/.env.local.php
+
+# PHPUnit
+/.phpunit.cache/
+/coverage/
+
+# PHP tools cache
+/.php-cs-fixer.cache
+/.phpstan.cache/
+/.psalm/cache/
+
+# IDE and editor state
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Archive/build outputs
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+/build/
+/dist/
+

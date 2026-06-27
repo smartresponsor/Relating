@@ -1,0 +1,46 @@
+# Relating first working slice wiring.
+#
+# Import only after the extracted skeleton has passed package validation.
+# This file wires concrete infrastructure for the first runnable business slice.
+#
+# Boundary:
+# - no CRUD routes;
+# - no CRUD controllers;
+# - no CRUD YAML;
+# - no migrations;
+# - no direct SQL;
+# - no Bundle layer.
+
+services:
+    App\Relating\Repository\DoctrineRelationshipRepository:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'
+
+    App\Relating\Repository\DoctrineLeadRepository:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'
+
+    App\Relating\Repository\DoctrineOpportunityRepository:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'
+
+    App\Relating\Service\UuidRelatingIdGenerator: ~
+
+    App\Relating\Service\DispatchingRelatingBusinessEventRecorder:
+        arguments:
+            $eventDispatcher: '@event_dispatcher'
+
+    App\Relating\Repository\RelationshipRepositoryInterface:
+        alias: App\Relating\Repository\DoctrineRelationshipRepository
+
+    App\Relating\Repository\LeadRepositoryInterface:
+        alias: App\Relating\Repository\DoctrineLeadRepository
+
+    App\Relating\Repository\OpportunityRepositoryInterface:
+        alias: App\Relating\Repository\DoctrineOpportunityRepository
+
+    App\Relating\Service\RelatingIdGeneratorInterface:
+        alias: App\Relating\Service\UuidRelatingIdGenerator
+
+    App\Relating\Service\RelatingBusinessEventRecorderInterface:
+        alias: App\Relating\Service\DispatchingRelatingBusinessEventRecorder

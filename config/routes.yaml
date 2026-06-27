@@ -1,0 +1,3 @@
+relating_controller:
+    resource: '../src/Relating/Controller/'
+    type: attribute

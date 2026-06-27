@@ -1,0 +1,56 @@
+# Relating service wiring skeleton.
+#
+# Import this file from config/services.yaml when the component is installed:
+#
+# imports:
+#     - { resource: services/relating.yaml }
+#
+# Boundary:
+# - business services only;
+# - no CRUD controllers or CRUD handlers;
+# - no save/create/update/delete application service aliases;
+# - no SQL-first infrastructure registrations.
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    App\Relating\Controller\:
+        resource: '../../src/Relating/Controller/*Controller.php'
+        exclude:
+            - '../../src/Relating/Controller/BusinessRequestPayload.php'
+            - '../../src/Relating/Controller/BusinessResultPayload.php'
+        tags: ['controller.service_arguments']
+
+    App\Relating\Application\Service\:
+        resource: '../../src/Relating/Application/Service/'
+        tags:
+            - { name: 'relating.application_service' }
+
+    App\Relating\Service\:
+        resource: '../../src/Relating/Service/'
+        tags:
+            - { name: 'relating.business_service' }
+
+    App\Relating\MessageHandler\:
+        resource: '../../src/Relating/MessageHandler/'
+        tags:
+            - { name: 'relating.business_message_handler' }
+
+    App\Relating\Fixture\:
+        resource: '../../src/Relating/Fixture/'
+        tags:
+            - { name: 'relating.demo_fixture' }
+
+
+    App\Relating\ReadModel\:
+        resource: '../../src/Relating/ReadModel/'
+        tags:
+            - { name: 'relating.read_model' }
+
+    App\Relating\Service\ReadModel\:
+        resource: '../../src/Relating/Service/ReadModel/'
+        tags:
+            - { name: 'relating.read_model_projector' }

@@ -1,0 +1,20 @@
+# Relating workflow config placeholder.
+#
+# Symfony Workflow definitions should be introduced only after EntityFirst invariants
+# and business transition services are stable. This file intentionally documents
+# allowed lifecycle names without enabling a host-level workflow yet.
+#
+# Allowed lifecycle surfaces:
+# - relationship lifecycle stage
+# - lead qualification/conversion
+# - opportunity stage transition
+# - case SLA/escalation
+# - AI suggestion review
+#
+# Forbidden surfaces:
+# - CRUD entity state machines
+# - generic created/updated/deleted transitions
+# - persistence-driven workflow transitions
+
+# framework:
+#     workflows: {}
