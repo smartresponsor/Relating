@@ -69,7 +69,7 @@ function Invoke-RelatingJson {
     $statusCode = [int]$parts[1].Trim()
 
     if ($statusCode -ne $ExpectedStatusCode) {
-        throw "$Method $Path returned HTTP $statusCode, expected $ExpectedStatusCode: $responseBody"
+        throw "$Method $Path returned HTTP $statusCode, expected ${ExpectedStatusCode}: $responseBody"
     }
 
     if ([string]::IsNullOrWhiteSpace($responseBody)) {
