@@ -69,12 +69,48 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
         self::assertSame('Business request payload must be valid JSON.', $error['error']['message'] ?? null);
     }
 
+    /** @throws JsonException */
+    public function testMissingBusinessReferencesReturnStableJsonErrors(): void
+    {
+        $cases = [
+            ['/relating/lead/qualify', ['lead_reference' => 'lead-missing', 'score' => 80], 'Lead was not found for reference: lead-missing'],
+            [
+                '/relating/lead/convert',
+                ['lead_reference' => 'lead-missing', 'vendor_reference' => 'vendor-positive'],
+                'Lead was not found for reference: lead-missing',
+            ],
+            [
+                '/relating/opportunity/open',
+                [
+                    'relationship_reference' => 'relationship-missing',
+                    'pipeline_reference' => 'pipeline-positive',
+                    'stage_reference' => 'stage-positive',
+                    'name' => 'Missing relationship opportunity',
+                ],
+                'Relationship was not found for reference: relationship-missing',
+            ],
+            [
+                '/relating/opportunity/stage-transition',
+                ['opportunity_reference' => 'opportunity-missing', 'stage_reference' => 'stage-positive', 'probability' => 50],
+                'Opportunity was not found for reference: opportunity-missing',
+            ],
+        ];
+
+        foreach ($cases as [$path, $payload, $message]) {
+            $error = $this->postJsonError($path, $payload, Response::HTTP_NOT_FOUND, 'business_reference_not_found');
+
+            self::assertSame('Relating', $error['component'] ?? null, $path);
+            self::assertSame('business_reference_not_found', $error['error']['code'] ?? null, $path);
+            self::assertSame($message, $error['error']['message'] ?? null, $path);
+        }
+    }
+
     /**
      * @param array<string, mixed> $payload
      * @return array<string, mixed>
      * @throws JsonException
      */
-    private function postJsonError(string $path, array $payload): array
+    private function postJsonError(string $path, array $payload, int $expectedStatusCode = Response::HTTP_BAD_REQUEST, string $expectedErrorCode = 'business_payload_invalid'): array
     {
         return $this->requestJsonError(Request::create(
             $path,
@@ -87,17 +123,17 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
                 'HTTP_ACCEPT' => 'application/json',
             ],
             json_encode($payload, JSON_THROW_ON_ERROR)
-        ));
+        ), $expectedStatusCode, $expectedErrorCode);
     }
 
     /** @return array<string, mixed> */
-    private function requestJsonError(Request $request): array
+    private function requestJsonError(Request $request, int $expectedStatusCode = Response::HTTP_BAD_REQUEST, string $expectedErrorCode = 'business_payload_invalid'): array
     {
         $response = $this->kernel->handle($request);
 
         try {
-            self::assertSame(Response::HTTP_BAD_REQUEST, $response->getStatusCode(), $response->getContent());
-            self::assertSame('business_payload_invalid', $response->headers->get('X-Relating-Error'));
+            self::assertSame($expectedStatusCode, $response->getStatusCode(), $response->getContent());
+            self::assertSame($expectedErrorCode, $response->headers->get('X-Relating-Error'));
             self::assertStringStartsWith('application/json', $response->headers->get('content-type', ''));
 
             $decoded = json_decode($response->getContent(), true, 512, JSON_THROW_ON_ERROR);

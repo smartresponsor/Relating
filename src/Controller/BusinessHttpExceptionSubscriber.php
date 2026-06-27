@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Exception\RelatingApplicationException;
 use InvalidArgumentException;
 use JsonException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -31,6 +32,20 @@ final readonly class BusinessHttpExceptionSubscriber implements EventSubscriberI
         }
 
         $exception = $event->getThrowable();
+
+        if ($exception instanceof RelatingApplicationException) {
+            $event->setResponse(new JsonResponse([
+                'component' => 'Relating',
+                'error' => [
+                    'code' => 'business_reference_not_found',
+                    'message' => $this->messageFor($exception),
+                ],
+            ], Response::HTTP_NOT_FOUND, [
+                'X-Relating-Error' => 'business_reference_not_found',
+            ]));
+
+            return;
+        }
 
         if (!$exception instanceof InvalidArgumentException && !$exception instanceof JsonException) {
             return;
