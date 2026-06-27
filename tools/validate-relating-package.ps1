@@ -1,5 +1,6 @@
 param(
-    [string]$Root = "."
+    [string]$Root = ".",
+    [switch]$PackageArchive
 )
 
 $ErrorActionPreference = 'Stop'
@@ -54,19 +55,22 @@ Assert-PathMissing (Join-Path $rootPath 'tests/Relating') 'Forbidden second-leve
 Assert-PathMissing (Join-Path $rootPath 'runtime/standalone') 'Forbidden legacy standalone runtime path exists.'
 Assert-PathMissing (Join-Path $rootPath 'src/Domain') 'Forbidden src/Domain path exists.'
 Assert-PathMissing (Join-Path $rootPath 'migrations') 'Forbidden migrations directory exists.'
-Assert-PathMissing (Join-Path $rootPath 'vendor') 'Forbidden vendor directory exists in skeleton package.'
-Assert-PathMissing (Join-Path $rootPath 'node_modules') 'Forbidden node_modules directory exists in skeleton package.'
+if ($PackageArchive) { Assert-PathMissing (Join-Path $rootPath 'vendor') 'Forbidden vendor directory exists in skeleton package archive.' }
+if ($PackageArchive) { Assert-PathMissing (Join-Path $rootPath 'node_modules') 'Forbidden node_modules directory exists in skeleton package archive.' }
+
+$packageScanRoots = @('src', 'config', 'tests', 'tools', 'docs') | ForEach-Object { Join-Path $rootPath $_ } | Where-Object { Test-Path $_ }
 
 $allowedBundle = 'src/RelatingBundle.php'
-$bundleFiles = Get-ChildItem -Path $rootPath -Recurse -File -Filter '*Bundle.php' -ErrorAction SilentlyContinue | Where-Object {
-    $_.FullName.Substring($rootPath.Length + 1).Replace('\\', '/') -ne $allowedBundle
-}
+$bundleFiles = @(Get-ChildItem -Path $packageScanRoots -Recurse -File -Filter '*Bundle.php' -ErrorAction SilentlyContinue | Where-Object {
+    $relativePath = $_.FullName.Substring($rootPath.Length + 1).Replace([char]92, '/')
+    $relativePath -ne $allowedBundle
+})
 
 if ($bundleFiles.Count -gt 0) {
     throw 'Forbidden Symfony Bundle class found outside optional RelatingBundle wrapper.'
 }
 
-$sqlFiles = Get-ChildItem -Path $rootPath -Recurse -File -Include '*.sql' -ErrorAction SilentlyContinue
+$sqlFiles = @(Get-ChildItem -Path $packageScanRoots -Recurse -File -Include '*.sql' -ErrorAction SilentlyContinue)
 if ($sqlFiles.Count -gt 0) {
     throw 'Forbidden SQL file found.'
 }

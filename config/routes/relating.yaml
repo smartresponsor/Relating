@@ -2,7 +2,7 @@
 # - business routes only;
 # - no CRUD controllers;
 # - no CRUD YAML routes;
-# - no index/create/read/update/delete action routes.
+# - no generic CRUD action routes.
 #
 # Current import is limited to Relating controllers that expose business routes.
 # Any future controller added under src/Controller must pass the route
