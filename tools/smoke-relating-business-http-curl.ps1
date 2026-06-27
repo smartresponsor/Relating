@@ -253,4 +253,14 @@ Assert-BusinessReferenceError -Response $referenceError -Message "Lead was not f
 Assert-NoCrudSurface $referenceError.Raw
 Write-Host 'OK business-reference-not-found lead-qualify'
 
+$aiSuggestionReferenceError = Invoke-RelatingJson -Method 'POST' -Path '/relating/ai-suggestion/review' -Payload @{
+    suggestion_reference = "suggestion-missing-$scenario"
+    reviewer_reference = "reviewer-$scenario"
+    decision = 'reject'
+    context = @{ scenario = $scenario }
+} -ExpectedStatusCode 404
+Assert-BusinessReferenceError -Response $aiSuggestionReferenceError -Message "AI suggestion was not found for reference: suggestion-missing-$scenario"
+Assert-NoCrudSurface $aiSuggestionReferenceError.Raw
+Write-Host 'OK business-reference-not-found ai-suggestion-review'
+
 Write-Host "Relating live business POST smoke passed for scenario $scenario."
