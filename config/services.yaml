@@ -11,6 +11,9 @@ services:
             - '../src/Controller/BusinessResultPayload.php'
         tags: ['controller.service_arguments']
 
+    App\Controller\BusinessHttpExceptionSubscriber:
+        tags: ['kernel.event_subscriber']
+
     App\Debug\:
         resource: '../src/Debug/'
 

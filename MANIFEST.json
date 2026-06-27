@@ -192,6 +192,7 @@
     "src/Application/Service/TransitionOpportunityStageApplicationService.php",
     "src/Controller/BusinessRequestPayload.php",
     "src/Controller/BusinessResultPayload.php",
+    "src/Controller/BusinessHttpExceptionSubscriber.php",
     "src/Controller/CaptureLeadController.php",
     "src/Controller/ConvertLeadController.php",
     "src/Controller/OpenOpportunityController.php",
@@ -721,6 +722,7 @@
     "tests/RelatingApplicationServiceBoundaryTest.php",
     "tests/RelatingAuditTraceBoundaryTest.php",
     "tests/RelatingBusinessRouteSurfaceTest.php",
+    "tests/RelatingBusinessHttpErrorContractTest.php",
     "tests/RelatingConfigBoundaryTest.php",
     "tests/RelatingContractBoundaryTest.php",
     "tests/RelatingDemoSeedBoundaryTest.php",
@@ -785,7 +787,7 @@
     "archive_verifier": "tools/verify-relating-archive.ps1",
     "windows_install_notes": "docs/windows-install-notes.md"
   },
-  "file_count": 715,
+  "file_count": 717,
   "notes": "S19 uses native Symfony root structure, Symfony CLI server execution, PHP 8.4, Symfony 8.1, file-backed debug repositories, a Kernel-level HTTP smoke gate, and a Windows live POST smoke script for business routes. No CRUD surface, migrations, SQL, src/Domain, or neighbor ownership added.",
   "version": "0.1.0-rc.1",
   "release_status": "symfony-root-http-and-live-post-smoke-ready"
