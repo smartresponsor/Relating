@@ -26,7 +26,8 @@ function Invoke-RelatingJson {
     param(
         [string]$Method,
         [string]$Path,
-        [object]$Payload = $null
+        [object]$Payload = $null,
+        [int]$ExpectedStatusCode = 200
     )
 
     $uri = $BaseUrl.TrimEnd('/') + $Path
@@ -42,7 +43,9 @@ function Invoke-RelatingJson {
         '--header',
         'Accept: application/json',
         '--header',
-        'Content-Type: application/json'
+        'Content-Type: application/json',
+        '--write-out',
+        "`n__HTTP_STATUS__:%{http_code}"
     )
 
     if ($null -ne $Payload) {
@@ -57,17 +60,29 @@ function Invoke-RelatingJson {
         throw "$Method $Path failed with curl exit code ${LASTEXITCODE}: $body"
     }
 
-    if ([string]::IsNullOrWhiteSpace($body)) {
+    $parts = $body -split "`n__HTTP_STATUS__:", 2
+    if ($parts.Count -ne 2) {
+        throw "$Method $Path did not return an HTTP status marker: $body"
+    }
+
+    $responseBody = $parts[0]
+    $statusCode = [int]$parts[1].Trim()
+
+    if ($statusCode -ne $ExpectedStatusCode) {
+        throw "$Method $Path returned HTTP $statusCode, expected $ExpectedStatusCode: $responseBody"
+    }
+
+    if ([string]::IsNullOrWhiteSpace($responseBody)) {
         throw "$Method $Path returned an empty response body."
     }
 
-    $decoded = $body | ConvertFrom-Json -ErrorAction Stop
+    $decoded = $responseBody | ConvertFrom-Json -ErrorAction Stop
 
     return [pscustomobject]@{
-        StatusCode = 200
+        StatusCode = $statusCode
         FinalUrl = $uri
         Json = $decoded
-        Raw = $body
+        Raw = $responseBody
     }
 }
 
@@ -81,6 +96,15 @@ function Assert-BusinessResult {
     if ($null -eq $Response.Json.payload) {
         throw "$BusinessAction payload is missing."
     }
+}
+
+function Assert-BusinessPayloadError {
+    param([object]$Response, [string]$Message)
+
+    Assert-Equals 400 $Response.StatusCode 'Business payload error status mismatch.'
+    Assert-Equals 'Relating' $Response.Json.component 'Business payload error component mismatch.'
+    Assert-Equals 'business_payload_invalid' $Response.Json.error.code 'Business payload error code mismatch.'
+    Assert-Equals $Message $Response.Json.error.message 'Business payload error message mismatch.'
 }
 
 function Assert-NoCrudSurface {
@@ -205,5 +229,10 @@ $timeline = Invoke-RelatingJson -Method 'POST' -Path '/relating/timeline/project
 }
 Assert-BusinessResult -Response $timeline -BusinessAction 'timeline-project'
 Write-Host "OK timeline-project $($timeline.Json.subject_reference)"
+
+$payloadError = Invoke-RelatingJson -Method 'POST' -Path '/relating/relationship/start' -Payload @{} -ExpectedStatusCode 400
+Assert-BusinessPayloadError -Response $payloadError -Message 'Missing required business field: vendor_reference.'
+Assert-NoCrudSurface $payloadError.Raw
+Write-Host 'OK business-payload-invalid relationship-start'
 
 Write-Host "Relating live business POST smoke passed for scenario $scenario."

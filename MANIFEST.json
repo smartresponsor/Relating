@@ -788,7 +788,7 @@
     "windows_install_notes": "docs/windows-install-notes.md"
   },
   "file_count": 717,
-  "notes": "S19 uses native Symfony root structure, Symfony CLI server execution, PHP 8.4, Symfony 8.1, file-backed debug repositories, a Kernel-level HTTP smoke gate, and a Windows live POST smoke script for business routes. No CRUD surface, migrations, SQL, src/Domain, or neighbor ownership added.",
+  "notes": "S19 uses native Symfony root structure, Symfony CLI server execution, PHP 8.4, Symfony 8.1, file-backed debug repositories, a Kernel-level HTTP smoke gate, and a Windows live POST smoke script for business routes and JSON error contracts. No CRUD surface, migrations, SQL, src/Domain, or neighbor ownership added.",
   "version": "0.1.0-rc.1",
   "release_status": "symfony-root-http-and-live-post-smoke-ready"
 }
