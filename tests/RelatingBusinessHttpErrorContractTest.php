@@ -94,6 +94,15 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
                 ['opportunity_reference' => 'opportunity-missing', 'stage_reference' => 'stage-positive', 'probability' => 50],
                 'Opportunity was not found for reference: opportunity-missing',
             ],
+            [
+                '/relating/ai-suggestion/review',
+                [
+                    'suggestion_reference' => 'suggestion-missing',
+                    'reviewer_reference' => 'reviewer-positive',
+                    'decision' => 'reject',
+                ],
+                'AI suggestion was not found for reference: suggestion-missing',
+            ],
         ];
 
         foreach ($cases as [$path, $payload, $message]) {
