@@ -107,6 +107,15 @@ function Assert-BusinessPayloadError {
     Assert-Equals $Message $Response.Json.error.message 'Business payload error message mismatch.'
 }
 
+function Assert-BusinessReferenceError {
+    param([object]$Response, [string]$Message)
+
+    Assert-Equals 404 $Response.StatusCode 'Business reference error status mismatch.'
+    Assert-Equals 'Relating' $Response.Json.component 'Business reference error component mismatch.'
+    Assert-Equals 'business_reference_not_found' $Response.Json.error.code 'Business reference error code mismatch.'
+    Assert-Equals $Message $Response.Json.error.message 'Business reference error message mismatch.'
+}
+
 function Assert-NoCrudSurface {
     param([string]$Raw)
 
@@ -234,5 +243,14 @@ $payloadError = Invoke-RelatingJson -Method 'POST' -Path '/relating/relationship
 Assert-BusinessPayloadError -Response $payloadError -Message 'Missing required business field: vendor_reference.'
 Assert-NoCrudSurface $payloadError.Raw
 Write-Host 'OK business-payload-invalid relationship-start'
+
+$referenceError = Invoke-RelatingJson -Method 'POST' -Path '/relating/lead/qualify' -Payload @{
+    lead_reference = "lead-missing-$scenario"
+    score = 80
+    context = @{ scenario = $scenario }
+} -ExpectedStatusCode 404
+Assert-BusinessReferenceError -Response $referenceError -Message "Lead was not found for reference: lead-missing-$scenario"
+Assert-NoCrudSurface $referenceError.Raw
+Write-Host 'OK business-reference-not-found lead-qualify'
 
 Write-Host "Relating live business POST smoke passed for scenario $scenario."
