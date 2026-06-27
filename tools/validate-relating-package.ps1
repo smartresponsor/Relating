@@ -93,4 +93,19 @@ Assert-PathExists (Join-Path $rootPath 'tests/RelatingBusinessHttpErrorContractT
 Assert-PathExists (Join-Path $rootPath 'tools/smoke-relating-business-http.ps1') 'Missing live business HTTP smoke wrapper.'
 Assert-PathExists (Join-Path $rootPath 'tools/smoke-relating-business-http-curl.ps1') 'Missing live business HTTP curl smoke.'
 
+$businessErrorSubscriber = Get-Content -Raw -Path (Join-Path $rootPath 'src/Controller/BusinessHttpExceptionSubscriber.php')
+if ($businessErrorSubscriber -notmatch [regex]::Escape('business_reference_not_found') -or $businessErrorSubscriber -notmatch [regex]::Escape('HTTP_NOT_FOUND')) {
+    throw 'Missing stable business reference-not-found HTTP subscriber contract.'
+}
+
+$businessErrorTest = Get-Content -Raw -Path (Join-Path $rootPath 'tests/RelatingBusinessHttpErrorContractTest.php')
+if ($businessErrorTest -notmatch [regex]::Escape('business_reference_not_found') -or $businessErrorTest -notmatch [regex]::Escape('HTTP_NOT_FOUND')) {
+    throw 'Missing stable business reference-not-found HTTP test contract.'
+}
+
+$businessSmoke = Get-Content -Raw -Path (Join-Path $rootPath 'tools/smoke-relating-business-http-curl.ps1')
+if ($businessSmoke -notmatch [regex]::Escape('business_reference_not_found') -or $businessSmoke -notmatch [regex]::Escape('ExpectedStatusCode 404')) {
+    throw 'Missing live business reference-not-found smoke contract.'
+}
+
 Write-Host 'Relating package validation passed.'
