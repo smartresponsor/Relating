@@ -1,6 +1,6 @@
 # S19 Symfony-root Debug Runtime Recovery
 
-S19 recovers the previous non-canonical standalone runtime attempt and moves local execution to the repository root.
+S19 rejects the previous non-canonical auxiliary runtime attempt and keeps local execution in the repository root.
 
 The runtime must follow native Symfony root structure:
 
