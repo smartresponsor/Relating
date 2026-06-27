@@ -741,6 +741,8 @@
     "tests/Relating/RelatingValidationPolicyBoundaryTest.php",
     "tests/Relating/RelatingViewBoundaryTest.php",
     "tests/Relating/RelationshipSkeletonTest.php",
+    "tools/smoke-relating-business-http.ps1",
+    "tools/smoke-relating-business-http-curl.ps1",
     "tools/install-from-local-zip.ps1",
     "tools/install-relating-skeleton.ps1",
     "tools/validate-relating-final-gap.ps1",
@@ -783,8 +785,8 @@
     "archive_verifier": "tools/verify-relating-archive.ps1",
     "windows_install_notes": "docs/windows-install-notes.md"
   },
-  "file_count": 713,
-  "notes": "S19 uses native Symfony root structure, Symfony CLI server execution, PHP 8.4, Symfony 8.1, file-backed debug repositories, and a Kernel-level HTTP smoke gate for business routes. No CRUD surface, migrations, SQL, src/Domain, or neighbor ownership added.",
+  "file_count": 715,
+  "notes": "S19 uses native Symfony root structure, Symfony CLI server execution, PHP 8.4, Symfony 8.1, file-backed debug repositories, a Kernel-level HTTP smoke gate, and a Windows live POST smoke script for business routes. No CRUD surface, migrations, SQL, src/Domain, or neighbor ownership added.",
   "version": "0.1.0-rc.1",
-  "release_status": "symfony-root-http-smoke-green"
+  "release_status": "symfony-root-http-and-live-post-smoke-ready"
 }
