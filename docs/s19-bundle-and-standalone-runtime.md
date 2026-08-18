@@ -1,6 +1,6 @@
 # S19 Symfony-root Debug Runtime Recovery
 
-S19 rejects the previous non-canonical auxiliary runtime attempt and keeps local execution in the repository root.
+S19 keeps local execution in the repository root and rejects auxiliary runtime applications.
 
 The runtime must follow native Symfony root structure:
 
@@ -14,7 +14,7 @@ public/index.php
 src/Kernel.php
 ```
 
-There is no `runtime/standalone` application. Local debug execution starts from the root repository.
+There is no secondary runtime application. Local debug execution starts from the root repository.
 
 ## Local server target
 

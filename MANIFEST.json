@@ -29,7 +29,7 @@
     "first_working_slice_glue": true,
     "optional_bundle_wrapper": true,
     "symfony_root_debug_runtime": true,
-    "legacy_standalone_runtime_cleanup_pending": false,
+    "secondary_runtime_cleanup_pending": false,
     "debug_runtime_uses_migrations": false,
     "feature_scope_expanded_after_freeze": false
   },

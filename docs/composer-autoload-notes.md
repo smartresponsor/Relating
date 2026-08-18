@@ -36,7 +36,7 @@ Forbidden: Relating\Relationship
 
 ## Composer install position
 
-`Relating` can now be used either as a source-level component under the host application or as a local Composer path package for standalone debugging:
+`Relating` can now be used either as a source-level component under the host application or as a local Composer path package for Symfony root debug execution:
 
 ```text
 src
