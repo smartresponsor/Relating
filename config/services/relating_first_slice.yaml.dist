@@ -44,3 +44,6 @@ services:
 
     App\Service\RelatingBusinessEventRecorderInterface:
         alias: App\Service\DispatchingRelatingBusinessEventRecorder
+
+    App\Service\VendorLeadReadServiceInterface:
+        alias: App\Service\VendorLeadReadService

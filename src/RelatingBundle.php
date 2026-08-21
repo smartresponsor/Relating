@@ -12,11 +12,12 @@ final class RelatingBundle extends AbstractBundle
 {
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-        $container->import('../../config/services/relating.yaml.dist');
+        $container->import($this->getPath().'/config/services/relating.yaml.dist');
+        $container->import($this->getPath().'/config/services/relating_first_slice.yaml.dist');
     }
 
     public function getPath(): string
     {
-        return dirname(__DIR__);
+        return \dirname(__DIR__);
     }
 }
