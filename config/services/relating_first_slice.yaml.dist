@@ -30,6 +30,8 @@ services:
         arguments:
             $eventDispatcher: '@event_dispatcher'
 
+    App\Service\VendorLeadReadService: ~
+
     App\Repository\RelationshipRepositoryInterface:
         alias: App\Repository\DoctrineRelationshipRepository
 
