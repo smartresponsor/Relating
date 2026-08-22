@@ -30,7 +30,10 @@ services:
         arguments:
             $eventDispatcher: '@event_dispatcher'
 
-    App\Service\VendorLeadReadService: ~
+    App\Service\VendorLeadReadService:
+        arguments:
+            $relationships: '@App\Repository\RelationshipRepositoryInterface'
+            $entityManager: '@doctrine.orm.entity_manager'
 
     App\Repository\RelationshipRepositoryInterface:
         alias: App\Repository\DoctrineRelationshipRepository
