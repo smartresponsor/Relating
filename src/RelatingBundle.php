@@ -12,8 +12,8 @@ final class RelatingBundle extends AbstractBundle
 {
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
-        $container->import($this->getPath().'/config/services/relating.yaml.dist');
-        $container->import($this->getPath().'/config/services/relating_first_slice.yaml.dist');
+        $container->import('../config/services/relating.yaml.dist', 'yaml');
+        $container->import('../config/services/relating_first_slice.yaml.dist', 'yaml');
     }
 
     public function getPath(): string

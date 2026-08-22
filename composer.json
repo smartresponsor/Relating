@@ -1,5 +1,5 @@
 {
-  "name": "smartresponsor/relating",
+  "name": "relating/relation",
   "description": "SmartResponsor Relating CRM relationship lifecycle component.",
   "type": "symfony-bundle",
   "license": "proprietary",
