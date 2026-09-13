@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-
 namespace App\Entity;
 
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -22,7 +20,7 @@ class Task extends AbstractRelatingEntity
     private string $status;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $dueAt = null;
+    private ?\DateTimeImmutable $dueAt = null;
 
     public function __construct(string $id, string $activityReference, string $title, string $status)
     {
@@ -32,7 +30,7 @@ class Task extends AbstractRelatingEntity
         $this->status = $this->required($status, 'Task status');
     }
 
-    public function schedule(?DateTimeImmutable $dueAt): void
+    public function schedule(?\DateTimeImmutable $dueAt): void
     {
         $this->dueAt = $dueAt;
         $this->touch();
@@ -42,8 +40,8 @@ class Task extends AbstractRelatingEntity
     {
         $value = trim($value);
 
-        if ($value === '') {
-            throw new \InvalidArgumentException($label . ' cannot be empty.');
+        if ('' === $value) {
+            throw new \InvalidArgumentException($label.' cannot be empty.');
         }
 
         return $value;

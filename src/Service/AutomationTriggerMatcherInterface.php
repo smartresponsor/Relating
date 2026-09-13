@@ -9,7 +9,7 @@ use App\Event\AbstractRelatingEvent;
 interface AutomationTriggerMatcherInterface
 {
     /**
-     * @return list<string> Automation rule references selected by the business event.
+     * @return list<string> automation rule references selected by the business event
      */
     public function rulesTriggeredBy(AbstractRelatingEvent $event): array;
 }

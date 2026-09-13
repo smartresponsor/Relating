@@ -10,26 +10,26 @@ final class RelatingFirstWorkingSliceGlueBoundaryTest extends TestCase
 {
     public function testFirstSliceGlueFilesExist(): void
     {
-        $root = dirname(__DIR__);
+        $root = \dirname(__DIR__);
 
         $required = [
             'src/Repository/DoctrineRelationshipRepository.php',
             'src/Repository/DoctrineLeadRepository.php',
             'src/Repository/DoctrineOpportunityRepository.php',
             'src/Service/UuidRelatingIdGenerator.php',
-            'src/Service/DispatchingRelatingBusinessEventRecorder.php',
+            'src/Service/DispatchingRelatingBusinessEventDispatcher.php',
             'config/services/relating_first_slice.yaml.dist',
             'docs/s18-first-working-slice-glue.md',
         ];
 
         foreach ($required as $relativePath) {
-            self::assertFileExists($root . '/' . $relativePath, $relativePath);
+            self::assertFileExists($root.'/'.$relativePath, $relativePath);
         }
     }
 
     public function testFirstSliceWiresExistingContractsOnly(): void
     {
-        $content = file_get_contents(dirname(__DIR__) . '/config/services/relating_first_slice.yaml.dist');
+        $content = file_get_contents(\dirname(__DIR__).'/config/services/relating_first_slice.yaml.dist');
         self::assertIsString($content);
 
         self::assertStringContainsString('RelationshipRepositoryInterface', $content);
@@ -41,10 +41,10 @@ final class RelatingFirstWorkingSliceGlueBoundaryTest extends TestCase
 
     public function testFirstSliceDoesNotIntroduceForbiddenInfrastructure(): void
     {
-        $root = dirname(__DIR__);
+        $root = \dirname(__DIR__);
 
-        self::assertDirectoryDoesNotExist($root . '/src/Domain');
-        self::assertDirectoryDoesNotExist($root . '/migrations');
+        self::assertDirectoryDoesNotExist($root.'/src/Domain');
+        self::assertDirectoryDoesNotExist($root.'/migrations');
 
         $newFiles = [
             'config/services/relating_first_slice.yaml.dist',
@@ -52,7 +52,7 @@ final class RelatingFirstWorkingSliceGlueBoundaryTest extends TestCase
         ];
 
         foreach ($newFiles as $relativePath) {
-            $content = file_get_contents($root . '/' . $relativePath);
+            $content = file_get_contents($root.'/'.$relativePath);
             self::assertIsString($content);
 
             self::assertStringNotContainsString('/relating/create', $content);

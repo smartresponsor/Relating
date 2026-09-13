@@ -7,7 +7,6 @@ namespace App\Entity;
 use App\Enum\ActivityDirection;
 use App\Enum\ActivityStatus;
 use App\Enum\ActivityType;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -46,10 +45,10 @@ final class Activity extends AbstractRelatingEntity
     private ?string $body = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $dueAt = null;
+    private ?\DateTimeImmutable $dueAt = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $completedAt = null;
+    private ?\DateTimeImmutable $completedAt = null;
 
     public function __construct(string $id, ActivityType $type, string $targetType, string $targetReference, ActivityDirection $direction = ActivityDirection::Internal)
     {
@@ -80,7 +79,7 @@ final class Activity extends AbstractRelatingEntity
         $this->touch();
     }
 
-    public function schedule(?DateTimeImmutable $dueAt): void
+    public function schedule(?\DateTimeImmutable $dueAt): void
     {
         $this->dueAt = $dueAt;
         $this->touch();
@@ -92,10 +91,10 @@ final class Activity extends AbstractRelatingEntity
         $this->touch();
     }
 
-    public function complete(?DateTimeImmutable $completedAt = null): void
+    public function complete(?\DateTimeImmutable $completedAt = null): void
     {
         $this->status = ActivityStatus::Completed->value;
-        $this->completedAt = $completedAt ?? new DateTimeImmutable();
+        $this->completedAt = $completedAt ?? new \DateTimeImmutable();
         $this->touch();
     }
 

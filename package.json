@@ -1,0 +1,11 @@
+{
+  "name": "relating-ui-tests",
+  "private": true,
+  "scripts": {
+    "test": "playwright test --pass-with-no-tests",
+    "test:ui": "playwright test --pass-with-no-tests"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

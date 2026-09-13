@@ -10,7 +10,7 @@ VendorReference exists in Vendoring
   -> LeadConverted
   -> OpportunityOpened
   -> OpportunityStageChanged
-  -> TimelineEventProjected
+  -> TimelineRecordProjected
   -> AiSuggestionRaised
   -> AiSuggestionReviewed
 ```

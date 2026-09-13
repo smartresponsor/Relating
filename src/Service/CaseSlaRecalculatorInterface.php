@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\View\CaseSlaView;
+use App\Snapshot\View\CaseSlaView;
 
 interface CaseSlaRecalculatorInterface
 {

@@ -13,7 +13,7 @@ Create and wire the core aggregate objects:
 - ActivityTarget
 - Task
 - Note
-- TimelineEvent
+- TimelineRecord
 
 ## Phase 2: ViewObjects
 

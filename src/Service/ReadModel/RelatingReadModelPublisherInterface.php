@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-
 namespace App\Service\ReadModel;
 
-use App\ReadModel\ReadModelProjectionResult;
-use App\ReadModel\RelatingReadModelInterface;
+use App\Snapshot\ReadModelProjectionResult;
+use App\Snapshot\RelatingReadModelInterface;
 
 interface RelatingReadModelPublisherInterface
 {

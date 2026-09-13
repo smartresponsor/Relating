@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\Validation\PayloadSchema;
+use App\Validator\PayloadSchema;
 
 interface RelatingValidationSchemaRegistryInterface
 {

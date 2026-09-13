@@ -7,8 +7,8 @@ namespace App\Enum;
 enum TraceRetentionClass: string
 {
     case Operational = 'operational';
-case Compliance = 'compliance';
-case AiDecision = 'ai_decision';
-case SecurityAdjacent = 'security_adjacent';
-case Diagnostic = 'diagnostic';
+    case Compliance = 'compliance';
+    case AiDecision = 'ai_decision';
+    case SecurityAdjacent = 'security_adjacent';
+    case Diagnostic = 'diagnostic';
 }

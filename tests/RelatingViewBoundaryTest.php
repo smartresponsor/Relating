@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace App\Tests;
 
-use App\View\AbstractArrayView;
-use App\View\RelatingViewInterface;
+use App\Snapshot\View\AbstractArrayView;
+use App\Snapshot\View\RelatingViewInterface;
 use PHPUnit\Framework\TestCase;
-use ReflectionClass;
 
 final class RelatingViewBoundaryTest extends TestCase
 {
     public function testViewsDoNotImportEntities(): void
     {
-        $viewPath = dirname(__DIR__).'/src/View';
+        $viewPath = \dirname(__DIR__).'/src/Snapshot/View';
         $files = glob($viewPath.'/*.php') ?: [];
 
         self::assertNotEmpty($files);
@@ -27,19 +26,19 @@ final class RelatingViewBoundaryTest extends TestCase
 
     public function testAllConcreteArrayViewsImplementRelatingViewInterface(): void
     {
-        $viewPath = dirname(__DIR__).'/src/View';
+        $viewPath = \dirname(__DIR__).'/src/Snapshot/View';
         $files = glob($viewPath.'/*View.php') ?: [];
 
         self::assertNotEmpty($files);
 
         foreach ($files as $file) {
-            $class = 'App\\View\\'.basename($file, '.php');
+            $class = 'App\\Snapshot\\View\\'.basename($file, '.php');
 
             if (!class_exists($class)) {
                 require_once $file;
             }
 
-            $reflection = new ReflectionClass($class);
+            $reflection = new \ReflectionClass($class);
 
             if ($reflection->isAbstract()) {
                 continue;

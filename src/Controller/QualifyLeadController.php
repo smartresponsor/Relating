@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\Command\QualifyLeadCommand;
-use App\Application\Service\QualifyLeadApplicationService;
+use App\Command\QualifyLeadCommand;
+use App\Service\Application\QualifyLeadApplicationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

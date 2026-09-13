@@ -12,10 +12,10 @@ Relating exposes only business HTTP route handlers. These handlers map JSON requ
 | `/relating/lead/qualify` | POST | QualifyLeadApplicationService | lead-qualification |
 | `/relating/lead/convert` | POST | ConvertLeadApplicationService | lead-conversion |
 | `/relating/opportunity/open` | POST | OpenOpportunityApplicationService | opportunity-open |
-| `/relating/opportunity/stage-transition` | POST | TransitionOpportunityStageApplicationService | opportunity-stage-transition |
+| `/relating/opportunity/stage/transition` | POST | TransitionOpportunityStageApplicationService | opportunity-stage-transition |
 | `/relating/activity/record` | POST | RecordActivityApplicationService | activity-record |
 | `/relating/timeline/project` | POST | ProjectTimelineApplicationService | timeline-projection |
-| `/relating/ai-suggestion/review` | POST | ReviewAiSuggestionApplicationService | ai-review |
+| `/relating/ai/suggestion/review` | POST | ReviewAiSuggestionApplicationService | ai-review |
 
 ## Hard boundary
 

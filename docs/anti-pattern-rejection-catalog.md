@@ -27,7 +27,7 @@ No Product/Order/Payment/Shipment ownership inside Relating.
 | Dynamic module CRUD | ObjectDefinition + ViewObject + existing CRUD mechanism |
 | Workflow writes any module | AutomationRule + specific Symfony service + audit |
 | SQL report | ReadModel/ViewObject/query service |
-| Email module | MessageThreadReference + TimelineEvent |
+| Email module | MessageThreadReference + TimelineRecord |
 | Product/invoice/contract suite | ProductReference / OrderReference / PaymentReference / CommercialTerm |
 | Role/security config | Accessing reference and voters/policies later |
 

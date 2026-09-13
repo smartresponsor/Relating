@@ -22,7 +22,7 @@ Primary objects:
 Relationship
 RelationshipParticipant
 Source
-TimelineEvent
+TimelineRecord
 Task
 RelationshipSummaryView
 RelationshipTimelineView
@@ -105,7 +105,7 @@ Note
 Call
 Meeting
 Reminder
-TimelineEvent
+TimelineRecord
 ```
 
 ## Chain 5: campaign and attribution
@@ -151,7 +151,7 @@ CaseThread
 CaseSla
 CaseEscalation
 CaseResolution
-TimelineEvent
+TimelineRecord
 RelationshipSignal
 ```
 

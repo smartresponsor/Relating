@@ -76,13 +76,9 @@ if (-not $SkipHashCheck) {
     Write-Host "Archive SHA256 verified: $expected"
 }
 
-$unpackRoot = Join-Path $targetRoot '.relating-skeleton-unpack'
+$unpackRoot = Join-Path $targetRoot ('.relating-skeleton-unpack-' + [guid]::NewGuid().ToString('N'))
 
-if (Test-Path $unpackRoot) {
-    Remove-Item -Recurse -Force $unpackRoot
-}
-
-New-Item -ItemType Directory -Force -Path $unpackRoot | Out-Null
+New-Item -ItemType Directory -Path $unpackRoot | Out-Null
 Expand-Archive -Force -Path $SourceZip -DestinationPath $unpackRoot
 
 $sourceRoot = Join-Path $unpackRoot 'relating-relationship-skeleton'
@@ -119,8 +115,8 @@ foreach ($item in $itemsToCopy) {
     }
 }
 
-if (-not $KeepUnpacked) {
-    Remove-Item -Recurse -Force $unpackRoot
+if (-not $KeepUnpacked -and (Test-Path $unpackRoot -PathType Container)) {
+    [System.IO.Directory]::Delete($unpackRoot, $true)
 }
 
 Write-Host "Relating skeleton installed into: $targetRoot"

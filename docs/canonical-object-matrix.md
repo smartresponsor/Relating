@@ -23,8 +23,8 @@ CRUD policy: never create CRUD controllers, CRUD YAML, CRUD route attributes, or
 | Twenty | People | VendorReference + RelationshipParticipant | Vendoring + Relating | Keep relationship role, lifecycle, participation, engagement signal |
 | Twenty | Companies | VendorReference + Relationship | Vendoring + Relating | Keep relationship profile and timeline around vendor |
 | Twenty | Opportunities | Opportunity | Relating | Own pipeline, stage history, forecast, risk, product interest references |
-| Twenty | Notes | Note + TimelineEvent | Relating | Own CRM note as business activity; do not own document storage |
-| Twenty | Tasks | Task + Reminder + TimelineEvent | Relating | Own CRM task and next-action planning |
+| Twenty | Notes | Note + TimelineRecord | Relating | Own CRM note as business activity; do not own document storage |
+| Twenty | Tasks | Task + Reminder + TimelineRecord | Relating | Own CRM task and next-action planning |
 | Twenty | Custom Object | RelatingObjectDefinition | Relating | Own metadata definition if object is CRM-specific; otherwise reference neighbor |
 | Twenty | Views | RelatingViewDefinition + ViewObject | Relating | Own saved business read-model configuration |
 | Twenty | Workflows | AutomationRule | Relating | Own CRM triggers/actions; dispatch through Symfony Messenger |
@@ -44,7 +44,7 @@ CRUD policy: never create CRUD controllers, CRUD YAML, CRUD route attributes, or
 | SuiteCRM | Meetings | Meeting + Activity | Relating | Own activity record and calendar reference |
 | SuiteCRM | Tasks | Task | Relating | Own CRM next action |
 | SuiteCRM | Notes | Note | Relating | Own CRM annotation and timeline projection |
-| SuiteCRM | Emails | MessageThreadReference + TimelineEvent | Messaging + Relating | Do not own email transport; project relationship signal |
+| SuiteCRM | Emails | MessageThreadReference + TimelineRecord | Messaging + Relating | Do not own email transport; project relationship signal |
 | SuiteCRM | Documents | DocumentReference | Documentating/Media | Do not own document storage; keep references in timeline/case/quote intent |
 | SuiteCRM | Targets | TargetProfile / LeadCandidate | Relating | Own target membership and campaign readiness |
 | SuiteCRM | Target Lists | TargetList | Relating | Own campaign audience list |
@@ -109,7 +109,7 @@ Task
 Note
 Meeting
 Call
-TimelineEvent
+TimelineRecord
 Reminder
 Campaign
 CampaignMember

@@ -22,14 +22,14 @@ service registration.
 The active service surfaces are:
 
 ```text
-App\Application\Service
+App\Service\Application
 App\Service
 App\Controller
 ```
 
 ## Route wiring rule
 
-`config/routes/relating.yaml` imports only controllers under
+`config/routes/relation_routes.yaml` imports only controllers under
 `src/Controller`, and tests enforce that controllers expose business
 routes only.
 
@@ -41,10 +41,10 @@ Allowed route examples:
 /relating/lead/qualify
 /relating/lead/convert
 /relating/opportunity/open
-/relating/opportunity/stage-transition
+/relating/opportunity/stage/transition
 /relating/activity/record
 /relating/timeline/project
-/relating/ai-suggestion/review
+/relating/ai/suggestion/review
 ```
 
 Forbidden route examples:

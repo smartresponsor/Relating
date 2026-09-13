@@ -10,7 +10,7 @@ final class RelatingEventBoundaryTest extends TestCase
 {
     public function testRelatingDoesNotDeclareGenericCrudEventClasses(): void
     {
-        $eventDir = dirname(__DIR__).'/src/Event';
+        $eventDir = \dirname(__DIR__).'/src/Event';
 
         self::assertDirectoryExists($eventDir);
 

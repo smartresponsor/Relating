@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Service;
 
 use App\Enum\NeighborComponent;
-use App\Value\NeighborSignalEnvelope;
+use App\ValueObject\NeighborSignalEnvelope;
 
 interface NeighborSignalNormalizerInterface
 {

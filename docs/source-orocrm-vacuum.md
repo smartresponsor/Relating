@@ -36,7 +36,7 @@ Oro account/contact/customer objects are not copied. They map to `VendorReferenc
 | Invoice / payment terms | PaymentReference | Payment |
 | Products | ProductReference | Producting / Production |
 | Shipping method on quote | ShipmentReference | Shipment |
-| Tasks / calls / emails / calendar events | Activity / TimelineEvent / MessageThreadReference | Relating + Messaging |
+| Tasks / calls / emails / calendar events | Activity / TimelineRecord / MessageThreadReference | Relating + Messaging |
 | Reports, dashboards, forecast widgets | DashboardDefinition / Forecast views | Relating |
 | Entity fields | ObjectDefinition / FieldDefinition | Relating metadata |
 | Roles, permissions, field permissions | AccessSubjectReference | Accessing |

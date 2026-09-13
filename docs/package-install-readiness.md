@@ -4,7 +4,7 @@ Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
 This document defines the installation shape for the `Relating` / `Relationship` skeleton.
 
-`Relating` is delivered as a Symfony-oriented source package, not as a framework bundle and not as a CRUD module. The package is intended to be copied into a host Symfony application that already owns application bootstrapping, CRUD machinery, security wiring, persistence configuration, and environment-specific infrastructure.
+`Relating` is delivered as a Symfony-oriented dual-runtime component: it remains independently bootable for verification/debugging and exposes `App\RelatingBundle` for explicit host composition. It is not a CRUD module. The host Symfony application still owns environment-specific persistence, security integration, deployment configuration, and generated migrations.
 
 ## Canon
 
@@ -15,7 +15,7 @@ Market category: CRM
 Namespace: App
 Source path: src
 Test path: tests
-Route file: config/routes/relating.yaml
+Route file: config/routes/relation_routes.yaml
 ```
 
 ## Installation contract
@@ -24,7 +24,7 @@ The package may install these skeleton surfaces:
 
 ```text
 src
-config/routes/relating.yaml
+config/routes/relation_routes.yaml
 config/*.dist
 config/packages/*.dist
 config/services/*.dist
@@ -39,7 +39,6 @@ The package must not install these surfaces:
 
 ```text
 src/Domain
-src/*Bundle.php
 migrations
 var
 vendor
@@ -60,10 +59,10 @@ The active route file is limited to the approved business route surface:
 /relating/lead/qualify
 /relating/lead/convert
 /relating/opportunity/open
-/relating/opportunity/stage-transition
+/relating/opportunity/stage/transition
 /relating/activity/record
 /relating/timeline/project
-/relating/ai-suggestion/review
+/relating/ai/suggestion/review
 ```
 
 No CRUD route is part of this package. CRUD remains the responsibility of the existing SmartResponsor CRUD mechanism.

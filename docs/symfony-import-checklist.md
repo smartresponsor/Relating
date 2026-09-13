@@ -9,7 +9,7 @@ This checklist is used when importing the skeleton into a Symfony host applicati
 ```text
 [ ] src exists
 [ ] tests exists
-[ ] config/routes/relating.yaml exists
+[ ] config/routes/relation_routes.yaml exists
 [ ] config/services/relating.yaml.dist exists
 [ ] config/packages/relating_messenger.yaml.dist exists
 [ ] config/packages/relating_workflow.yaml.dist exists
@@ -26,7 +26,7 @@ The host application may import only the approved business route file:
 
 ```yaml
 relating_business:
-    resource: '../config/routes/relating.yaml'
+    resource: '../config/routes/relation_routes.yaml'
 ```
 
 The import must not point to generated CRUD route declarations.

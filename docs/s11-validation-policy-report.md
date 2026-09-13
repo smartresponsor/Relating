@@ -5,7 +5,7 @@ S11 adds business validation and policy contracts.
 ## Added code
 
 ```text
-src/Validation/*
+src/Validator/*
 src/Policy/*
 src/Enum/PolicyDecision.php
 src/Enum/PolicyFailureCode.php

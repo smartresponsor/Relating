@@ -28,7 +28,7 @@ Relating transformation:
 ```text
 People/Companies -> VendorReference
 Opportunities -> Opportunity
-Notes/Tasks -> Note/Task/Activity/TimelineEvent
+Notes/Tasks -> Note/Task/Activity/TimelineRecord
 Objects/Fields/Views -> Relating metadata registry
 Workflows/Agents -> AutomationRule + AiSuggestion + AiDecisionLog
 ```
@@ -128,7 +128,7 @@ Relating transformation:
 ```text
 Customer360 -> RelationshipProfileView
 Account/contact info -> VendorReference
-Communication -> TimelineEvent/MessageThreadReference
+Communication -> TimelineRecord/MessageThreadReference
 Product views/support tickets -> RelationshipSignal/CaseRecord
 Campaign performance -> CampaignPerformanceView
 ```
@@ -185,7 +185,7 @@ Relating transformation:
 ```text
 Contacts -> VendorReference
 Relationships -> Relationship/RelationshipRelation
-Activities -> Activity/TimelineEvent
+Activities -> Activity/TimelineRecord
 Groups/Tags -> Segment/TargetList concept
 Cases -> CaseRecord
 Campaigns/Mailings -> Campaign/CampaignTouch

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use App\Enum\RelationshipSignalKind;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -35,9 +34,9 @@ final class RelationshipSignal extends AbstractRelatingEntity
     private array $payload;
 
     #[ORM\Column(type: 'datetime_immutable')]
-    private DateTimeImmutable $occurredAt;
+    private \DateTimeImmutable $occurredAt;
 
-    public function __construct(string $id, string $relationshipReference, RelationshipSignalKind $signalType, ?string $sourceComponent = null, ?string $sourceReference = null, array $payload = [], ?DateTimeImmutable $occurredAt = null)
+    public function __construct(string $id, string $relationshipReference, RelationshipSignalKind $signalType, ?string $sourceComponent = null, ?string $sourceReference = null, array $payload = [], ?\DateTimeImmutable $occurredAt = null)
     {
         $this->bootEntity($id);
         $this->relationshipReference = $this->requiredText($relationshipReference, 'Relationship reference', 128);
@@ -45,7 +44,7 @@ final class RelationshipSignal extends AbstractRelatingEntity
         $this->sourceComponent = $this->nullableText($sourceComponent, 64);
         $this->sourceReference = $this->nullableText($sourceReference, 128);
         $this->payload = $payload;
-        $this->occurredAt = $occurredAt ?? new DateTimeImmutable();
+        $this->occurredAt = $occurredAt ?? new \DateTimeImmutable();
     }
 
     public function relationshipReference(): string
@@ -73,7 +72,7 @@ final class RelationshipSignal extends AbstractRelatingEntity
         return $this->payload;
     }
 
-    public function occurredAt(): DateTimeImmutable
+    public function occurredAt(): \DateTimeImmutable
     {
         return $this->occurredAt;
     }

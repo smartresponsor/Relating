@@ -11,7 +11,7 @@ Application services record business events after successful business transition
 | opportunity-open | `OpportunityOpened` | none |
 | opportunity-stage-transition | `OpportunityStageChanged` | none |
 | activity-record | `ActivityRecorded` | none |
-| timeline-project | `TimelineEventProjected` | none |
+| timeline-project | `TimelineRecordProjected` | none |
 | ai-review | `AiSuggestionReviewed` | `AiSuggestionAccepted` or `AiSuggestionRejected` |
 
 The event map is intentionally business-named. Generic entity lifecycle events are rejected.

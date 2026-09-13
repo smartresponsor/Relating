@@ -11,7 +11,7 @@ DoctrineRelationshipRepository
 DoctrineLeadRepository
 DoctrineOpportunityRepository
 UuidRelatingIdGenerator
-DispatchingRelatingBusinessEventRecorder
+DispatchingRelatingBusinessEventDispatcher
 config/services/relating_first_slice.yaml.dist
 ```
 
@@ -66,7 +66,7 @@ php -l .\src\Repository\DoctrineRelationshipRepository.php
 php -l .\src\Repository\DoctrineLeadRepository.php
 php -l .\src\Repository\DoctrineOpportunityRepository.php
 php -l .\src\Service\UuidRelatingIdGenerator.php
-php -l .\src\Service\DispatchingRelatingBusinessEventRecorder.php
+php -l .\src\Service\DispatchingRelatingBusinessEventDispatcher.php
 ```
 
 After lint passes, run the host Symfony container check from the application repository that imports these files.

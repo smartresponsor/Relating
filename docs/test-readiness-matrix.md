@@ -15,9 +15,9 @@
 
 | Factory method | Objects |
 | --- | --- |
-| `relationshipStart()` | `Relationship`, `TimelineEvent`, `Activity` |
-| `qualifiedLead()` | `Lead`, `TimelineEvent` |
-| `opportunityFlow()` | `Pipeline`, `PipelineStage`, `Opportunity`, `TimelineEvent` |
+| `relationshipStart()` | `Relationship`, `TimelineRecord`, `Activity` |
+| `qualifiedLead()` | `Lead`, `TimelineRecord` |
+| `opportunityFlow()` | `Pipeline`, `PipelineStage`, `Opportunity`, `TimelineRecord` |
 
 ## Next test waves
 

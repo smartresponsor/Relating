@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Tests;
 
+use App\DataFixtures\RelatingDemoSeed;
 use App\Enum\DemoScenarioKind;
-use App\Fixture\RelatingDemoEntityFactory;
-use App\Fixture\RelatingDemoSeed;
-use App\View\DemoScenarioView;
+use App\Factory\RelatingDemoEntityFactory;
+use App\Snapshot\View\DemoScenarioView;
 use PHPUnit\Framework\TestCase;
 
 final class RelatingDemoSeedBoundaryTest extends TestCase

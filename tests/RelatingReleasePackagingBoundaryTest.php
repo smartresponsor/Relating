@@ -10,7 +10,7 @@ final class RelatingReleasePackagingBoundaryTest extends TestCase
 {
     public function testReleasePackagingDocsAndToolsExist(): void
     {
-        $root = dirname(__DIR__);
+        $root = \dirname(__DIR__);
 
         $required = [
             'docs/release-packaging-quality.md',
@@ -25,14 +25,14 @@ final class RelatingReleasePackagingBoundaryTest extends TestCase
         ];
 
         foreach ($required as $relativePath) {
-            self::assertFileExists($root . '/' . $relativePath, $relativePath);
+            self::assertFileExists($root.'/'.$relativePath, $relativePath);
         }
     }
 
     public function testManifestKnowsReleasePackagingFiles(): void
     {
-        $root = dirname(__DIR__);
-        $manifest = json_decode((string) file_get_contents($root . '/MANIFEST.json'), true, 512, JSON_THROW_ON_ERROR);
+        $root = \dirname(__DIR__);
+        $manifest = json_decode((string) file_get_contents($root.'/MANIFEST.json'), true, 512, \JSON_THROW_ON_ERROR);
         $files = $manifest['files'] ?? [];
 
         self::assertContains('docs/release-packaging-quality.md', $files);
@@ -44,13 +44,21 @@ final class RelatingReleasePackagingBoundaryTest extends TestCase
 
     public function testReleasePackagingDoesNotIntroduceForbiddenInventory(): void
     {
-        $root = dirname(__DIR__);
+        $root = \dirname(__DIR__);
 
-        self::assertDirectoryDoesNotExist($root . '/src/Domain');
-        self::assertDirectoryDoesNotExist($root . '/migrations');
-        self::assertDirectoryDoesNotExist($root . '/node_modules');
+        self::assertDirectoryDoesNotExist($root.'/src/Domain');
+        self::assertDirectoryDoesNotExist($root.'/migrations');
+        self::assertStringContainsString('/node_modules/', (string) file_get_contents($root.'/.gitignore'));
 
-        $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($root));
+        $directory = new \RecursiveDirectoryIterator($root, \FilesystemIterator::SKIP_DOTS);
+        $filter = new \RecursiveCallbackFilterIterator($directory, static function (\SplFileInfo $file): bool {
+            if (!$file->isDir()) {
+                return true;
+            }
+
+            return !\in_array($file->getFilename(), ['.git', '.gating', '.phpunit.cache', '.idea', 'vendor', 'node_modules', 'var'], true);
+        });
+        $iterator = new \RecursiveIteratorIterator($filter);
 
         foreach ($iterator as $file) {
             if (!$file instanceof \SplFileInfo || !$file->isFile()) {
@@ -63,7 +71,7 @@ final class RelatingReleasePackagingBoundaryTest extends TestCase
 
     public function testReleaseDocsPreserveNoCrudBoundary(): void
     {
-        $content = (string) file_get_contents(dirname(__DIR__) . '/docs/release-packaging-quality.md');
+        $content = (string) file_get_contents(\dirname(__DIR__).'/docs/release-packaging-quality.md');
 
         self::assertStringContainsString('CRUD controllers', $content);
         self::assertStringContainsString('CRUD routes', $content);

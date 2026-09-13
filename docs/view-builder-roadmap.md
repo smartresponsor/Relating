@@ -12,7 +12,7 @@
 ## Implementation order
 
 1. Build `RelationshipProfileView` from `Relationship` + `VendorReference` + score snapshots.
-2. Build `RelationshipTimelineView` from `TimelineEvent` projections.
+2. Build `RelationshipTimelineView` from `TimelineRecord` projections.
 3. Build `LeadKanbanCardView` and `LeadConversionView` from Lead lifecycle use cases.
 4. Build `OpportunityBoardView` from Pipeline and PipelineStage semantics.
 5. Build `CampaignPerformanceView` from attribution records.

@@ -28,7 +28,7 @@ This roadmap turns Relating skeleton contracts into implementation milestones wh
 - `ActivityRecorderInterface`
 - `ActivityTimelineBuilderInterface`
 - `RelationshipTimelineProjectorInterface`
-- emits: `ActivityRecorded`, `TimelineEventProjected`, `RelationshipTimelineRebuildRequested`, `RelationshipTimelineRebuilt`
+- emits: `ActivityRecorded`, `TimelineRecordProjected`, `RelationshipTimelineRebuildRequested`, `RelationshipTimelineRebuilt`
 
 ## AS5 Signals from neighbors
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\View\CampaignPerformanceView;
+use App\Snapshot\View\CampaignPerformanceView;
 
 interface CampaignPerformanceRebuilderInterface
 {

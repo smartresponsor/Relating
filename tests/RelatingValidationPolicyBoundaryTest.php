@@ -10,17 +10,17 @@ final class RelatingValidationPolicyBoundaryTest extends TestCase
 {
     public function testValidationAndPolicyLayersExist(): void
     {
-        self::assertFileExists(__DIR__ . '/../src/Validation/ValidationResult.php');
-        self::assertFileExists(__DIR__ . '/../src/Policy/PolicyDecisionResult.php');
-        self::assertFileExists(__DIR__ . '/../src/Policy/OpportunityStageTransitionPolicyInterface.php');
-        self::assertFileExists(__DIR__ . '/../src/Validation/BusinessPayloadValidatorInterface.php');
+        self::assertFileExists(__DIR__.'/../src/Validator/ValidationResult.php');
+        self::assertFileExists(__DIR__.'/../src/Policy/PolicyDecisionResult.php');
+        self::assertFileExists(__DIR__.'/../src/Policy/OpportunityStageTransitionPolicyInterface.php');
+        self::assertFileExists(__DIR__.'/../src/Validator/BusinessPayloadValidatorInterface.php');
     }
 
     public function testValidationLayerDoesNotDeclareCrudRouteSurface(): void
     {
         $paths = array_merge(
-            glob(__DIR__ . '/../src/Validation/*.php') ?: [],
-            glob(__DIR__ . '/../src/Policy/*.php') ?: []
+            glob(__DIR__.'/../src/Validator/*.php') ?: [],
+            glob(__DIR__.'/../src/Policy/*.php') ?: []
         );
 
         self::assertNotEmpty($paths);
@@ -45,14 +45,14 @@ final class RelatingValidationPolicyBoundaryTest extends TestCase
             $contents = (string) file_get_contents($path);
 
             foreach ($forbidden as $needle) {
-                self::assertStringNotContainsString($needle, $contents, $path . ' must not contain ' . $needle);
+                self::assertStringNotContainsString($needle, $contents, $path.' must not contain '.$needle);
             }
         }
     }
 
     public function testPolicyNamingIsBusinessLifecycleNaming(): void
     {
-        $policyFiles = glob(__DIR__ . '/../src/Policy/*PolicyInterface.php') ?: [];
+        $policyFiles = glob(__DIR__.'/../src/Policy/*PolicyInterface.php') ?: [];
 
         self::assertNotEmpty($policyFiles);
 

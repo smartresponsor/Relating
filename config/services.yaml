@@ -11,55 +11,55 @@ services:
             - '../src/Controller/BusinessResultPayload.php'
         tags: ['controller.service_arguments']
 
-    App\Controller\BusinessHttpExceptionSubscriber:
+    App\EventSubscriber\BusinessHttpExceptionSubscriber:
         tags: ['kernel.event_subscriber']
 
-    App\Debug\:
-        resource: '../src/Debug/'
+    App\Repository\Debug\:
+        resource: '../src/Repository/Debug/'
 
-    App\Debug\DebugRelatingObjectStore:
+    App\Repository\Debug\DebugRelatingObjectStore:
         arguments:
             $filePath: '%kernel.project_dir%/var/relating-debug-store.json'
 
     App\Service\UuidRelatingIdGenerator: ~
 
-    App\Service\DispatchingRelatingBusinessEventRecorder:
+    App\Service\DispatchingRelatingBusinessEventDispatcher:
         arguments:
             $eventDispatcher: '@event_dispatcher'
 
     App\Repository\RelationshipRepositoryInterface:
-        alias: App\Debug\DebugRelationshipRepository
+        alias: App\Repository\Debug\DebugRelationshipRepository
 
     App\Repository\LeadRepositoryInterface:
-        alias: App\Debug\DebugLeadRepository
+        alias: App\Repository\Debug\DebugLeadRepository
 
     App\Repository\OpportunityRepositoryInterface:
-        alias: App\Debug\DebugOpportunityRepository
+        alias: App\Repository\Debug\DebugOpportunityRepository
 
     App\Repository\ActivityRepositoryInterface:
-        alias: App\Debug\DebugActivityRepository
+        alias: App\Repository\Debug\DebugActivityRepository
 
-    App\Repository\TimelineEventRepositoryInterface:
-        alias: App\Debug\DebugTimelineEventRepository
+    App\Repository\TimelineRecordRepositoryInterface:
+        alias: App\Repository\Debug\DebugTimelineRecordRepository
 
     App\Repository\AiSuggestionRepositoryInterface:
-        alias: App\Debug\DebugAiSuggestionRepository
+        alias: App\Repository\Debug\DebugAiSuggestionRepository
 
     App\Service\RelatingIdGeneratorInterface:
         alias: App\Service\UuidRelatingIdGenerator
 
     App\Service\RelatingBusinessEventRecorderInterface:
-        alias: App\Service\DispatchingRelatingBusinessEventRecorder
+        alias: App\Service\DispatchingRelatingBusinessEventDispatcher
 
     App\Service\VendorLeadReadServiceInterface:
         alias: App\Service\VendorLeadReadService
 
-    App\Application\Service\StartRelationshipApplicationService: ~
-    App\Application\Service\CaptureLeadApplicationService: ~
-    App\Application\Service\QualifyLeadApplicationService: ~
-    App\Application\Service\ConvertLeadApplicationService: ~
-    App\Application\Service\OpenOpportunityApplicationService: ~
-    App\Application\Service\TransitionOpportunityStageApplicationService: ~
-    App\Application\Service\RecordActivityApplicationService: ~
-    App\Application\Service\ProjectTimelineApplicationService: ~
-    App\Application\Service\ReviewAiSuggestionApplicationService: ~
+    App\Service\Application\StartRelationshipApplicationService: ~
+    App\Service\Application\CaptureLeadApplicationService: ~
+    App\Service\Application\QualifyLeadApplicationService: ~
+    App\Service\Application\ConvertLeadApplicationService: ~
+    App\Service\Application\OpenOpportunityApplicationService: ~
+    App\Service\Application\TransitionOpportunityStageApplicationService: ~
+    App\Service\Application\RecordActivityApplicationService: ~
+    App\Service\Application\ProjectTimelineApplicationService: ~
+    App\Service\Application\ReviewAiSuggestionApplicationService: ~

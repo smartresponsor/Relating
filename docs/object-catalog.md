@@ -40,7 +40,7 @@
 - Note
 - Meeting
 - Call
-- TimelineEvent
+- TimelineRecord
 - Reminder
 
 ## Campaign layer

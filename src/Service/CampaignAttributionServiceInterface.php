@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\View\AttributionView;
+use App\Snapshot\View\AttributionView;
 
 interface CampaignAttributionServiceInterface
 {

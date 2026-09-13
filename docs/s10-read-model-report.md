@@ -4,7 +4,7 @@ S10 adds a business projection skeleton for Relating.
 
 ## Added code
 
-- `src/ReadModel/*`
+- `src/Snapshot/*`
 - `src/Service/ReadModel/*`
 - read-model projection ViewObjects
 - read-model boundary test

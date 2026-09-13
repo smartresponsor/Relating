@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\Command\RecordActivityCommand;
-use App\Application\Service\RecordActivityApplicationService;
-use DateTimeImmutable;
+use App\Command\RecordActivityCommand;
+use App\Service\Application\RecordActivityApplicationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

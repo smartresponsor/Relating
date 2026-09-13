@@ -10,7 +10,7 @@ final class RelatingPackageInstallBoundaryTest extends TestCase
 {
     public function testPackageInstallDocsExist(): void
     {
-        $root = dirname(__DIR__);
+        $root = \dirname(__DIR__);
 
         $required = [
             'docs/package-install-readiness.md',
@@ -24,16 +24,16 @@ final class RelatingPackageInstallBoundaryTest extends TestCase
         ];
 
         foreach ($required as $relativePath) {
-            self::assertFileExists($root . '/' . $relativePath, $relativePath);
+            self::assertFileExists($root.'/'.$relativePath, $relativePath);
         }
     }
 
     public function testSkeletonDoesNotIntroduceBundleMagicOrDomainPath(): void
     {
-        $root = dirname(__DIR__);
+        $root = \dirname(__DIR__);
 
-        self::assertDirectoryDoesNotExist($root . '/src/Domain');
-        self::assertDirectoryDoesNotExist($root . '/migrations');
+        self::assertDirectoryDoesNotExist($root.'/src/Domain');
+        self::assertDirectoryDoesNotExist($root.'/migrations');
 
         $iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($root));
 
@@ -48,7 +48,7 @@ final class RelatingPackageInstallBoundaryTest extends TestCase
 
     public function testComposerAutoloadNotesKeepDefaultAppNamespace(): void
     {
-        $content = file_get_contents(dirname(__DIR__) . '/docs/composer-autoload-notes.md');
+        $content = file_get_contents(\dirname(__DIR__).'/docs/composer-autoload-notes.md');
         self::assertIsString($content);
 
         self::assertStringContainsString('"App\\\\": "src/"', $content);
@@ -58,12 +58,12 @@ final class RelatingPackageInstallBoundaryTest extends TestCase
 
     public function testInstallReadinessKeepsBusinessRouteOnlyBoundary(): void
     {
-        $content = file_get_contents(dirname(__DIR__) . '/docs/package-install-readiness.md');
+        $content = file_get_contents(\dirname(__DIR__).'/docs/package-install-readiness.md');
         self::assertIsString($content);
 
         self::assertStringContainsString('No CRUD route is part of this package', $content);
         self::assertStringContainsString('/relating/relationship/start', $content);
         self::assertStringContainsString('/relating/lead/qualify', $content);
-        self::assertStringContainsString('/relating/ai-suggestion/review', $content);
+        self::assertStringContainsString('/relating/ai/suggestion/review', $content);
     }
 }

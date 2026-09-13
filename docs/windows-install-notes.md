@@ -29,4 +29,4 @@ This does not affect the ZIP package. It only means connector-side git-backed pa
 
 ## Route boundary reminder
 
-Do not import or generate CRUD routes from this package. `config/routes/relating.yaml` is business-only.
+Do not import or generate CRUD routes from this package. `config/routes/relation_routes.yaml` is business-only.

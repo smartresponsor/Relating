@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policy;
 
-use App\Application\Command\QualifyLeadCommand;
+use App\Command\QualifyLeadCommand;
 
 interface LeadQualificationPolicyInterface
 {

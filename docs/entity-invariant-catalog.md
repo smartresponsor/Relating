@@ -26,7 +26,7 @@
 - Can be planned, started, completed or cancelled.
 - Does not own Messaging records.
 
-## TimelineEvent
+## TimelineRecord
 
 - Append-style history projection.
 - Uses business event kinds, not CRUD event names.

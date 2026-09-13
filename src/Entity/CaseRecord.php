@@ -7,7 +7,6 @@ namespace App\Entity;
 use App\Enum\CasePriority;
 use App\Enum\CaseSlaStatus;
 use App\Enum\CaseStatusCode;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -34,10 +33,10 @@ final class CaseRecord extends AbstractRelatingEntity
     private string $slaStatus;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $slaDeadlineAt = null;
+    private ?\DateTimeImmutable $slaDeadlineAt = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $resolvedAt = null;
+    private ?\DateTimeImmutable $resolvedAt = null;
 
     #[ORM\Column(type: 'json')]
     private array $context = [];
@@ -69,7 +68,7 @@ final class CaseRecord extends AbstractRelatingEntity
         $this->touch();
     }
 
-    public function startSla(?DateTimeImmutable $deadlineAt): void
+    public function startSla(?\DateTimeImmutable $deadlineAt): void
     {
         $this->slaDeadlineAt = $deadlineAt;
         $this->slaStatus = CaseSlaStatus::Running->value;
@@ -82,11 +81,11 @@ final class CaseRecord extends AbstractRelatingEntity
         $this->touch();
     }
 
-    public function resolve(?DateTimeImmutable $resolvedAt = null): void
+    public function resolve(?\DateTimeImmutable $resolvedAt = null): void
     {
         $this->status = CaseStatusCode::Resolved->value;
         $this->slaStatus = CaseSlaStatus::Satisfied->value;
-        $this->resolvedAt = $resolvedAt ?? new DateTimeImmutable();
+        $this->resolvedAt = $resolvedAt ?? new \DateTimeImmutable();
         $this->touch();
     }
 

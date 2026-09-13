@@ -45,7 +45,7 @@ Relationship
 RelationshipParticipant
 RelationshipRelation
 RelationshipSignal
-TimelineEvent
+TimelineRecord
 Activity
 ActivityTarget
 ```
@@ -180,7 +180,7 @@ Note
 Meeting
 Call
 Reminder
-TimelineEvent
+TimelineRecord
 ```
 
 Business operations:

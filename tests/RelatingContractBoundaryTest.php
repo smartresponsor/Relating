@@ -10,10 +10,10 @@ final class RelatingContractBoundaryTest extends TestCase
 {
     public function testRepositoryAndServiceContractsDoNotExposeCrudMutationNames(): void
     {
-        $root = dirname(__DIR__) . '/src';
+        $root = \dirname(__DIR__).'/src';
         $files = array_merge(
-            glob($root . '/Repository/*Interface.php') ?: [],
-            glob($root . '/Service/*Interface.php') ?: []
+            glob($root.'/Repository/*Interface.php') ?: [],
+            glob($root.'/Service/*Interface.php') ?: []
         );
 
         self::assertNotSame([], $files);
@@ -35,7 +35,7 @@ final class RelatingContractBoundaryTest extends TestCase
             self::assertIsString($content);
 
             foreach ($forbidden as $needle) {
-                self::assertStringNotContainsString($needle, $content, basename($file) . ' exposes forbidden contract method ' . $needle);
+                self::assertStringNotContainsString($needle, $content, basename($file).' exposes forbidden contract method '.$needle);
             }
         }
     }

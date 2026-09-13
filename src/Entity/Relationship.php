@@ -7,7 +7,6 @@ namespace App\Entity;
 use App\Enum\RelationshipKind;
 use App\Enum\RelationshipLifecycleStage;
 use App\Enum\RelationshipStatus;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -48,13 +47,13 @@ final class Relationship extends AbstractRelatingEntity
     private int $fitScore = 0;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $firstTouchAt = null;
+    private ?\DateTimeImmutable $firstTouchAt = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $lastTouchAt = null;
+    private ?\DateTimeImmutable $lastTouchAt = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $nextActionAt = null;
+    private ?\DateTimeImmutable $nextActionAt = null;
 
     #[ORM\Column(type: 'json')]
     private array $context = [];
@@ -136,15 +135,15 @@ final class Relationship extends AbstractRelatingEntity
         $this->touch();
     }
 
-    public function markTouch(?DateTimeImmutable $at = null): void
+    public function markTouch(?\DateTimeImmutable $at = null): void
     {
-        $at ??= new DateTimeImmutable();
+        $at ??= new \DateTimeImmutable();
         $this->firstTouchAt ??= $at;
         $this->lastTouchAt = $at;
         $this->touch();
     }
 
-    public function planNextAction(?DateTimeImmutable $at): void
+    public function planNextAction(?\DateTimeImmutable $at): void
     {
         $this->nextActionAt = $at;
         $this->touch();

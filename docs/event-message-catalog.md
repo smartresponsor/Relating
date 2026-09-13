@@ -69,7 +69,7 @@ CallLogged
 ReminderScheduled
 ReminderSnoozed
 MessageThreadLinked
-TimelineEventProjected
+TimelineRecordProjected
 TimelineRebuildRequested
 ```
 

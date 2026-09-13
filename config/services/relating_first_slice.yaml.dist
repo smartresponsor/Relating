@@ -26,7 +26,7 @@ services:
 
     App\Service\UuidRelatingIdGenerator: ~
 
-    App\Service\DispatchingRelatingBusinessEventRecorder:
+    App\Service\DispatchingRelatingBusinessEventDispatcher:
         arguments:
             $eventDispatcher: '@event_dispatcher'
 
@@ -48,7 +48,7 @@ services:
         alias: App\Service\UuidRelatingIdGenerator
 
     App\Service\RelatingBusinessEventRecorderInterface:
-        alias: App\Service\DispatchingRelatingBusinessEventRecorder
+        alias: App\Service\DispatchingRelatingBusinessEventDispatcher
 
     App\Service\VendorLeadReadServiceInterface:
         alias: App\Service\VendorLeadReadService

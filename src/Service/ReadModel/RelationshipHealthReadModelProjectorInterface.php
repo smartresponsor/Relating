@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-
 namespace App\Service\ReadModel;
 
-use App\ReadModel\RelationshipHealthReadModel;
+use App\Snapshot\RelationshipHealthReadModel;
 
 interface RelationshipHealthReadModelProjectorInterface
 {

@@ -74,13 +74,13 @@ final readonly class DoctrineLeadRepository implements LeadRepositoryInterface
             default => null,
         };
 
-        if ($field === null || trim($signalValue) === '') {
+        if (null === $field || '' === trim($signalValue)) {
             return [];
         }
 
         $leads = $this->entityManager->getRepository(Lead::class)
             ->createQueryBuilder('lead')
-            ->andWhere(sprintf('lead.%s = :signalValue', $field))
+            ->andWhere(\sprintf('lead.%s = :signalValue', $field))
             ->setParameter('signalValue', trim($signalValue))
             ->setMaxResults(25)
             ->getQuery()

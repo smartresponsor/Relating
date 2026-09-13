@@ -12,7 +12,7 @@ S1 corrected the high-impact aggregate roots and business entities:
 - `Pipeline`
 - `PipelineStage`
 - `Activity`
-- `TimelineEvent`
+- `TimelineRecord`
 - `Campaign`
 - `CaseRecord`
 - `RelationshipParticipant`

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\Command\ProjectTimelineCommand;
-use App\Application\Service\ProjectTimelineApplicationService;
+use App\Command\ProjectTimelineCommand;
+use App\Service\Application\ProjectTimelineApplicationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

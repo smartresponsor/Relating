@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-
 namespace App\Service\ReadModel;
 
-use App\ReadModel\OpportunityRiskReadModel;
+use App\Snapshot\OpportunityRiskReadModel;
 
 interface OpportunityRiskReadModelProjectorInterface
 {

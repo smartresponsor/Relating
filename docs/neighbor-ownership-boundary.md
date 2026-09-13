@@ -15,7 +15,7 @@ Opportunity
 Pipeline
 PipelineStage
 Activity
-TimelineEvent
+TimelineRecord
 Campaign
 TargetList
 CaseRecord

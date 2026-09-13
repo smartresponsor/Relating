@@ -10,8 +10,8 @@ final class RelatingMessengerRoutingBoundaryTest extends TestCase
 {
     public function testMessengerRoutingUsesBusinessMessagesOnly(): void
     {
-        $root = dirname(__DIR__);
-        $messageDir = $root . '/src/Message';
+        $root = \dirname(__DIR__);
+        $messageDir = $root.'/src/Message';
 
         self::assertDirectoryExists($messageDir);
 
@@ -25,13 +25,13 @@ final class RelatingMessengerRoutingBoundaryTest extends TestCase
             'Remove',
         ];
 
-        foreach (glob($messageDir . '/*Message.php') ?: [] as $file) {
+        foreach (glob($messageDir.'/*Message.php') ?: [] as $file) {
             $class = basename($file, '.php');
 
             foreach ($forbiddenPrefixes as $prefix) {
                 self::assertFalse(
                     str_starts_with($class, $prefix),
-                    sprintf('Relating message must be business-named, got %s', $class),
+                    \sprintf('Relating message must be business-named, got %s', $class),
                 );
             }
         }
@@ -39,8 +39,8 @@ final class RelatingMessengerRoutingBoundaryTest extends TestCase
 
     public function testMessengerDistDoesNotRouteCrudMessages(): void
     {
-        $root = dirname(__DIR__);
-        $file = $root . '/config/packages/relating_messenger.yaml.dist';
+        $root = \dirname(__DIR__);
+        $file = $root.'/config/packages/relating_messenger.yaml.dist';
 
         self::assertFileExists($file);
 
@@ -48,9 +48,9 @@ final class RelatingMessengerRoutingBoundaryTest extends TestCase
 
         foreach (['Create', 'Update', 'Delete', 'Save', 'Persist', 'Flush', 'Remove'] as $prefix) {
             self::assertStringNotContainsString(
-                '\\Message\\' . $prefix,
+                '\\Message\\'.$prefix,
                 $content,
-                sprintf('Messenger routing must not include %s*Message', $prefix),
+                \sprintf('Messenger routing must not include %s*Message', $prefix),
             );
         }
     }

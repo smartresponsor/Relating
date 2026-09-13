@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests;
 
 use App\Kernel;
-use JsonException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +25,7 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
         $this->kernel->shutdown();
     }
 
-    /** @throws JsonException */
+    /** @throws \JsonException */
     public function testCatalogAndBusinessHttpRoutesReturnJson(): void
     {
         $catalog = $this->getJson('/relating/catalog');
@@ -83,7 +82,7 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
         ]);
         $this->assertBusinessResult($opportunity, 'opportunity-open');
 
-        $stage = $this->postJson('/relating/opportunity/stage-transition', [
+        $stage = $this->postJson('/relating/opportunity/stage/transition', [
             'opportunity_reference' => $opportunity['subject_reference'],
             'stage_reference' => 'stage-qualified',
             'probability' => 60,
@@ -125,8 +124,10 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
 
     /**
      * @param array<string, mixed> $payload
+     *
      * @return array<string, mixed>
-     * @throws JsonException
+     *
+     * @throws \JsonException
      */
     private function postJson(string $path, array $payload): array
     {
@@ -140,7 +141,7 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
                 'CONTENT_TYPE' => 'application/json',
                 'HTTP_ACCEPT' => 'application/json',
             ],
-            json_encode($payload, JSON_THROW_ON_ERROR)
+            json_encode($payload, \JSON_THROW_ON_ERROR)
         ));
     }
 
@@ -152,7 +153,7 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
         try {
             self::assertSame(Response::HTTP_OK, $response->getStatusCode(), $response->getContent());
             self::assertStringStartsWith('application/json', $response->headers->get('content-type', ''));
-            $decoded = json_decode($response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+            $decoded = json_decode($response->getContent(), true, 512, \JSON_THROW_ON_ERROR);
             self::assertIsArray($decoded);
 
             return $decoded;
@@ -172,7 +173,7 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
 
     private function resetDebugStore(): void
     {
-        $storePath = dirname(__DIR__) . '/var/relating-debug-store.json';
+        $storePath = \dirname(__DIR__).'/var/relating-debug-store.json';
 
         if (is_file($storePath)) {
             unlink($storePath);

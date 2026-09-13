@@ -16,13 +16,13 @@ For SmartResponsor this is important because Relating should support sales, vend
 |---|---|---|
 | Contact | VendorReference | Vendoring |
 | Contact relationship | RelationshipRelation / RelationshipParticipant | Relating |
-| Activities tab | Activity / TimelineEvent | Relating |
+| Activities tab | Activity / TimelineRecord | Relating |
 | Mailings tab | CampaignTouch / MessageThreadReference | Relating + Messaging |
 | Contributions tab | ContributionReference / RelationshipSignal | External / Payment / Relating signal |
 | Memberships tab | MembershipReference / RelationshipSignal | External / Relating signal |
 | Events tab | EventReference / RelationshipSignal | External / Relating signal |
 | Groups | Segment / TargetList concept | Relating |
-| Notes tab | Note / TimelineEvent | Relating |
+| Notes tab | Note / TimelineRecord | Relating |
 | Tags tab | Source / Segment / metadata tag concept | Relating |
 | Change log | Audit signal, do not implement in Relating if global audit exists | Auditing / Relating signal |
 | Deduping and merging | DuplicateCandidate / MergeProposal | Relating + Vendoring |

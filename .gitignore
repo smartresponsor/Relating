@@ -1,11 +1,14 @@
 # Composer dependencies
 /vendor/
+/node_modules/
 
 # Symfony runtime files
-/var/cache/
-/var/log/
-/var/sessions/
-/var/relating-debug-store.json
+/var/
+/config/reference.php
+
+# Local canonicalization/test tooling artifacts
+/.gating/
+/test-results/
 
 # Symfony local web server
 /.symfony.local.yaml

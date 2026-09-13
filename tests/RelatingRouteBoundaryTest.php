@@ -27,7 +27,7 @@ final class RelatingRouteBoundaryTest extends TestCase
     #[DataProvider('forbiddenCrudActions')]
     public function testRouteConfigDoesNotDeclareCrudActions(string $action): void
     {
-        $routeConfig = dirname(__DIR__).'/config/routes/relating.yaml';
+        $routeConfig = \dirname(__DIR__).'/config/routes/relation_routes.yaml';
 
         self::assertFileExists($routeConfig);
 
@@ -48,7 +48,7 @@ final class RelatingRouteBoundaryTest extends TestCase
     #[DataProvider('forbiddenCrudActions')]
     public function testRelatingControllersDoNotUseCrudActionNames(string $action): void
     {
-        $controllerDir = dirname(__DIR__).'/src/Controller';
+        $controllerDir = \dirname(__DIR__).'/src/Controller';
 
         self::assertDirectoryExists($controllerDir);
 

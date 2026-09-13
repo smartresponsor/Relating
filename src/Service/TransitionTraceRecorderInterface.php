@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\Trace\TransitionTrace;
+use App\ValueObject\Trace\TransitionTrace;
 
 interface TransitionTraceRecorderInterface
 {

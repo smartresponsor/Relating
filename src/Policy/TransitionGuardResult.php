@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace App\Policy;
 
 use App\Enum\TransitionGuardOutcome;
-use JsonSerializable;
 
-final readonly class TransitionGuardResult implements JsonSerializable
+final readonly class TransitionGuardResult implements \JsonSerializable
 {
     public function __construct(
         private TransitionGuardOutcome $outcome,
@@ -37,7 +36,7 @@ final readonly class TransitionGuardResult implements JsonSerializable
 
     public function passed(): bool
     {
-        return $this->outcome === TransitionGuardOutcome::Pass;
+        return TransitionGuardOutcome::Pass === $this->outcome;
     }
 
     public function jsonSerialize(): array

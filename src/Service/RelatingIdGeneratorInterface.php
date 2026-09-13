@@ -14,5 +14,5 @@ interface RelatingIdGeneratorInterface
 
     public function nextActivityId(): string;
 
-    public function nextTimelineEventId(): string;
+    public function nextTimelineRecordId(): string;
 }

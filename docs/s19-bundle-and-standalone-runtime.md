@@ -61,10 +61,10 @@ The root Symfony debug app imports business controllers by attribute routes:
 /relating/lead/qualify
 /relating/lead/convert
 /relating/opportunity/open
-/relating/opportunity/stage-transition
+/relating/opportunity/stage/transition
 /relating/activity/record
 /relating/timeline/project
-/relating/ai-suggestion/review
+/relating/ai/suggestion/review
 ```
 
 Only business routes are exposed.

@@ -20,9 +20,9 @@ Relating does not copy SuiteCRM module architecture, controllers, SQL patterns, 
 | Calls | Call / Activity | Relating | Timeline specialization. |
 | Meetings | Meeting / Activity | Relating | Timeline specialization. |
 | Email Templates | MessageTemplateReference | Messaging | Reference only. |
-| Emails | MessageThreadReference / TimelineEvent | Messaging + Relating | Transport is Messaging. |
+| Emails | MessageThreadReference / TimelineRecord | Messaging + Relating | Transport is Messaging. |
 | Tasks | Task / Activity | Relating | Keep. |
-| Notes | Note / TimelineEvent | Relating | Keep. |
+| Notes | Note / TimelineRecord | Relating | Keep. |
 | Documents | DocumentReference | Documentating/Media | Reference only. |
 | Targets | TargetListMember / CampaignMember | Relating | Normalize. |
 | Target Lists | TargetList | Relating | Keep. |

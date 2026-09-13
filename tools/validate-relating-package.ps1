@@ -46,7 +46,7 @@ Assert-PathExists (Join-Path $rootPath 'bin/console') 'Missing Symfony console e
 Assert-PathExists (Join-Path $rootPath 'public/index.php') 'Missing Symfony public front controller.'
 Assert-PathExists (Join-Path $rootPath 'src/Kernel.php') 'Missing native Symfony Kernel.'
 Assert-PathExists (Join-Path $rootPath 'config/services.yaml') 'Missing root Symfony service wiring.'
-Assert-PathExists (Join-Path $rootPath 'config/routes/relating.yaml') 'Missing business route file.'
+Assert-PathExists (Join-Path $rootPath 'config/routes/relation_routes.yaml') 'Missing business route file.'
 Assert-PathExists (Join-Path $rootPath 'README.md') 'Missing README.md.'
 Assert-PathExists (Join-Path $rootPath 'MANIFEST.json') 'Missing MANIFEST.json.'
 
@@ -75,7 +75,7 @@ if ($sqlFiles.Count -gt 0) {
     throw 'Forbidden SQL file found.'
 }
 
-$routeFile = Join-Path $rootPath 'config/routes/relating.yaml'
+$routeFile = Join-Path $rootPath 'config/routes/relation_routes.yaml'
 Assert-ContentDoesNotContain -Path $routeFile -Forbidden @('/create', '/read', '/update', '/delete', '/list', '/show', '/edit', '/remove')
 
 $phpFiles = Get-ChildItem -Path (Join-Path $rootPath 'src'), (Join-Path $rootPath 'tests') -Recurse -File -Filter '*.php'
@@ -88,12 +88,12 @@ foreach ($file in $phpFiles) {
     Assert-ContentDoesNotContain -Path $file.FullName -Forbidden @('App\Relating\', 'App\Tests\Relating\')
 }
 
-Assert-PathExists (Join-Path $rootPath 'src/Controller/BusinessHttpExceptionSubscriber.php') 'Missing business HTTP error contract subscriber.'
+Assert-PathExists (Join-Path $rootPath 'src/EventSubscriber/BusinessHttpExceptionSubscriber.php') 'Missing business HTTP error contract subscriber.'
 Assert-PathExists (Join-Path $rootPath 'tests/RelatingBusinessHttpErrorContractTest.php') 'Missing business HTTP error contract test.'
 Assert-PathExists (Join-Path $rootPath 'tools/smoke-relating-business-http.ps1') 'Missing live business HTTP smoke wrapper.'
 Assert-PathExists (Join-Path $rootPath 'tools/smoke-relating-business-http-curl.ps1') 'Missing live business HTTP curl smoke.'
 
-$businessErrorSubscriber = Get-Content -Raw -Path (Join-Path $rootPath 'src/Controller/BusinessHttpExceptionSubscriber.php')
+$businessErrorSubscriber = Get-Content -Raw -Path (Join-Path $rootPath 'src/EventSubscriber/BusinessHttpExceptionSubscriber.php')
 if ($businessErrorSubscriber -notmatch [regex]::Escape('business_reference_not_found') -or $businessErrorSubscriber -notmatch [regex]::Escape('HTTP_NOT_FOUND')) {
     throw 'Missing stable business reference-not-found HTTP subscriber contract.'
 }

@@ -6,16 +6,15 @@ namespace App\Policy;
 
 use App\Enum\PolicyDecision;
 use App\Enum\PolicyFailureCode;
-use JsonSerializable;
 
-final readonly class PolicyDecisionResult implements JsonSerializable
+final readonly class PolicyDecisionResult implements \JsonSerializable
 {
     public function __construct(
         private PolicyDecision $decision,
         private ?PolicyFailureCode $failureCode = null,
         private ?string $message = null,
     ) {
-        if ($this->decision === PolicyDecision::Allowed && $this->failureCode !== null) {
+        if (PolicyDecision::Allowed === $this->decision && null !== $this->failureCode) {
             throw new \InvalidArgumentException('Allowed policy result cannot contain a failure code.');
         }
     }
@@ -42,7 +41,7 @@ final readonly class PolicyDecisionResult implements JsonSerializable
 
     public function allowed(): bool
     {
-        return $this->decision === PolicyDecision::Allowed;
+        return PolicyDecision::Allowed === $this->decision;
     }
 
     public function jsonSerialize(): array

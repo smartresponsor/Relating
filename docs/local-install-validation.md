@@ -21,7 +21,7 @@ forbidden src/Domain path
 forbidden Bundle class
 forbidden migrations directory
 forbidden SQL files
-forbidden CRUD route tokens in config/routes/relating.yaml
+forbidden CRUD route tokens in config/routes/relation_routes.yaml
 forbidden CRUD controller action names
 presence of required docs
 presence of required install files

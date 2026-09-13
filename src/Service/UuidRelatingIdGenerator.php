@@ -26,7 +26,7 @@ final class UuidRelatingIdGenerator implements RelatingIdGeneratorInterface
         return $this->uuidV4();
     }
 
-    public function nextTimelineEventId(): string
+    public function nextTimelineRecordId(): string
     {
         return $this->uuidV4();
     }
@@ -34,12 +34,12 @@ final class UuidRelatingIdGenerator implements RelatingIdGeneratorInterface
     private function uuidV4(): string
     {
         $bytes = random_bytes(16);
-        $bytes[6] = chr((ord($bytes[6]) & 0x0f) | 0x40);
-        $bytes[8] = chr((ord($bytes[8]) & 0x3f) | 0x80);
+        $bytes[6] = \chr((\ord($bytes[6]) & 0x0F) | 0x40);
+        $bytes[8] = \chr((\ord($bytes[8]) & 0x3F) | 0x80);
 
         $hex = bin2hex($bytes);
 
-        return sprintf(
+        return \sprintf(
             '%s-%s-%s-%s-%s',
             substr($hex, 0, 8),
             substr($hex, 8, 4),

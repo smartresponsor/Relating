@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Repository;
 
 use App\Entity\Relationship;
-use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 
 final readonly class DoctrineRelationshipRepository implements RelationshipRepositoryInterface
@@ -55,7 +54,7 @@ final readonly class DoctrineRelationshipRepository implements RelationshipRepos
         return $relationship instanceof Relationship ? $relationship : null;
     }
 
-    public function relationshipsNeedingActionBefore(DateTimeImmutable $deadline): array
+    public function relationshipsNeedingActionBefore(\DateTimeImmutable $deadline): array
     {
         $relationships = $this->entityManager->getRepository(Relationship::class)
             ->createQueryBuilder('relationship')

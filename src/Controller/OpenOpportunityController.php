@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\Command\OpenOpportunityCommand;
-use App\Application\Service\OpenOpportunityApplicationService;
+use App\Command\OpenOpportunityCommand;
+use App\Service\Application\OpenOpportunityApplicationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

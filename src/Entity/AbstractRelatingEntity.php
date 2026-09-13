@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\MappedSuperclass]
@@ -18,10 +17,10 @@ abstract class AbstractRelatingEntity
     protected ?string $tenantReference = null;
 
     #[ORM\Column(type: 'datetime_immutable')]
-    protected DateTimeImmutable $createdAt;
+    protected \DateTimeImmutable $createdAt;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    protected ?DateTimeImmutable $updatedAt = null;
+    protected ?\DateTimeImmutable $updatedAt = null;
 
     public function id(): string
     {
@@ -39,12 +38,12 @@ abstract class AbstractRelatingEntity
         $this->touch();
     }
 
-    public function createdAt(): DateTimeImmutable
+    public function createdAt(): \DateTimeImmutable
     {
         return $this->createdAt;
     }
 
-    public function updatedAt(): ?DateTimeImmutable
+    public function updatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
@@ -52,24 +51,24 @@ abstract class AbstractRelatingEntity
     protected function bootEntity(string $id): void
     {
         $this->id = $this->requiredText($id, 'Entity id');
-        $this->createdAt = new DateTimeImmutable();
+        $this->createdAt = new \DateTimeImmutable();
     }
 
     protected function touch(): void
     {
-        $this->updatedAt = new DateTimeImmutable();
+        $this->updatedAt = new \DateTimeImmutable();
     }
 
     protected function requiredText(string $value, string $label, int $maxLength = 255): string
     {
         $value = trim($value);
 
-        if ($value === '') {
-            throw new \InvalidArgumentException($label . ' cannot be empty.');
+        if ('' === $value) {
+            throw new \InvalidArgumentException($label.' cannot be empty.');
         }
 
         if (mb_strlen($value) > $maxLength) {
-            throw new \InvalidArgumentException($label . ' cannot exceed ' . $maxLength . ' characters.');
+            throw new \InvalidArgumentException($label.' cannot exceed '.$maxLength.' characters.');
         }
 
         return $value;
@@ -77,18 +76,18 @@ abstract class AbstractRelatingEntity
 
     protected function nullableText(?string $value, int $maxLength = 255): ?string
     {
-        if ($value === null) {
+        if (null === $value) {
             return null;
         }
 
         $value = trim($value);
 
-        if ($value === '') {
+        if ('' === $value) {
             return null;
         }
 
         if (mb_strlen($value) > $maxLength) {
-            throw new \InvalidArgumentException('Value cannot exceed ' . $maxLength . ' characters.');
+            throw new \InvalidArgumentException('Value cannot exceed '.$maxLength.' characters.');
         }
 
         return $value;
@@ -99,7 +98,7 @@ abstract class AbstractRelatingEntity
         $value = $this->requiredText($value, $label, $maxLength);
 
         if (!preg_match('/^[a-z][a-z0-9_]*$/', $value)) {
-            throw new \InvalidArgumentException($label . ' must be a lowercase code.');
+            throw new \InvalidArgumentException($label.' must be a lowercase code.');
         }
 
         return $value;
@@ -108,7 +107,7 @@ abstract class AbstractRelatingEntity
     protected function scoreValue(int $value, string $label): int
     {
         if ($value < 0 || $value > 100) {
-            throw new \InvalidArgumentException($label . ' must be between 0 and 100.');
+            throw new \InvalidArgumentException($label.' must be between 0 and 100.');
         }
 
         return $value;
@@ -117,7 +116,7 @@ abstract class AbstractRelatingEntity
     protected function nonNegativeInt(int $value, string $label): int
     {
         if ($value < 0) {
-            throw new \InvalidArgumentException($label . ' cannot be negative.');
+            throw new \InvalidArgumentException($label.' cannot be negative.');
         }
 
         return $value;
@@ -134,10 +133,10 @@ abstract class AbstractRelatingEntity
         return $currency;
     }
 
-    protected function assertDateOrder(DateTimeImmutable $start, DateTimeImmutable $end, string $label): void
+    protected function assertDateOrder(\DateTimeImmutable $start, \DateTimeImmutable $end, string $label): void
     {
         if ($end < $start) {
-            throw new \InvalidArgumentException($label . ' end cannot be before start.');
+            throw new \InvalidArgumentException($label.' end cannot be before start.');
         }
     }
 }

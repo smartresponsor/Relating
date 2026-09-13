@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,7 +22,7 @@ final class RelatingObjectCatalogController extends AbstractController
                 'Lead',
                 'Opportunity',
                 'Activity',
-                'TimelineEvent',
+                'TimelineRecord',
                 'Campaign',
                 'CaseRecord',
                 'QuoteIntent',

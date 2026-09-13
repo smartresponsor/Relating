@@ -216,7 +216,7 @@ try {
     $opportunityReference = [string]$opportunity.Json.subject_reference
     Write-Host "OK opportunity-open $opportunityReference"
 
-    $stageTransition = Invoke-RelatingJson -Client $client -Method 'POST' -Path '/relating/opportunity/stage-transition' -Payload @{
+    $stageTransition = Invoke-RelatingJson -Client $client -Method 'POST' -Path '/relating/opportunity/stage/transition' -Payload @{
         opportunity_reference = $opportunityReference
         stage_reference = "stage-qualified-$scenario"
         probability = 65

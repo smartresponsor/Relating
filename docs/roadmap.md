@@ -41,8 +41,8 @@ Deliverable:
 
 ```text
 src/Entity
-src/Value
-src/View
+src/ValueObject
+src/Snapshot/View
 src/Repository
 src/Service
 src/Event

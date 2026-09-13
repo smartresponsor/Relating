@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace App\Tests;
 
 use PHPUnit\Framework\TestCase;
@@ -11,10 +10,10 @@ final class RelatingReadModelBoundaryTest extends TestCase
 {
     public function testReadModelLayerDoesNotBecomeCrudOrSqlInfrastructure(): void
     {
-        $root = dirname(__DIR__);
+        $root = \dirname(__DIR__);
         $directories = [
-            $root . '/src/ReadModel',
-            $root . '/src/Service/ReadModel',
+            $root.'/src/Snapshot',
+            $root.'/src/Service/ReadModel',
         ];
 
         foreach ($directories as $directory) {
@@ -23,7 +22,7 @@ final class RelatingReadModelBoundaryTest extends TestCase
 
         $files = [];
         foreach ($directories as $directory) {
-            $files = array_merge($files, glob($directory . '/*.php') ?: []);
+            $files = array_merge($files, glob($directory.'/*.php') ?: []);
         }
 
         self::assertNotEmpty($files);
@@ -46,9 +45,9 @@ final class RelatingReadModelBoundaryTest extends TestCase
 
     public function testProjectionViewsDoNotImportEntities(): void
     {
-        $root = dirname(__DIR__);
-        $viewDirectory = $root . '/src/View';
-        $files = glob($viewDirectory . '/*ProjectionView.php') ?: [];
+        $root = \dirname(__DIR__);
+        $viewDirectory = $root.'/src/Snapshot/View';
+        $files = glob($viewDirectory.'/*ProjectionView.php') ?: [];
 
         self::assertNotEmpty($files);
 

@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -43,8 +42,8 @@ class Note extends AbstractRelatingEntity
     {
         $value = trim($value);
 
-        if ($value === '') {
-            throw new \InvalidArgumentException($label . ' cannot be empty.');
+        if ('' === $value) {
+            throw new \InvalidArgumentException($label.' cannot be empty.');
         }
 
         return $value;

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tests;
 
 use App\Kernel;
-use JsonException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +25,7 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
         $this->kernel->shutdown();
     }
 
-    /** @throws JsonException */
+    /** @throws \JsonException */
     public function testMissingRequiredBusinessFieldsReturnStableJsonErrors(): void
     {
         $cases = [
@@ -36,7 +35,7 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
             ['/relating/lead/qualify', ['lead_reference' => 'lead-negative'], 'Missing required business field: score.'],
             ['/relating/opportunity/open', [], 'Missing required business field: relationship_reference.'],
             [
-                '/relating/opportunity/stage-transition',
+                '/relating/opportunity/stage/transition',
                 ['opportunity_reference' => 'opportunity-negative', 'stage_reference' => 'stage-negative'],
                 'Missing required business field: probability.',
             ],
@@ -51,7 +50,7 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
         }
     }
 
-    /** @throws JsonException */
+    /** @throws \JsonException */
     public function testMalformedJsonReturnsStableJsonError(): void
     {
         $error = $this->requestJsonError(Request::create(
@@ -69,7 +68,7 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
         self::assertSame('Business request payload must be valid JSON.', $error['error']['message'] ?? null);
     }
 
-    /** @throws JsonException */
+    /** @throws \JsonException */
     public function testMissingBusinessReferencesReturnStableJsonErrors(): void
     {
         $cases = [
@@ -90,12 +89,12 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
                 'Relationship was not found for reference: relationship-missing',
             ],
             [
-                '/relating/opportunity/stage-transition',
+                '/relating/opportunity/stage/transition',
                 ['opportunity_reference' => 'opportunity-missing', 'stage_reference' => 'stage-positive', 'probability' => 50],
                 'Opportunity was not found for reference: opportunity-missing',
             ],
             [
-                '/relating/ai-suggestion/review',
+                '/relating/ai/suggestion/review',
                 [
                     'suggestion_reference' => 'suggestion-missing',
                     'reviewer_reference' => 'reviewer-positive',
@@ -116,8 +115,10 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
 
     /**
      * @param array<string, mixed> $payload
+     *
      * @return array<string, mixed>
-     * @throws JsonException
+     *
+     * @throws \JsonException
      */
     private function postJsonError(string $path, array $payload, int $expectedStatusCode = Response::HTTP_BAD_REQUEST, string $expectedErrorCode = 'business_payload_invalid'): array
     {
@@ -131,7 +132,7 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
                 'CONTENT_TYPE' => 'application/json',
                 'HTTP_ACCEPT' => 'application/json',
             ],
-            json_encode($payload, JSON_THROW_ON_ERROR)
+            json_encode($payload, \JSON_THROW_ON_ERROR)
         ), $expectedStatusCode, $expectedErrorCode);
     }
 
@@ -145,7 +146,7 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
             self::assertSame($expectedErrorCode, $response->headers->get('X-Relating-Error'));
             self::assertStringStartsWith('application/json', $response->headers->get('content-type', ''));
 
-            $decoded = json_decode($response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+            $decoded = json_decode($response->getContent(), true, 512, \JSON_THROW_ON_ERROR);
             self::assertIsArray($decoded);
 
             return $decoded;
@@ -156,7 +157,7 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
 
     private function resetDebugStore(): void
     {
-        $storePath = dirname(__DIR__) . '/var/relating-debug-store.json';
+        $storePath = \dirname(__DIR__).'/var/relating-debug-store.json';
 
         if (is_file($storePath)) {
             unlink($storePath);

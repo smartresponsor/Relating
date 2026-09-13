@@ -4,7 +4,7 @@ S9 adds Symfony Messenger handler skeletons for approved Relating business messa
 
 ## Added
 
-- `src/MessageHandler/*`
+- `src/Handler/*`
 - `BusinessMessagePayload` validation helper
 - additional business service contracts for scoring/rebuild/recalculation surfaces
 - message handler service wiring in `config/services/relating.yaml.dist`

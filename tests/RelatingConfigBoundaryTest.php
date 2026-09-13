@@ -10,8 +10,8 @@ final class RelatingConfigBoundaryTest extends TestCase
 {
     public function testConfigDoesNotDeclareCrudRoutesOrSqlFirstInfrastructure(): void
     {
-        $root = dirname(__DIR__);
-        $configDir = $root . '/config';
+        $root = \dirname(__DIR__);
+        $configDir = $root.'/config';
 
         self::assertDirectoryExists($configDir);
 
@@ -40,7 +40,7 @@ final class RelatingConfigBoundaryTest extends TestCase
                 self::assertStringNotContainsString(
                     $needle,
                     $content,
-                    sprintf('Forbidden config fragment %s found in %s', $needle, $file),
+                    \sprintf('Forbidden config fragment %s found in %s', $needle, $file),
                 );
             }
         }
@@ -78,7 +78,7 @@ final class RelatingConfigBoundaryTest extends TestCase
             static function (string $line): bool {
                 $trimmed = trim($line);
 
-                return $trimmed !== '' && !str_starts_with($trimmed, '#');
+                return '' !== $trimmed && !str_starts_with($trimmed, '#');
             },
         ));
     }

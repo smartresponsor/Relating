@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\Command\StartRelationshipCommand;
-use App\Application\Service\StartRelationshipApplicationService;
+use App\Command\StartRelationshipCommand;
+use App\Service\Application\StartRelationshipApplicationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

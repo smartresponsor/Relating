@@ -18,7 +18,7 @@ final class Kernel extends BaseKernel
     /** @return iterable<BundleInterface> */
     public function registerBundles(): iterable
     {
-        $contents = require $this->getProjectDir() . '/config/bundles.php';
+        $contents = require $this->getProjectDir().'/config/bundles.php';
 
         foreach ($contents as $class => $envs) {
             if ($envs[$this->environment] ?? $envs['all'] ?? false) {
@@ -29,12 +29,12 @@ final class Kernel extends BaseKernel
 
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
     {
-        $loader->load($this->getProjectDir() . '/config/packages/*.yaml', 'glob');
-        $loader->load($this->getProjectDir() . '/config/services.yaml');
+        $loader->load($this->getProjectDir().'/config/packages/*.yaml', 'glob');
+        $loader->load($this->getProjectDir().'/config/services.yaml');
     }
 
     protected function configureRoutes(RoutingConfigurator $routes): void
     {
-        $routes->import($this->getProjectDir() . '/config/routes.yaml');
+        $routes->import($this->getProjectDir().'/config/routes.yaml');
     }
 }

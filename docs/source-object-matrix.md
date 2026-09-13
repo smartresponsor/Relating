@@ -27,7 +27,7 @@ Relating   owns relationship lifecycle, lead, opportunity, activity, timeline, c
 | People | Twenty | VendorReference / Relationship participant | Vendoring + Relating | People become vendor/person references; Relating stores lifecycle context only. |
 | Companies | Twenty | VendorReference / Relationship organization | Vendoring + Relating | Company data belongs to Vendoring; Relating attaches relationship state. |
 | Opportunities | Twenty / SuiteCRM / EspoCRM / OroCRM | Opportunity | Relating | Core commercial possibility object. |
-| Notes | Twenty / SuiteCRM | Note / TimelineEvent | Relating | Notes are contextual relationship records unless they become documents. |
+| Notes | Twenty / SuiteCRM | Note / TimelineRecord | Relating | Notes are contextual relationship records unless they become documents. |
 | Tasks | Twenty / SuiteCRM / EspoCRM | Task / Activity | Relating | CRM tasks are activity items with due dates, status, owner. |
 | Custom Objects | Twenty | RelatingObjectDefinition | Relating | Metadata registry; no foreign dynamic ORM imported. |
 | Custom Fields | Twenty / EspoCRM / Krayin | RelatingFieldDefinition | Relating | EntityFirst-compatible metadata; does not bypass typed entity model. |
@@ -40,7 +40,7 @@ Relating   owns relationship lifecycle, lead, opportunity, activity, timeline, c
 | Lead Source | SuiteCRM / Krayin | LeadSource / Source | Relating | Captures origin and attribution. |
 | Calls | SuiteCRM / EspoCRM | Call / Activity | Relating | Timeline activity specialization. |
 | Meetings | SuiteCRM / EspoCRM | Meeting / Activity | Relating | Timeline activity specialization. |
-| Emails | SuiteCRM | MessageThreadReference / TimelineEvent | Messaging + Relating | Transport belongs to Messaging; CRM timeline references the thread. |
+| Emails | SuiteCRM | MessageThreadReference / TimelineRecord | Messaging + Relating | Transport belongs to Messaging; CRM timeline references the thread. |
 | Campaigns | SuiteCRM / OroCRM / CiviCRM | Campaign | Relating | Marketing or nurture relationship program. |
 | Targets | SuiteCRM | TargetListMember / CampaignMember | Relating | Prefer target list/member model. |
 | Target Lists | SuiteCRM | TargetList | Relating | Campaign audience object. |
@@ -52,7 +52,7 @@ Relating   owns relationship lifecycle, lead, opportunity, activity, timeline, c
 | Invoices | SuiteCRM AOS | PaymentReference / OrderReference | Payment + Ordering | Not owned by Relating. |
 | Contracts | SuiteCRM AOS | CommercialTerm / DocumentReference | Relating + Documentating | Only relationship intent/term metadata here. |
 | Products | SuiteCRM / Krayin / OroCRM | ProductReference / OpportunityProductInterest | Producting + Relating | Relating stores interest, not product master data. |
-| Product views | OroCRM | TimelineEvent / ProductInterestSignal | Relating + Producting | Useful for relationship 360. |
+| Product views | OroCRM | TimelineRecord / ProductInterestSignal | Relating + Producting | Useful for relationship 360. |
 | Support tickets | OroCRM | CaseRecord / CaseThread | Relating | Relationship issue view. |
 | Contributions | CiviCRM | PaymentReference / ContributionSignal | Payment + Relating | Nonprofit signal only; financial ownership elsewhere. |
 | Memberships | CiviCRM | Relationship segment / MembershipReference | Relating or Membership component later | Keep as signal until separate component exists. |
@@ -81,7 +81,7 @@ Call
 Meeting
 Task
 Note
-TimelineEvent
+TimelineRecord
 Campaign
 CampaignMember
 TargetList
@@ -129,7 +129,7 @@ CaseQueue           -> CaseQueueView
 | Bottom Panels | EspoCRM | RelationshipRelatedPanelView | Relating | Related objects read model. |
 | Side Panels | EspoCRM | RelationshipSidePanelView | Relating | Context read model. |
 | Dynamic Logic | EspoCRM | LayoutCondition / FieldVisibilityRule | Relating | Future metadata; enforce via ViewObject compiler. |
-| Case conversation thread | SuiteCRM | CaseThread / TimelineEvent | Relating | Relationship issue history. |
+| Case conversation thread | SuiteCRM | CaseThread / TimelineRecord | Relating | Relationship issue history. |
 | Campaign real-time response tracking | SuiteCRM | CampaignResponse / RelationshipSignal | Relating | Response becomes signal for lead/relationship. |
 | Customer 360 interaction data | OroCRM | RelationshipProfileView / RelationshipSignal | Relating | Cross-component relationship profile. |
 | Account merge | OroCRM | MergeProposal | Relating + Vendoring | Relating proposes; Vendoring owns final merge. |
@@ -157,7 +157,7 @@ CaseQueue           -> CaseQueueView
 | Krayin | Quick Add | business capture route only | Relating |
 | CiviCRM | Contact | VendorReference | Vendoring |
 | CiviCRM | Relationships | RelationshipRelation / RelationshipParticipant | Relating |
-| CiviCRM | Activities | Activity / TimelineEvent | Relating |
+| CiviCRM | Activities | Activity / TimelineRecord | Relating |
 | CiviCRM | Contributions | ContributionReference / RelationshipSignal | Payment/external + Relating signal |
 | CiviCRM | Memberships | MembershipReference / RelationshipSignal | External + Relating signal |
 | CiviCRM | Events | EventReference / RelationshipSignal | External + Relating signal |

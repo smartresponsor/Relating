@@ -2,25 +2,32 @@
 
 Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
-`Relating` is not introduced as a Symfony Bundle in this skeleton.
+`Relating` exposes a minimal `App\RelatingBundle` composition surface while remaining independently bootable as a standalone Symfony application.
 
 ## Why
 
-The component is developed under the default Symfony application namespace:
+The component stays under the default Symfony application namespace:
 
 ```text
 App
 ```
 
-A Bundle class would introduce a second registration mechanism and would weaken the explicit host-app wiring model.
+The bundle marker exists only for explicit dual-runtime composition. It must not become a second hidden owner of CRUD, persistence, migrations, navigation, or neighboring component behavior.
+
+## Required
+
+```text
+src/RelatingBundle.php
+config/bundles.php standalone registration
+```
 
 ## Forbidden
 
 ```text
-RelatingBundle.php
-DependencyInjection/RelatingExtension.php
-Resources/config/services.yaml as bundle resource
-Bundle auto-registration
+hidden CRUD route/controller registration
+bundle-owned migrations or direct SQL
+neighbor entity ownership
+alternative namespace roots outside App\
 ```
 
 ## Allowed
@@ -29,7 +36,7 @@ Bundle auto-registration
 config/services/relating.yaml.dist
 config/packages/relating_messenger.yaml.dist
 config/packages/relating_workflow.yaml.dist
-config/routes/relating.yaml
+config/routes/relation_routes.yaml
 ```
 
 These files are explicit host application templates. They are reviewed and imported by the host app deliberately.

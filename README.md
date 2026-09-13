@@ -179,7 +179,7 @@ Relating automation remains business-only and does not introduce CRUD routes, CR
 
 ## S1 EntityFirst correction
 
-The skeleton now includes a stronger Doctrine-ready EntityFirst layer for `Relationship`, `Lead`, `Opportunity`, `Pipeline`, `Activity`, `TimelineEvent`, `Campaign`, `CaseRecord`, `RelationshipParticipant`, and `RelationshipSignal`. Migrations are intentionally not generated. CRUD routes/controllers remain explicitly out of scope.
+The skeleton now includes a stronger Doctrine-ready EntityFirst layer for `Relationship`, `Lead`, `Opportunity`, `Pipeline`, `Activity`, `TimelineRecord`, `Campaign`, `CaseRecord`, `RelationshipParticipant`, and `RelationshipSignal`. Migrations are intentionally not generated. CRUD routes/controllers remain explicitly out of scope.
 
 ## S2 Contract Boundary
 
@@ -239,10 +239,10 @@ Added S5 files:
 
 ```text
 src/Enum/DemoScenarioKind.php
-src/Fixture/RelatingDemoScenario.php
-src/Fixture/RelatingDemoSeed.php
-src/Fixture/RelatingDemoEntityFactory.php
-src/View/DemoScenarioView.php
+src/DataFixtures/RelatingDemoScenario.php
+src/DataFixtures/RelatingDemoSeed.php
+src/Factory/RelatingDemoEntityFactory.php
+src/Snapshot/View/DemoScenarioView.php
 tests/RelatingDemoSeedBoundaryTest.php
 docs/demo-seed-readiness.md
 docs/fixture-scenario-catalog.md
@@ -277,10 +277,10 @@ POST /relating/lead/capture
 POST /relating/lead/qualify
 POST /relating/lead/convert
 POST /relating/opportunity/open
-POST /relating/opportunity/stage-transition
+POST /relating/opportunity/stage/transition
 POST /relating/activity/record
 POST /relating/timeline/project
-POST /relating/ai-suggestion/review
+POST /relating/ai/suggestion/review
 ```
 
 CRUD routes remain forbidden. Relating must not declare index/create/read/update/delete/list/show/edit/store/patch/remove route surfaces.

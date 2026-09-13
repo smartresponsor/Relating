@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\Trace\PolicyDecisionTrace;
+use App\ValueObject\Trace\PolicyDecisionTrace;
 
 interface PolicyDecisionTraceRecorderInterface
 {

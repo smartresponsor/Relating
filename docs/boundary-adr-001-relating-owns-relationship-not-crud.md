@@ -101,7 +101,7 @@ A plain entity-named controller tends to become CRUD by gravity. Every Relating 
 
 ## YAML policy
 
-Route declarations in `config/routes/relating.yaml` may reference business controllers only.
+Route declarations in `config/routes/relation_routes.yaml` may reference business controllers only.
 
 They must not declare entity collection/item routes such as:
 

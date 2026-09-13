@@ -10,13 +10,13 @@ final class RelatingMessageHandlerBoundaryTest extends TestCase
 {
     public function testMessageHandlersUseBusinessBoundaryNames(): void
     {
-        $root = dirname(__DIR__);
-        $handlerDirectory = $root . '/src/MessageHandler';
+        $root = \dirname(__DIR__);
+        $handlerDirectory = $root.'/src/Handler';
 
         self::assertDirectoryExists($handlerDirectory);
 
         $forbidden = '/(Create|Update|Delete|Remove|Persist|Flush|Save)(Entity|Record|Model|Handler|Message)?/';
-        $files = glob($handlerDirectory . '/*MessageHandler.php') ?: [];
+        $files = glob($handlerDirectory.'/*MessageHandler.php') ?: [];
 
         self::assertNotEmpty($files);
 

@@ -56,10 +56,10 @@ Activate only the approved business routes:
 - `/relating/lead/qualify`
 - `/relating/lead/convert`
 - `/relating/opportunity/open`
-- `/relating/opportunity/stage-transition`
+- `/relating/opportunity/stage/transition`
 - `/relating/activity/record`
 - `/relating/timeline/project`
-- `/relating/ai-suggestion/review`
+- `/relating/ai/suggestion/review`
 
 ## Stage 6: Read models and projections
 

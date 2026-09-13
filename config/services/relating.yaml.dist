@@ -24,8 +24,8 @@ services:
             - '../../src/Controller/BusinessResultPayload.php'
         tags: ['controller.service_arguments']
 
-    App\Application\Service\:
-        resource: '../../src/Application/Service/'
+    App\Service\Application\:
+        resource: '../../src/Service/Application/'
         tags:
             - { name: 'relating.application_service' }
 
@@ -34,19 +34,19 @@ services:
         tags:
             - { name: 'relating.business_service' }
 
-    App\MessageHandler\:
-        resource: '../../src/MessageHandler/'
+    App\Handler\:
+        resource: '../../src/Handler/'
         tags:
             - { name: 'relating.business_message_handler' }
 
-    App\Fixture\:
-        resource: '../../src/Fixture/'
+    App\DataFixtures\:
+        resource: '../../src/DataFixtures/'
         tags:
             - { name: 'relating.demo_fixture' }
 
 
-    App\ReadModel\:
-        resource: '../../src/ReadModel/'
+    App\Snapshot\:
+        resource: '../../src/Snapshot/'
         tags:
             - { name: 'relating.read_model' }
 

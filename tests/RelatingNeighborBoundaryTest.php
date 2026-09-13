@@ -6,8 +6,8 @@ namespace App\Tests;
 
 use App\Enum\NeighborComponent;
 use App\Enum\NeighborReferenceKind;
-use App\Value\NeighborReference;
-use App\Value\NeighborSignalEnvelope;
+use App\ValueObject\NeighborReference;
+use App\ValueObject\NeighborSignalEnvelope;
 use PHPUnit\Framework\TestCase;
 
 final class RelatingNeighborBoundaryTest extends TestCase
@@ -42,7 +42,7 @@ final class RelatingNeighborBoundaryTest extends TestCase
 
     public function testRelatingDoesNotDeclareNeighborEntities(): void
     {
-        $entityPath = dirname(__DIR__).'/src/Entity';
+        $entityPath = \dirname(__DIR__).'/src/Entity';
         $forbidden = [
             'Vendor.php',
             'Account.php',

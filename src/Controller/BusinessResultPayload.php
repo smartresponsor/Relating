@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\Result\RelatingActionResult;
+use App\ValueObject\RelatingActionResult;
 
 final class BusinessResultPayload
 {

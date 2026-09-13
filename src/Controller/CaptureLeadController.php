@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\Command\CaptureLeadCommand;
-use App\Application\Service\CaptureLeadApplicationService;
+use App\Command\CaptureLeadCommand;
+use App\Service\Application\CaptureLeadApplicationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

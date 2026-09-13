@@ -10,10 +10,10 @@ final class RelatingApplicationServiceBoundaryTest extends TestCase
 {
     public function testApplicationServicesDoNotExposeCrudActionNames(): void
     {
-        $serviceDir = dirname(__DIR__) . '/src/Application/Service';
+        $serviceDir = \dirname(__DIR__).'/src/Service/Application';
         self::assertDirectoryExists($serviceDir);
 
-        $files = glob($serviceDir . '/*.php') ?: [];
+        $files = glob($serviceDir.'/*.php') ?: [];
         self::assertNotSame([], $files);
 
         $forbidden = [
@@ -35,17 +35,17 @@ final class RelatingApplicationServiceBoundaryTest extends TestCase
             self::assertIsString($content);
 
             foreach ($forbidden as $needle) {
-                self::assertStringNotContainsString($needle, $content, basename($file) . ' exposes forbidden application method ' . $needle);
+                self::assertStringNotContainsString($needle, $content, basename($file).' exposes forbidden application method '.$needle);
             }
         }
     }
 
     public function testAsyncMessagesDoNotUseGenericCrudNames(): void
     {
-        $messageDir = dirname(__DIR__) . '/src/Message';
+        $messageDir = \dirname(__DIR__).'/src/Message';
         self::assertDirectoryExists($messageDir);
 
-        self::assertFileDoesNotExist($messageDir . '/CreateAiSuggestionMessage.php');
-        self::assertFileExists($messageDir . '/RaiseAiSuggestionMessage.php');
+        self::assertFileDoesNotExist($messageDir.'/CreateAiSuggestionMessage.php');
+        self::assertFileExists($messageDir.'/RaiseAiSuggestionMessage.php');
     }
 }

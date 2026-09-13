@@ -1,0 +1,42 @@
+{
+  "name": "relating/relation",
+  "description": "SmartResponsor Relating CRM relationship lifecycle component.",
+  "type": "symfony-bundle",
+  "license": "proprietary",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.4 <8.5",
+    "collectioning/collection": "dev-master",
+    "cruding/crud": "dev-master",
+    "doctrine/migrations": "^3.9",
+    "doctrine/orm": "^3.0",
+    "easycorp/easyadmin-bundle": "^5.0",
+    "interfacing/interface": "dev-master",
+    "objecting/object": "dev-master",
+    "symfony/console": "8.1.*",
+    "symfony/framework-bundle": "8.1.*",
+    "symfony/runtime": "8.1.*",
+    "symfony/yaml": "8.1.*",
+    "tabling/table": "dev-master",
+    "viewing/view": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "extra": {
+    "symfony": {
+      "allow-contrib": false,
+      "require": "8.1.*",
+      "bundle": "App\\RelatingBundle"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    },
+    "sort-packages": true
+  }
+}

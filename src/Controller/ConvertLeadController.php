@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Application\Command\ConvertLeadCommand;
-use App\Application\Service\ConvertLeadApplicationService;
+use App\Command\ConvertLeadCommand;
+use App\Service\Application\ConvertLeadApplicationService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;

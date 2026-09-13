@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policy;
 
-use App\Value\NeighborSignalEnvelope;
+use App\ValueObject\NeighborSignalEnvelope;
 
 interface NeighborSignalPolicyInterface
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policy;
 
-use App\Value\NeighborReference;
+use App\ValueObject\NeighborReference;
 
 interface RelatingReferencePolicyInterface
 {

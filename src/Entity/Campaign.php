@@ -6,7 +6,6 @@ namespace App\Entity;
 
 use App\Enum\CampaignChannel;
 use App\Enum\CampaignStatus;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -22,10 +21,10 @@ final class Campaign extends AbstractNamedRelatingEntity
     private string $channel = 'manual';
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $startsAt = null;
+    private ?\DateTimeImmutable $startsAt = null;
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    private ?DateTimeImmutable $endsAt = null;
+    private ?\DateTimeImmutable $endsAt = null;
 
     public function setChannel(CampaignChannel $channel): void
     {
@@ -33,10 +32,10 @@ final class Campaign extends AbstractNamedRelatingEntity
         $this->touch();
     }
 
-    public function activate(?DateTimeImmutable $startsAt = null): void
+    public function activate(?\DateTimeImmutable $startsAt = null): void
     {
         $this->status = CampaignStatus::Active->value;
-        $this->startsAt = $startsAt ?? new DateTimeImmutable();
+        $this->startsAt = $startsAt ?? new \DateTimeImmutable();
         $this->touch();
     }
 
@@ -46,10 +45,10 @@ final class Campaign extends AbstractNamedRelatingEntity
         $this->touch();
     }
 
-    public function complete(?DateTimeImmutable $endsAt = null): void
+    public function complete(?\DateTimeImmutable $endsAt = null): void
     {
-        $endsAt ??= new DateTimeImmutable();
-        if ($this->startsAt !== null) {
+        $endsAt ??= new \DateTimeImmutable();
+        if (null !== $this->startsAt) {
             $this->assertDateOrder($this->startsAt, $endsAt, 'Campaign');
         }
 

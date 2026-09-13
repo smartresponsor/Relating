@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service;
 
-use App\View\RelatingViewInterface;
+use App\Snapshot\View\RelatingViewInterface;
 
 interface RelatingViewBuilderInterface
 {

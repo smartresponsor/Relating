@@ -13,7 +13,7 @@ final class RelatingBusinessRouteSurfaceTest extends TestCase
      */
     private function controllerFiles(): array
     {
-        $files = glob(dirname(__DIR__) . '/src/Controller/*.php') ?: [];
+        $files = glob(\dirname(__DIR__).'/src/Controller/*.php') ?: [];
         sort($files);
 
         return $files;
@@ -44,9 +44,9 @@ final class RelatingBusinessRouteSurfaceTest extends TestCase
             foreach ($matches[1] ?? [] as $routePath) {
                 foreach ($forbidden as $token) {
                     self::assertDoesNotMatchRegularExpression(
-                        '/(^|[\/_-])' . preg_quote($token, '/') . '($|[\/_-])/i',
+                        '/(^|[\/_-])'.preg_quote($token, '/').'($|[\/_-])/i',
                         $routePath,
-                        basename($file) . ' exposes forbidden route token ' . $token . ' in ' . $routePath
+                        basename($file).' exposes forbidden route token '.$token.' in '.$routePath
                     );
                 }
             }
@@ -62,10 +62,10 @@ final class RelatingBusinessRouteSurfaceTest extends TestCase
             '/relating/lead/qualify',
             '/relating/lead/convert',
             '/relating/opportunity/open',
-            '/relating/opportunity/stage-transition',
+            '/relating/opportunity/stage/transition',
             '/relating/activity/record',
             '/relating/timeline/project',
-            '/relating/ai-suggestion/review',
+            '/relating/ai/suggestion/review',
         ];
 
         $actual = [];

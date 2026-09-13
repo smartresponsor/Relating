@@ -14,7 +14,7 @@ Twenty describes its CRM building blocks as objects, views, workflows, and agent
 Twenty object        -> App\Entity\ObjectDefinition
 Twenty field         -> App\Entity\FieldDefinition
 Twenty relation      -> App\Entity\RelationshipDefinition
-Twenty saved view    -> App\Entity\ViewDefinition + App\View\*
+Twenty saved view    -> App\Entity\ViewDefinition + App\Snapshot\View\*
 Twenty workflow      -> App\Entity\AutomationRule / AutomationRun
 Twenty AI agent      -> App\Entity\AiSuggestion / AiDecisionLog
 ```
@@ -26,7 +26,7 @@ Twenty AI agent      -> App\Entity\AiSuggestion / AiDecisionLog
 | People | VendorReference + RelationshipParticipant | Vendoring + Relating | Do not create Person master data in Relating. |
 | Companies | VendorReference + Relationship | Vendoring + Relating | Do not create Company master data in Relating. |
 | Opportunities | Opportunity | Relating | Core commercial opportunity object. |
-| Notes | Note + TimelineEvent | Relating | Notes can attach to relationship lifecycle targets. |
+| Notes | Note + TimelineRecord | Relating | Notes can attach to relationship lifecycle targets. |
 | Tasks | Task + Activity | Relating | Tasks are CRM activity items. |
 | Custom objects | ObjectDefinition | Relating | Metadata registry only; do not bypass EntityFirst model. |
 | Custom fields | FieldDefinition | Relating | Field metadata must compile into typed views/forms. |

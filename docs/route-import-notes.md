@@ -3,7 +3,7 @@
 Relating has exactly one route import file:
 
 ```text
-config/routes/relating.yaml
+config/routes/relation_routes.yaml
 ```
 
 The route file imports controller attributes from:

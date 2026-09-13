@@ -10,18 +10,18 @@ final class RelatingAuditTraceBoundaryTest extends TestCase
 {
     public function testTraceLayerExists(): void
     {
-        self::assertFileExists(__DIR__ . '/../src/Trace/BusinessDecisionTrace.php');
-        self::assertFileExists(__DIR__ . '/../src/Trace/PolicyDecisionTrace.php');
-        self::assertFileExists(__DIR__ . '/../src/Trace/AiReviewTrace.php');
-        self::assertFileExists(__DIR__ . '/../src/Trace/TransitionTrace.php');
-        self::assertFileExists(__DIR__ . '/../src/Trace/NeighborSignalTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/BusinessDecisionTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/PolicyDecisionTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/AiReviewTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/TransitionTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/NeighborSignalTrace.php');
     }
 
     public function testTraceLayerDoesNotDeclareCrudOrSqlSurface(): void
     {
         $paths = array_merge(
-            glob(__DIR__ . '/../src/Trace/*.php') ?: [],
-            glob(__DIR__ . '/../src/Service/*Trace*Interface.php') ?: []
+            glob(__DIR__.'/../src/ValueObject/Trace/*.php') ?: [],
+            glob(__DIR__.'/../src/Service/*Trace*Interface.php') ?: []
         );
 
         self::assertNotEmpty($paths);
@@ -47,14 +47,14 @@ final class RelatingAuditTraceBoundaryTest extends TestCase
             $contents = (string) file_get_contents($path);
 
             foreach ($forbidden as $needle) {
-                self::assertStringNotContainsString($needle, $contents, $path . ' must not contain ' . $needle);
+                self::assertStringNotContainsString($needle, $contents, $path.' must not contain '.$needle);
             }
         }
     }
 
     public function testTraceNamingIsBusinessDecisionNaming(): void
     {
-        $paths = glob(__DIR__ . '/../src/Trace/*Trace.php') ?: [];
+        $paths = glob(__DIR__.'/../src/ValueObject/Trace/*Trace.php') ?: [];
 
         self::assertNotEmpty($paths);
 

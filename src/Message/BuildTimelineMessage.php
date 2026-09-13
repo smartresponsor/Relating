@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace App\Message;
 
 final readonly class BuildTimelineMessage
@@ -11,7 +10,7 @@ final readonly class BuildTimelineMessage
         public string $targetReference,
         public array $payload = [],
     ) {
-        if (trim($this->targetReference) === '') {
+        if ('' === trim($this->targetReference)) {
             throw new \InvalidArgumentException('Target reference cannot be empty.');
         }
     }

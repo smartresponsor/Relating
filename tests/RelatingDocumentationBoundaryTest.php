@@ -28,12 +28,12 @@ final class RelatingDocumentationBoundaryTest extends TestCase
     #[DataProvider('requiredDocumentationFiles')]
     public function testRequiredDocumentationFileExists(string $relativePath): void
     {
-        self::assertFileExists(dirname(__DIR__).'/'.$relativePath);
+        self::assertFileExists(\dirname(__DIR__).'/'.$relativePath);
     }
 
     public function testDocumentationPackDeclaresCrudBoundary(): void
     {
-        $content = file_get_contents(dirname(__DIR__).'/docs/documentation-finalization-pack.md');
+        $content = file_get_contents(\dirname(__DIR__).'/docs/documentation-finalization-pack.md');
         self::assertIsString($content);
 
         self::assertStringContainsString('Relating never creates CRUD controllers', $content);
@@ -43,7 +43,7 @@ final class RelatingDocumentationBoundaryTest extends TestCase
 
     public function testCanonKeepsRelatingAndRelationshipNames(): void
     {
-        $content = file_get_contents(dirname(__DIR__).'/docs/relating-canon.md');
+        $content = file_get_contents(\dirname(__DIR__).'/docs/relating-canon.md');
         self::assertIsString($content);
 
         self::assertStringContainsString('Relating', $content);

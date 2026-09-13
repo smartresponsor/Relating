@@ -203,7 +203,7 @@ Assert-BusinessResult -Response $opportunity -BusinessAction 'opportunity-open'
 $opportunityReference = [string]$opportunity.Json.subject_reference
 Write-Host "OK opportunity-open $opportunityReference"
 
-$stageTransition = Invoke-RelatingJson -Method 'POST' -Path '/relating/opportunity/stage-transition' -Payload @{
+$stageTransition = Invoke-RelatingJson -Method 'POST' -Path '/relating/opportunity/stage/transition' -Payload @{
     opportunity_reference = $opportunityReference
     stage_reference = "stage-qualified-$scenario"
     probability = 65
@@ -253,7 +253,7 @@ Assert-BusinessReferenceError -Response $referenceError -Message "Lead was not f
 Assert-NoCrudSurface $referenceError.Raw
 Write-Host 'OK business-reference-not-found lead-qualify'
 
-$aiSuggestionReferenceError = Invoke-RelatingJson -Method 'POST' -Path '/relating/ai-suggestion/review' -Payload @{
+$aiSuggestionReferenceError = Invoke-RelatingJson -Method 'POST' -Path '/relating/ai/suggestion/review' -Payload @{
     suggestion_reference = "suggestion-missing-$scenario"
     reviewer_reference = "reviewer-$scenario"
     decision = 'reject'

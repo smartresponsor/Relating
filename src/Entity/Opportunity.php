@@ -6,7 +6,6 @@ namespace App\Entity;
 
 use App\Enum\ForecastCategory;
 use App\Enum\OpportunityStatus;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -46,7 +45,7 @@ final class Opportunity extends AbstractRelatingEntity
     private int $probability = 0;
 
     #[ORM\Column(type: 'date_immutable', nullable: true)]
-    private ?DateTimeImmutable $expectedCloseDate = null;
+    private ?\DateTimeImmutable $expectedCloseDate = null;
 
     #[ORM\Column(type: 'string', length: 128, nullable: true)]
     private ?string $primaryProductReference = null;
@@ -99,7 +98,7 @@ final class Opportunity extends AbstractRelatingEntity
         $this->touch();
     }
 
-    public function scheduleClose(?DateTimeImmutable $expectedCloseDate): void
+    public function scheduleClose(?\DateTimeImmutable $expectedCloseDate): void
     {
         $this->expectedCloseDate = $expectedCloseDate;
         $this->touch();

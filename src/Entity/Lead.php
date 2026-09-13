@@ -115,7 +115,7 @@ final class Lead extends AbstractRelatingEntity
 
     public function markConverted(?string $relationshipReference = null): void
     {
-        if ($relationshipReference !== null) {
+        if (null !== $relationshipReference) {
             $this->relationshipReference = $this->requiredText($relationshipReference, 'Relationship reference', 128);
         }
 

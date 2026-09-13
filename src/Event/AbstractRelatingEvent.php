@@ -2,31 +2,28 @@
 
 declare(strict_types=1);
 
-
 namespace App\Event;
-
-use DateTimeImmutable;
 
 abstract readonly class AbstractRelatingEvent
 {
     private string $aggregateReference;
     private array $payload;
-    private DateTimeImmutable $occurredAt;
+    private \DateTimeImmutable $occurredAt;
 
     public function __construct(
         string $aggregateReference,
         array $payload = [],
-        ?DateTimeImmutable $occurredAt = null,
+        ?\DateTimeImmutable $occurredAt = null,
     ) {
         $aggregateReference = trim($aggregateReference);
 
-        if ($aggregateReference === '') {
+        if ('' === $aggregateReference) {
             throw new \InvalidArgumentException('Aggregate reference cannot be empty.');
         }
 
         $this->aggregateReference = $aggregateReference;
         $this->payload = $payload;
-        $this->occurredAt = $occurredAt ?? new DateTimeImmutable();
+        $this->occurredAt = $occurredAt ?? new \DateTimeImmutable();
     }
 
     public function aggregateReference(): string
@@ -39,7 +36,7 @@ abstract readonly class AbstractRelatingEvent
         return $this->payload;
     }
 
-    public function occurredAt(): DateTimeImmutable
+    public function occurredAt(): \DateTimeImmutable
     {
         return $this->occurredAt;
     }
