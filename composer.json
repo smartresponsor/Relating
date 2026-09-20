@@ -9,32 +9,32 @@
     {
       "type": "path",
       "url": "../Cruding",
-      "options": { "symlink": true }
+      "options": { "symlink": true, "versions": { "cruding/crud": "dev-master" } }
     },
     {
       "type": "path",
       "url": "../Collectioning",
-      "options": { "symlink": true }
+      "options": { "symlink": true, "versions": { "collectioning/collection": "dev-master" } }
     },
     {
       "type": "path",
       "url": "../Tabling",
-      "options": { "symlink": true }
+      "options": { "symlink": true, "versions": { "tabling/table": "dev-master" } }
     },
     {
       "type": "path",
       "url": "../Viewing",
-      "options": { "symlink": true }
+      "options": { "symlink": true, "versions": { "viewing/view": "dev-master" } }
     },
     {
       "type": "path",
       "url": "../Interfacing",
-      "options": { "symlink": true }
+      "options": { "symlink": true, "versions": { "interfacing/interface": "dev-master" } }
     },
     {
       "type": "path",
       "url": "../Objecting",
-      "options": { "symlink": true }
+      "options": { "symlink": true, "versions": { "objecting/object": "dev-master" } }
     }
   ],
   "require": {
