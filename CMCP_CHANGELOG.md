@@ -61,3 +61,36 @@
 - Burn down the PHPStan baseline instead of regenerating it casually.
 - Raise semantic PHPDoc coverage from the current legacy baseline.
 - Add real browser/UI behavioral scenarios before claiming UI coverage; absence of those scenarios does not block this business/API-oriented RC.
+
+## 2026-09-20 — RC dependency pinning follow-up
+
+### Reconnaissance and market baseline
+- Re-read Relating responsibility, package/runtime manifests, business route boundary, release/roadmap docs, current Git state, and the Objecting/Cruding/Viewing/Interfacing plus Canonization/Gating contract contour.
+- CRM market/open-source baseline remains lifecycle-centric: relationship/lead/opportunity/activity/timeline/campaign/case automation, explicit business transitions, stable integration boundaries, auditability, projections, and testable APIs. Generic CRUD, shared shell rendering, access ownership, transport storage, and cross-component system fields stay outside Relating.
+- RC-critical work selected: repair the deterministic Canon043 development dependency identity failure without changing Relating business behavior.
+- Growth work remains separate: deeper workflow/forecasting/AI assistance, observability, real behavioral scenarios, and coverage improvement after RC.
+
+### Canonization mapping consulted
+- Canon018: conflicts with the explicit repository/user default `App\\` namespace contract; preserved `App\\` and recorded the conflict rather than introducing `App\\Relating\\`.
+- Canon019/020: role-first source topology applies; current Gating evidence passes.
+- Canon021: generic CRUD stays in Cruding; current business-only route surface passes.
+- Canon022/023/024/025/026: standalone baseline, local symlink development, packaged production, dual runtime, and PHP/Symfony baseline apply and pass.
+- Canon029/030: repository quality tooling and executable Doctrine parity contract apply and pass.
+- Canon040: coverage remains measurable debt, including HIGH_TEST_DEBT, but is not the deterministic RC failure repaired in this follow-up.
+- Canon043 (current Gating identity: `development_composer_dependency_version`): each sibling path repository must pin `options.versions[package]` to exact `dev-master`; applied to Cruding, Collectioning, Tabling, Viewing, Interfacing, and Objecting.
+
+### Material risk and boundary decisions
+- `AbstractRelatingEntity` still contains local `tenantReference`, `createdAt`, and `updatedAt`; Objecting requires semantic/data-safe classification before any system-field migration. No mechanical migration is performed in this follow-up.
+- No CRUD, navigation, presentation ownership, or neighbor master-data ownership is added.
+
+### Verification target
+- Re-run Gating, Composer validation-compatible checks, PHP-CS-Fixer, PHPStan, PHPUnit, Doctrine parity, and final Git state; repair only factual Relating-owned failures.
+
+### Follow-up result
+- Canon043 is now green; all six direct sibling path repositories pin their package identity to `dev-master` while retaining `symlink: true`.
+- Composer lock was refreshed against current sibling heads and maintained dependencies; strict Composer validation is green and Composer reported no security advisories.
+- PHP-CS-Fixer check: 575 files, zero fixes required.
+- PHPStan level 8 with the existing legacy baseline: green.
+- PHPUnit after dependency refresh: 74 tests / 26,261 assertions green.
+- Doctrine parity: 79 mapped entities / 118 generated schema statements green; host-owned migrations boundary preserved.
+- Gating now has one remaining hard failure only: Canon018, which is intentionally non-applicable because the explicit owner/user contract requires the default `App\\` namespace and forbids an alternative component root namespace. Warnings remain for PHPDoc coverage, HIGH_TEST_DEBT, and missing behavioral/UI evidence.
