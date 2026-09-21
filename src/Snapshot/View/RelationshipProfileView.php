@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Snapshot\View;
+namespace App\Relating\Snapshot\View;
 
-final readonly class RelationshipProfileView extends AbstractArrayView
+final readonly class RelationshipProfileView extends RelationAbstractArrayView
 {
     protected static function surfaceName(): string
     {

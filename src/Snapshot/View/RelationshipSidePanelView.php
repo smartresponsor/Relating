@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Snapshot\View;
+namespace App\Relating\Snapshot\View;
 
-final readonly class RelationshipSidePanelView extends AbstractArrayView
+final readonly class RelationshipSidePanelView extends RelationAbstractArrayView
 {
     public static function expectedKeys(): array
     {

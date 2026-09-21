@@ -1,784 +1,784 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Method App\\Command\\CaptureLeadCommand\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationCaptureLeadCommand\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/CaptureLeadCommand.php
+			path: src/Command/RelationCaptureLeadCommand.php
 
 		-
-			message: '#^Method App\\Command\\ConvertLeadCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationConvertLeadCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/ConvertLeadCommand.php
+			path: src/Command/RelationConvertLeadCommand.php
 
 		-
-			message: '#^Method App\\Command\\OpenOpportunityCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationOpenOpportunityCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/OpenOpportunityCommand.php
+			path: src/Command/RelationOpenOpportunityCommand.php
 
 		-
-			message: '#^Method App\\Command\\ProjectTimelineCommand\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationProjectTimelineCommand\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/ProjectTimelineCommand.php
+			path: src/Command/RelationProjectTimelineCommand.php
 
 		-
-			message: '#^Method App\\Command\\QualifyLeadCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationQualifyLeadCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/QualifyLeadCommand.php
+			path: src/Command/RelationQualifyLeadCommand.php
 
 		-
-			message: '#^Method App\\Command\\RecordActivityCommand\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationRecordActivityCommand\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/RecordActivityCommand.php
+			path: src/Command/RelationRecordActivityCommand.php
 
 		-
-			message: '#^Method App\\Command\\ReviewAiSuggestionCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationReviewAiSuggestionCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/ReviewAiSuggestionCommand.php
+			path: src/Command/RelationReviewAiSuggestionCommand.php
 
 		-
-			message: '#^Method App\\Command\\StartRelationshipCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationStartRelationshipCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/StartRelationshipCommand.php
+			path: src/Command/RelationStartRelationshipCommand.php
 
 		-
-			message: '#^Method App\\Command\\TransitionOpportunityStageCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Command\\RelationTransitionOpportunityStageCommand\:\:__construct\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Command/TransitionOpportunityStageCommand.php
+			path: src/Command/RelationTransitionOpportunityStageCommand.php
 
 		-
-			message: '#^Method App\\Entity\\AbstractNamedRelatingEntity\:\:__construct\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationAbstractNamedRelatingEntity\:\:__construct\(\) has parameter \$data with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/AbstractNamedRelatingEntity.php
+			path: src/Entity/RelationAbstractNamedRelatingEntity.php
 
 		-
-			message: '#^Method App\\Entity\\AbstractNamedRelatingEntity\:\:data\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationAbstractNamedRelatingEntity\:\:data\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/AbstractNamedRelatingEntity.php
+			path: src/Entity/RelationAbstractNamedRelatingEntity.php
 
 		-
-			message: '#^Method App\\Entity\\AbstractNamedRelatingEntity\:\:replaceData\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationAbstractNamedRelatingEntity\:\:replaceData\(\) has parameter \$data with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/AbstractNamedRelatingEntity.php
+			path: src/Entity/RelationAbstractNamedRelatingEntity.php
 
 		-
-			message: '#^Property App\\Entity\\AbstractNamedRelatingEntity\:\:\$data type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationAbstractNamedRelatingEntity\:\:\$data type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/AbstractNamedRelatingEntity.php
+			path: src/Entity/RelationAbstractNamedRelatingEntity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$body is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$body is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$completedAt is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$completedAt is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$direction is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$direction is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$dueAt is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$dueAt is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$ownerReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$ownerReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$relationshipReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$relationshipReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$status is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$status is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$subject is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$subject is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$targetReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$targetReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$targetType is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$targetType is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Activity\:\:\$type is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationActivity\:\:\$type is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Activity.php
+			path: src/Entity/RelationActivity.php
 
 		-
-			message: '#^Property App\\Entity\\Campaign\:\:\$channel is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCampaign\:\:\$channel is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Campaign.php
+			path: src/Entity/RelationCampaign.php
 
 		-
-			message: '#^Property App\\Entity\\Campaign\:\:\$endsAt is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCampaign\:\:\$endsAt is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Campaign.php
+			path: src/Entity/RelationCampaign.php
 
 		-
-			message: '#^Property App\\Entity\\Campaign\:\:\$status is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCampaign\:\:\$status is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Campaign.php
+			path: src/Entity/RelationCampaign.php
 
 		-
-			message: '#^Method App\\Entity\\CaseRecord\:\:replaceContext\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationCaseRecord\:\:replaceContext\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Property App\\Entity\\CaseRecord\:\:\$context is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCaseRecord\:\:\$context is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Property App\\Entity\\CaseRecord\:\:\$context type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCaseRecord\:\:\$context type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Property App\\Entity\\CaseRecord\:\:\$priority is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCaseRecord\:\:\$priority is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Property App\\Entity\\CaseRecord\:\:\$resolvedAt is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCaseRecord\:\:\$resolvedAt is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Property App\\Entity\\CaseRecord\:\:\$slaDeadlineAt is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCaseRecord\:\:\$slaDeadlineAt is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Property App\\Entity\\CaseRecord\:\:\$slaStatus is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCaseRecord\:\:\$slaStatus is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Property App\\Entity\\CaseRecord\:\:\$status is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCaseRecord\:\:\$status is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Property App\\Entity\\CaseRecord\:\:\$title is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationCaseRecord\:\:\$title is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/CaseRecord.php
+			path: src/Entity/RelationCaseRecord.php
 
 		-
-			message: '#^Method App\\Entity\\ContactPointSnapshot\:\:__construct\(\) has parameter \$contactPoints with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationContactPointSnapshot\:\:__construct\(\) has parameter \$contactPoints with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/ContactPointSnapshot.php
+			path: src/Entity/RelationContactPointSnapshot.php
 
 		-
-			message: '#^Method App\\Entity\\ContactPointSnapshot\:\:contactPoints\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationContactPointSnapshot\:\:contactPoints\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/ContactPointSnapshot.php
+			path: src/Entity/RelationContactPointSnapshot.php
 
 		-
-			message: '#^Property App\\Entity\\ContactPointSnapshot\:\:\$contactPoints type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationContactPointSnapshot\:\:\$contactPoints type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/ContactPointSnapshot.php
+			path: src/Entity/RelationContactPointSnapshot.php
 
 		-
-			message: '#^Property App\\Entity\\ContactPointSnapshot\:\:\$ownerReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationContactPointSnapshot\:\:\$ownerReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/ContactPointSnapshot.php
+			path: src/Entity/RelationContactPointSnapshot.php
 
 		-
-			message: '#^Property App\\Entity\\ContactPointSnapshot\:\:\$ownerType is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationContactPointSnapshot\:\:\$ownerType is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/ContactPointSnapshot.php
+			path: src/Entity/RelationContactPointSnapshot.php
 
 		-
-			message: '#^Method App\\Entity\\Lead\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationLead\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Method App\\Entity\\Lead\:\:payload\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationLead\:\:payload\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Method App\\Entity\\Lead\:\:replacePayload\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationLead\:\:replacePayload\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$companyName is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$companyName is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$conversionStatus is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$conversionStatus is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$displayName is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$displayName is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$email is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$email is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$payload type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$payload type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$phone is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$phone is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$relationshipReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$relationshipReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$sourceReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$sourceReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Lead\:\:\$temperature is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationLead\:\:\$temperature is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Lead.php
+			path: src/Entity/RelationLead.php
 
 		-
-			message: '#^Property App\\Entity\\Note\:\:\$targetReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationNote\:\:\$targetReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Note.php
+			path: src/Entity/RelationNote.php
 
 		-
-			message: '#^Property App\\Entity\\Note\:\:\$targetType is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationNote\:\:\$targetType is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Note.php
+			path: src/Entity/RelationNote.php
 
 		-
-			message: '#^Method App\\Entity\\Opportunity\:\:replaceContext\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationOpportunity\:\:replaceContext\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$amountMinor is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$amountMinor is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$context is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$context is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$context type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$context type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$currency is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$currency is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$expectedCloseDate is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$expectedCloseDate is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$forecastCategory is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$forecastCategory is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$lossReasonCode is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$lossReasonCode is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$name is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$name is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$pipelineReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$pipelineReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$primaryProductReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$primaryProductReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$probability is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$probability is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Property App\\Entity\\Opportunity\:\:\$stageReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationOpportunity\:\:\$stageReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Opportunity.php
+			path: src/Entity/RelationOpportunity.php
 
 		-
-			message: '#^Method App\\Entity\\PipelineStage\:\:__construct\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationPipelineStage\:\:__construct\(\) has parameter \$data with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/PipelineStage.php
+			path: src/Entity/RelationPipelineStage.php
 
 		-
-			message: '#^Property App\\Entity\\PipelineStage\:\:\$forecastCategory is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationPipelineStage\:\:\$forecastCategory is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/PipelineStage.php
+			path: src/Entity/RelationPipelineStage.php
 
 		-
-			message: '#^Property App\\Entity\\PipelineStage\:\:\$terminal is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationPipelineStage\:\:\$terminal is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/PipelineStage.php
+			path: src/Entity/RelationPipelineStage.php
 
 		-
-			message: '#^Method App\\Entity\\QuoteIntent\:\:estimate\(\) has parameter \$terms with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationQuoteIntent\:\:estimate\(\) has parameter \$terms with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/QuoteIntent.php
+			path: src/Entity/RelationQuoteIntent.php
 
 		-
-			message: '#^Property App\\Entity\\QuoteIntent\:\:\$currency is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationQuoteIntent\:\:\$currency is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/QuoteIntent.php
+			path: src/Entity/RelationQuoteIntent.php
 
 		-
-			message: '#^Property App\\Entity\\QuoteIntent\:\:\$estimatedAmountMinor is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationQuoteIntent\:\:\$estimatedAmountMinor is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/QuoteIntent.php
+			path: src/Entity/RelationQuoteIntent.php
 
 		-
-			message: '#^Property App\\Entity\\QuoteIntent\:\:\$opportunityReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationQuoteIntent\:\:\$opportunityReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/QuoteIntent.php
+			path: src/Entity/RelationQuoteIntent.php
 
 		-
-			message: '#^Property App\\Entity\\QuoteIntent\:\:\$terms is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationQuoteIntent\:\:\$terms is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/QuoteIntent.php
+			path: src/Entity/RelationQuoteIntent.php
 
 		-
-			message: '#^Property App\\Entity\\QuoteIntent\:\:\$terms type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationQuoteIntent\:\:\$terms type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/QuoteIntent.php
+			path: src/Entity/RelationQuoteIntent.php
 
 		-
-			message: '#^Method App\\Entity\\Relationship\:\:context\(\) return type has no value type specified in iterable type array\.$#'
-			identifier: missingType.iterableValue
-			count: 1
-			path: src/Entity/Relationship.php
-
-		-
-			message: '#^Method App\\Entity\\Relationship\:\:replaceContext\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\Relationship\:\:context\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Entity/Relationship.php
 
 		-
-			message: '#^Property App\\Entity\\Relationship\:\:\$context type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\Relationship\:\:replaceContext\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Entity/Relationship.php
 
 		-
-			message: '#^Property App\\Entity\\Relationship\:\:\$engagementScore is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\Relationship\:\:\$context type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/Entity/Relationship.php
+
+		-
+			message: '#^Property App\\Relating\\Entity\\Relationship\:\:\$engagementScore is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/Relationship.php
 
 		-
-			message: '#^Property App\\Entity\\Relationship\:\:\$fitScore is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\Relationship\:\:\$fitScore is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/Relationship.php
 
 		-
-			message: '#^Property App\\Entity\\Relationship\:\:\$healthScore is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\Relationship\:\:\$healthScore is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/Relationship.php
 
 		-
-			message: '#^Property App\\Entity\\Relationship\:\:\$lastTouchAt is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\Relationship\:\:\$lastTouchAt is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/Relationship.php
 
 		-
-			message: '#^Property App\\Entity\\Relationship\:\:\$nextActionAt is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\Relationship\:\:\$nextActionAt is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/Relationship.php
 
 		-
-			message: '#^Property App\\Entity\\Relationship\:\:\$sourceReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\Relationship\:\:\$sourceReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/Relationship.php
 
 		-
-			message: '#^Method App\\Entity\\RelationshipParticipant\:\:replaceContext\(\) has parameter \$context with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationshipParticipant\:\:replaceContext\(\) has parameter \$context with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Entity/RelationshipParticipant.php
 
 		-
-			message: '#^Property App\\Entity\\RelationshipParticipant\:\:\$context is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationshipParticipant\:\:\$context is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/RelationshipParticipant.php
 
 		-
-			message: '#^Property App\\Entity\\RelationshipParticipant\:\:\$context type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationshipParticipant\:\:\$context type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Entity/RelationshipParticipant.php
 
 		-
-			message: '#^Property App\\Entity\\RelationshipRelation\:\:\$relationKind is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationshipRelation\:\:\$relationKind is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/RelationshipRelation.php
 
 		-
-			message: '#^Property App\\Entity\\RelationshipRelation\:\:\$sourceRelationshipReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationshipRelation\:\:\$sourceRelationshipReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/RelationshipRelation.php
 
 		-
-			message: '#^Property App\\Entity\\RelationshipRelation\:\:\$targetRelationshipReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationshipRelation\:\:\$targetRelationshipReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/RelationshipRelation.php
 
 		-
-			message: '#^Method App\\Entity\\RelationshipSignal\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationshipSignal\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Entity/RelationshipSignal.php
 
 		-
-			message: '#^Method App\\Entity\\RelationshipSignal\:\:payload\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationshipSignal\:\:payload\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Entity/RelationshipSignal.php
 
 		-
-			message: '#^Property App\\Entity\\RelationshipSignal\:\:\$payload type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationshipSignal\:\:\$payload type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/Entity/RelationshipSignal.php
 
 		-
-			message: '#^Property App\\Entity\\RelationshipSignal\:\:\$weight is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationshipSignal\:\:\$weight is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Entity/RelationshipSignal.php
 
 		-
-			message: '#^Property App\\Entity\\Task\:\:\$activityReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTask\:\:\$activityReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Task.php
+			path: src/Entity/RelationTask.php
 
 		-
-			message: '#^Property App\\Entity\\Task\:\:\$dueAt is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTask\:\:\$dueAt is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Task.php
+			path: src/Entity/RelationTask.php
 
 		-
-			message: '#^Property App\\Entity\\Task\:\:\$status is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTask\:\:\$status is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Task.php
+			path: src/Entity/RelationTask.php
 
 		-
-			message: '#^Property App\\Entity\\Task\:\:\$title is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTask\:\:\$title is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/Task.php
+			path: src/Entity/RelationTask.php
 
 		-
-			message: '#^Method App\\Entity\\TimelineRecord\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationTimelineRecord\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Method App\\Entity\\TimelineRecord\:\:payload\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Entity\\RelationTimelineRecord\:\:payload\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Property App\\Entity\\TimelineRecord\:\:\$eventType is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTimelineRecord\:\:\$eventType is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Property App\\Entity\\TimelineRecord\:\:\$payload type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTimelineRecord\:\:\$payload type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Property App\\Entity\\TimelineRecord\:\:\$relationshipReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTimelineRecord\:\:\$relationshipReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Property App\\Entity\\TimelineRecord\:\:\$sourceComponent is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTimelineRecord\:\:\$sourceComponent is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Property App\\Entity\\TimelineRecord\:\:\$sourceReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTimelineRecord\:\:\$sourceReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Property App\\Entity\\TimelineRecord\:\:\$targetReference is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTimelineRecord\:\:\$targetReference is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Property App\\Entity\\TimelineRecord\:\:\$targetType is never read, only written\.$#'
+			message: '#^Property App\\Relating\\Entity\\RelationTimelineRecord\:\:\$targetType is never read, only written\.$#'
 			identifier: property.onlyWritten
 			count: 1
-			path: src/Entity/TimelineRecord.php
+			path: src/Entity/RelationTimelineRecord.php
 
 		-
-			message: '#^Method App\\Event\\AbstractRelatingEvent\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Event\\RelationAbstractRelatingEvent\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Event/AbstractRelatingEvent.php
+			path: src/Event/RelationAbstractRelatingEvent.php
 
 		-
-			message: '#^Method App\\Event\\AbstractRelatingEvent\:\:payload\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Event\\RelationAbstractRelatingEvent\:\:payload\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Event/AbstractRelatingEvent.php
+			path: src/Event/RelationAbstractRelatingEvent.php
 
 		-
-			message: '#^Property App\\Event\\AbstractRelatingEvent\:\:\$payload type has no value type specified in iterable type array\.$#'
+			message: '#^Property App\\Relating\\Event\\RelationAbstractRelatingEvent\:\:\$payload type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Event/AbstractRelatingEvent.php
+			path: src/Event/RelationAbstractRelatingEvent.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/ApplyAiSuggestionMessageHandler.php
+			path: src/Handler/RelationApplyAiSuggestionMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/BuildRelationshipTimelineMessageHandler.php
+			path: src/Handler/RelationBuildRelationshipTimelineMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/BuildTimelineMessageHandler.php
+			path: src/Handler/RelationBuildTimelineMessageHandler.php
 
 		-
-			message: '#^Method App\\Handler\\BusinessMessagePayload\:\:array\(\) has parameter \$default with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Handler\\RelationBusinessMessagePayload\:\:array\(\) has parameter \$default with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Handler/BusinessMessagePayload.php
+			path: src/Handler/RelationBusinessMessagePayload.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/CaptureCampaignResponseMessageHandler.php
+			path: src/Handler/RelationCaptureCampaignResponseMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/ConvertLeadMessageHandler.php
+			path: src/Handler/RelationConvertLeadMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/DetectLeadDuplicateMessageHandler.php
+			path: src/Handler/RelationDetectLeadDuplicateMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/QualifyLeadMessageHandler.php
+			path: src/Handler/RelationQualifyLeadMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/RaiseAiSuggestionMessageHandler.php
+			path: src/Handler/RelationRaiseAiSuggestionMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/RebuildCampaignPerformanceMessageHandler.php
+			path: src/Handler/RelationRebuildCampaignPerformanceMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/RecalculateCaseSlaMessageHandler.php
+			path: src/Handler/RelationRecalculateCaseSlaMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/RecalculateOpportunityForecastMessageHandler.php
+			path: src/Handler/RelationRecalculateOpportunityForecastMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/RecalculateOpportunityRiskMessageHandler.php
+			path: src/Handler/RelationRecalculateOpportunityRiskMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/RecalculateRelationshipHealthMessageHandler.php
+			path: src/Handler/RelationRecalculateRelationshipHealthMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/ReviewAiSuggestionMessageHandler.php
+			path: src/Handler/RelationReviewAiSuggestionMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/RunRelatingAutomationMessageHandler.php
+			path: src/Handler/RelationRunRelatingAutomationMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/ScoreLeadMessageHandler.php
+			path: src/Handler/RelationScoreLeadMessageHandler.php
 
 		-
 			message: '#^Attribute class Symfony\\Component\\Messenger\\Attribute\\AsMessageHandler does not exist\.$#'
 			identifier: attribute.notFound
 			count: 1
-			path: src/Handler/TransitionOpportunityStageMessageHandler.php
+			path: src/Handler/RelationTransitionOpportunityStageMessageHandler.php
 
 		-
 			message: '#^Generator expects value type Symfony\\Component\\HttpKernel\\Bundle\\BundleInterface, object given\.$#'
@@ -787,298 +787,298 @@ parameters:
 			path: src/Kernel.php
 
 		-
-			message: '#^Method App\\Message\\ApplyAiSuggestionMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationApplyAiSuggestionMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/ApplyAiSuggestionMessage.php
+			path: src/Message/RelationApplyAiSuggestionMessage.php
 
 		-
-			message: '#^Method App\\Message\\BuildRelationshipTimelineMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationBuildRelationshipTimelineMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/BuildRelationshipTimelineMessage.php
+			path: src/Message/RelationBuildRelationshipTimelineMessage.php
 
 		-
-			message: '#^Method App\\Message\\BuildTimelineMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationBuildTimelineMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/BuildTimelineMessage.php
+			path: src/Message/RelationBuildTimelineMessage.php
 
 		-
-			message: '#^Method App\\Message\\CaptureCampaignResponseMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationCaptureCampaignResponseMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/CaptureCampaignResponseMessage.php
+			path: src/Message/RelationCaptureCampaignResponseMessage.php
 
 		-
-			message: '#^Method App\\Message\\ConvertLeadMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationConvertLeadMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/ConvertLeadMessage.php
+			path: src/Message/RelationConvertLeadMessage.php
 
 		-
-			message: '#^Method App\\Message\\DetectLeadDuplicateMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationDetectLeadDuplicateMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/DetectLeadDuplicateMessage.php
+			path: src/Message/RelationDetectLeadDuplicateMessage.php
 
 		-
-			message: '#^Method App\\Message\\QualifyLeadMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationQualifyLeadMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/QualifyLeadMessage.php
+			path: src/Message/RelationQualifyLeadMessage.php
 
 		-
-			message: '#^Method App\\Message\\RaiseAiSuggestionMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationRaiseAiSuggestionMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/RaiseAiSuggestionMessage.php
+			path: src/Message/RelationRaiseAiSuggestionMessage.php
 
 		-
-			message: '#^Method App\\Message\\RebuildCampaignPerformanceMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationRebuildCampaignPerformanceMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/RebuildCampaignPerformanceMessage.php
+			path: src/Message/RelationRebuildCampaignPerformanceMessage.php
 
 		-
-			message: '#^Method App\\Message\\RecalculateCaseSlaMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationRecalculateCaseSlaMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/RecalculateCaseSlaMessage.php
+			path: src/Message/RelationRecalculateCaseSlaMessage.php
 
 		-
-			message: '#^Method App\\Message\\RecalculateOpportunityForecastMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationRecalculateOpportunityForecastMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/RecalculateOpportunityForecastMessage.php
+			path: src/Message/RelationRecalculateOpportunityForecastMessage.php
 
 		-
-			message: '#^Method App\\Message\\RecalculateOpportunityRiskMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationRecalculateOpportunityRiskMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/RecalculateOpportunityRiskMessage.php
+			path: src/Message/RelationRecalculateOpportunityRiskMessage.php
 
 		-
-			message: '#^Method App\\Message\\RecalculateRelationshipHealthMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationRecalculateRelationshipHealthMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/RecalculateRelationshipHealthMessage.php
+			path: src/Message/RelationRecalculateRelationshipHealthMessage.php
 
 		-
-			message: '#^Method App\\Message\\ReviewAiSuggestionMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationReviewAiSuggestionMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/ReviewAiSuggestionMessage.php
+			path: src/Message/RelationReviewAiSuggestionMessage.php
 
 		-
-			message: '#^Method App\\Message\\RunRelatingAutomationMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationRunRelatingAutomationMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/RunRelatingAutomationMessage.php
+			path: src/Message/RelationRunRelatingAutomationMessage.php
 
 		-
-			message: '#^Method App\\Message\\ScoreLeadMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationScoreLeadMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/ScoreLeadMessage.php
+			path: src/Message/RelationScoreLeadMessage.php
 
 		-
-			message: '#^Method App\\Message\\TransitionOpportunityStageMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Message\\RelationTransitionOpportunityStageMessage\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Message/TransitionOpportunityStageMessage.php
+			path: src/Message/RelationTransitionOpportunityStageMessage.php
 
 		-
-			message: '#^Method App\\Policy\\PolicyDecisionResult\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Policy\\RelationPolicyDecisionResult\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Policy/PolicyDecisionResult.php
+			path: src/Policy/RelationPolicyDecisionResult.php
 
 		-
-			message: '#^Method App\\Policy\\TransitionGuardResult\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Policy\\RelationTransitionGuardResult\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Policy/TransitionGuardResult.php
+			path: src/Policy/RelationTransitionGuardResult.php
 
 		-
-			message: '#^Method App\\RelatingBundle\:\:loadExtension\(\) has parameter \$config with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\RelatingBundle\:\:loadExtension\(\) has parameter \$config with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/RelatingBundle.php
 
 		-
-			message: '#^Method App\\Repository\\Debug\\DebugLeadRepository\:\:activeLeadsForRelationship\(\) should return list\<App\\Entity\\Lead\> but returns array\.$#'
+			message: '#^Method App\\Relating\\Repository\\Debug\\RelationDebugLeadRepository\:\:activeLeadsForRelationship\(\) should return list\<App\\Relating\\Entity\\RelationLead\> but returns array\.$#'
 			identifier: return.type
 			count: 1
-			path: src/Repository/Debug/DebugLeadRepository.php
+			path: src/Repository/Debug/RelationDebugLeadRepository.php
 
 		-
-			message: '#^Method App\\Repository\\Debug\\DebugLeadRepository\:\:allLeads\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Repository\\Debug\\RelationDebugLeadRepository\:\:allLeads\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Repository/Debug/DebugLeadRepository.php
+			path: src/Repository/Debug/RelationDebugLeadRepository.php
 
 		-
-			message: '#^Method App\\Repository\\Debug\\DebugLeadRepository\:\:duplicateCandidatesForSignal\(\) should return list\<App\\Entity\\Lead\> but returns array\.$#'
+			message: '#^Method App\\Relating\\Repository\\Debug\\RelationDebugLeadRepository\:\:duplicateCandidatesForSignal\(\) should return list\<App\\Relating\\Entity\\RelationLead\> but returns array\.$#'
 			identifier: return.type
 			count: 1
-			path: src/Repository/Debug/DebugLeadRepository.php
+			path: src/Repository/Debug/RelationDebugLeadRepository.php
 
 		-
-			message: '#^Method App\\Repository\\Debug\\DebugRelatingObjectStore\:\:all\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Repository\\Debug\\RelationDebugRelatingObjectStore\:\:all\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Repository/Debug/DebugRelatingObjectStore.php
+			path: src/Repository/Debug/RelationDebugRelatingObjectStore.php
 
 		-
-			message: '#^Method App\\Repository\\Debug\\DebugRelatingObjectStore\:\:read\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Repository\\Debug\\RelationDebugRelatingObjectStore\:\:read\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Repository/Debug/DebugRelatingObjectStore.php
+			path: src/Repository/Debug/RelationDebugRelatingObjectStore.php
 
 		-
-			message: '#^Method App\\Repository\\Debug\\DebugRelatingObjectStore\:\:write\(\) has parameter \$data with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Repository\\Debug\\RelationDebugRelatingObjectStore\:\:write\(\) has parameter \$data with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Repository/Debug/DebugRelatingObjectStore.php
+			path: src/Repository/Debug/RelationDebugRelatingObjectStore.php
 
 		-
 			message: '#^Parameter \#1 \$stream of function fclose expects resource, resource\|false given\.$#'
 			identifier: argument.type
 			count: 1
-			path: src/Repository/Debug/DebugRelatingObjectStore.php
+			path: src/Repository/Debug/RelationDebugRelatingObjectStore.php
 
 		-
 			message: '#^Parameter \#1 \$stream of function fwrite expects resource, resource\|false given\.$#'
 			identifier: argument.type
 			count: 1
-			path: src/Repository/Debug/DebugRelatingObjectStore.php
+			path: src/Repository/Debug/RelationDebugRelatingObjectStore.php
 
 		-
-			message: '#^Method App\\Validator\\PayloadFieldRule\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Validator\\RelationPayloadFieldRule\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Validator/PayloadFieldRule.php
+			path: src/Validator/RelationPayloadFieldRule.php
 
 		-
-			message: '#^Instanceof between App\\Validator\\PayloadFieldRule and App\\Validator\\PayloadFieldRule will always evaluate to true\.$#'
+			message: '#^Instanceof between App\\Relating\\Validator\\RelationPayloadFieldRule and App\\Relating\\Validator\\RelationPayloadFieldRule will always evaluate to true\.$#'
 			identifier: instanceof.alwaysTrue
 			count: 1
-			path: src/Validator/PayloadSchema.php
+			path: src/Validator/RelationPayloadSchema.php
 
 		-
-			message: '#^Method App\\Validator\\PayloadSchema\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Validator\\RelationPayloadSchema\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Validator/PayloadSchema.php
+			path: src/Validator/RelationPayloadSchema.php
 
 		-
-			message: '#^Instanceof between App\\Validator\\ValidationViolation and App\\Validator\\ValidationViolation will always evaluate to true\.$#'
+			message: '#^Instanceof between App\\Relating\\Validator\\RelationValidationViolation and App\\Relating\\Validator\\RelationValidationViolation will always evaluate to true\.$#'
 			identifier: instanceof.alwaysTrue
 			count: 1
-			path: src/Validator/ValidationResult.php
+			path: src/Validator/RelationValidationResult.php
 
 		-
-			message: '#^Method App\\Validator\\ValidationResult\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Validator\\RelationValidationResult\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Validator/ValidationResult.php
+			path: src/Validator/RelationValidationResult.php
 
 		-
-			message: '#^Method App\\Validator\\ValidationViolation\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\Validator\\RelationValidationViolation\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/Validator/ValidationViolation.php
+			path: src/Validator/RelationValidationViolation.php
 
 		-
-			message: '#^Readonly property App\\ValueObject\\AbstractStringValue\:\:\$value is already assigned\.$#'
+			message: '#^Readonly property App\\Relating\\ValueObject\\RelationAbstractStringValue\:\:\$value is already assigned\.$#'
 			identifier: assign.readOnlyProperty
 			count: 1
-			path: src/ValueObject/AbstractStringValue.php
+			path: src/ValueObject/RelationAbstractStringValue.php
 
 		-
-			message: '#^Method App\\ValueObject\\MoneyAmount\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\RelationMoneyAmount\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/MoneyAmount.php
+			path: src/ValueObject/RelationMoneyAmount.php
 
 		-
-			message: '#^Readonly property App\\ValueObject\\MoneyAmount\:\:\$currency is already assigned\.$#'
+			message: '#^Readonly property App\\Relating\\ValueObject\\RelationMoneyAmount\:\:\$currency is already assigned\.$#'
 			identifier: assign.readOnlyProperty
 			count: 1
-			path: src/ValueObject/MoneyAmount.php
+			path: src/ValueObject/RelationMoneyAmount.php
 
 		-
-			message: '#^Method App\\ValueObject\\RelatingActionResult\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\RelationRelatingActionResult\:\:__construct\(\) has parameter \$payload with no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/RelatingActionResult.php
+			path: src/ValueObject/RelationRelatingActionResult.php
 
 		-
-			message: '#^Method App\\ValueObject\\Trace\\AiReviewTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\Trace\\RelationAiReviewTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/Trace/AiReviewTrace.php
+			path: src/ValueObject/Trace/RelationAiReviewTrace.php
 
 		-
-			message: '#^Method App\\ValueObject\\Trace\\BusinessDecisionTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\Trace\\RelationBusinessDecisionTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/Trace/BusinessDecisionTrace.php
+			path: src/ValueObject/Trace/RelationBusinessDecisionTrace.php
 
 		-
-			message: '#^Method App\\ValueObject\\Trace\\NeighborSignalTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\Trace\\RelationNeighborSignalTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/Trace/NeighborSignalTrace.php
+			path: src/ValueObject/Trace/RelationNeighborSignalTrace.php
 
 		-
-			message: '#^Method App\\ValueObject\\Trace\\PolicyDecisionTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\Trace\\RelationPolicyDecisionTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/Trace/PolicyDecisionTrace.php
+			path: src/ValueObject/Trace/RelationPolicyDecisionTrace.php
 
 		-
-			message: '#^Method App\\ValueObject\\Trace\\TraceActorReference\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\Trace\\RelationTraceActorReference\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/Trace/TraceActorReference.php
+			path: src/ValueObject/Trace/RelationTraceActorReference.php
 
 		-
 			message: '#^Call to function is_string\(\) with string will always evaluate to true\.$#'
 			identifier: function.alreadyNarrowedType
 			count: 1
-			path: src/ValueObject/Trace/TraceMetadata.php
+			path: src/ValueObject/Trace/RelationTraceMetadata.php
 
 		-
-			message: '#^Method App\\ValueObject\\Trace\\TraceMetadata\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\Trace\\RelationTraceMetadata\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/Trace/TraceMetadata.php
+			path: src/ValueObject/Trace/RelationTraceMetadata.php
 
 		-
 			message: '#^Result of && is always false\.$#'
 			identifier: booleanAnd.alwaysFalse
 			count: 1
-			path: src/ValueObject/Trace/TraceMetadata.php
+			path: src/ValueObject/Trace/RelationTraceMetadata.php
 
 		-
 			message: '#^Strict comparison using \!\=\= between null and null will always evaluate to false\.$#'
 			identifier: notIdentical.alwaysFalse
 			count: 1
-			path: src/ValueObject/Trace/TraceMetadata.php
+			path: src/ValueObject/Trace/RelationTraceMetadata.php
 
 		-
-			message: '#^Method App\\ValueObject\\Trace\\TraceSubjectReference\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\Trace\\RelationTraceSubjectReference\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/Trace/TraceSubjectReference.php
+			path: src/ValueObject/Trace/RelationTraceSubjectReference.php
 
 		-
-			message: '#^Method App\\ValueObject\\Trace\\TransitionTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
+			message: '#^Method App\\Relating\\ValueObject\\Trace\\RelationTransitionTrace\:\:jsonSerialize\(\) return type has no value type specified in iterable type array\.$#'
 			identifier: missingType.iterableValue
 			count: 1
-			path: src/ValueObject/Trace/TransitionTrace.php
+			path: src/ValueObject/Trace/RelationTransitionTrace.php
 
 		-
 			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|false given\.$#'

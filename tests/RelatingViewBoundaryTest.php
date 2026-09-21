@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
-use App\Snapshot\View\AbstractArrayView;
-use App\Snapshot\View\RelatingViewInterface;
+use App\Relating\Snapshot\View\RelationAbstractArrayView;
+use App\Relating\Snapshot\View\RelationRelatingViewInterface;
 use PHPUnit\Framework\TestCase;
 
 final class RelatingViewBoundaryTest extends TestCase
@@ -19,8 +19,8 @@ final class RelatingViewBoundaryTest extends TestCase
 
         foreach ($files as $file) {
             $contents = (string) file_get_contents($file);
-            self::assertStringNotContainsString('use App\\Entity\\', $contents, basename($file));
-            self::assertStringNotContainsString('App\\Entity\\', $contents, basename($file));
+            self::assertStringNotContainsString('use App\Relating\\Entity\\', $contents, basename($file));
+            self::assertStringNotContainsString('App\Relating\\Entity\\', $contents, basename($file));
         }
     }
 
@@ -32,7 +32,7 @@ final class RelatingViewBoundaryTest extends TestCase
         self::assertNotEmpty($files);
 
         foreach ($files as $file) {
-            $class = 'App\\Snapshot\\View\\'.basename($file, '.php');
+            $class = 'App\Relating\\Snapshot\\View\\'.basename($file, '.php');
 
             if (!class_exists($class)) {
                 require_once $file;
@@ -44,24 +44,24 @@ final class RelatingViewBoundaryTest extends TestCase
                 continue;
             }
 
-            if (!$reflection->isSubclassOf(AbstractArrayView::class)) {
+            if (!$reflection->isSubclassOf(RelationAbstractArrayView::class)) {
                 continue;
             }
 
-            self::assertTrue($reflection->implementsInterface(RelatingViewInterface::class), $class);
+            self::assertTrue($reflection->implementsInterface(RelationRelatingViewInterface::class), $class);
         }
     }
 
     public function testAbstractArrayViewRejectsObjectPayloads(): void
     {
-        $view = new readonly class(['id' => 'rel_1']) extends AbstractArrayView {
+        $view = new readonly class(['id' => 'rel_1']) extends RelationAbstractArrayView {
         };
 
         self::assertSame(['id' => 'rel_1'], $view->payload());
 
         $this->expectException(\InvalidArgumentException::class);
 
-        new readonly class(['entity' => new \stdClass()]) extends AbstractArrayView {
+        new readonly class(['entity' => new \stdClass()]) extends RelationAbstractArrayView {
         };
     }
 }

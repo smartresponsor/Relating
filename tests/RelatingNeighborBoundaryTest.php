@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
-use App\Enum\NeighborComponent;
-use App\Enum\NeighborReferenceKind;
-use App\ValueObject\NeighborReference;
-use App\ValueObject\NeighborSignalEnvelope;
+use App\Relating\Enum\RelationNeighborComponent;
+use App\Relating\Enum\RelationNeighborReferenceKind;
+use App\Relating\ValueObject\RelationNeighborReference;
+use App\Relating\ValueObject\RelationNeighborSignalEnvelope;
 use PHPUnit\Framework\TestCase;
 
 final class RelatingNeighborBoundaryTest extends TestCase
 {
     public function testNeighborReferenceIsScalarAndSerializable(): void
     {
-        $reference = new NeighborReference(
-            NeighborComponent::Vendoring,
-            NeighborReferenceKind::Vendor,
+        $reference = new RelationNeighborReference(
+            RelationNeighborComponent::Vendoring,
+            RelationNeighborReferenceKind::Vendor,
             'vendor_123',
         );
 
@@ -32,8 +32,8 @@ final class RelatingNeighborBoundaryTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        new NeighborSignalEnvelope(
-            NeighborComponent::Ordering,
+        new RelationNeighborSignalEnvelope(
+            RelationNeighborComponent::Ordering,
             'OrderCreated',
             'order_1',
             'relationship_1',
@@ -63,8 +63,8 @@ final class RelatingNeighborBoundaryTest extends TestCase
 
     public function testNeighborReferenceKindsExposeCanonicalCodes(): void
     {
-        self::assertContains('vendor', NeighborReferenceKind::codes());
-        self::assertContains('message_thread', NeighborReferenceKind::codes());
-        self::assertContains('shipment', NeighborReferenceKind::codes());
+        self::assertContains('vendor', RelationNeighborReferenceKind::codes());
+        self::assertContains('message_thread', RelationNeighborReferenceKind::codes());
+        self::assertContains('shipment', RelationNeighborReferenceKind::codes());
     }
 }

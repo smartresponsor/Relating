@@ -13,11 +13,11 @@
 - Canon022 applies because `bin/console` and `config/bundles.php` exist: declare the complete direct platform baseline.
 - Canon023/043: locally linked first-party packages use sibling path repositories, symlink=true and exact dev-master.
 - Canon024: production Composer manifest is path-independent.
-- Canon025/032: the existing `App\RelatingBundle` is registered by standalone mode.
+- Canon025/032: the existing `App\Relating\RelatingBundle` is registered by standalone mode.
 - Canon029: PHP-CS-Fixer and PHPStan are repository-owned and reproducibly executable.
 - Canon039: PHPUnit configuration declares the production source population and persistent branch coverage path.
 - Canon041: Symfony Test Pack, Panther and repository-local Playwright tooling are present.
-- Canon018 conflicts with the explicit owner/default-Symfony `App\` namespace policy; the owner policy is preserved and no alternative root namespace is introduced.
+- Canon018 is authoritative: `relating/relation` maps component identity to `App\\Relating\\` and component-owned PHP subject vocabulary to `Relation*`.
 
 ### RC-critical workstream
 - Close dependency, production-manifest, bundle-registration, static-analysis, formatting and multi-layer test-tooling gaps.
@@ -43,7 +43,7 @@
 
 ### RC implementation result
 - Canonicalized the source tree to technical-role-first Symfony roots and removed the competing `Application`, `MessageHandler`, `ReadModel`, `Validation`, `View`, `Value`, `Trace`, `Debug`, and `Fixture` top-level taxonomies.
-- Preserved the explicit owner requirement for the default `App\\` namespace. Canon018 still expects `App\\Relating\\` / `Relation*` naming and is therefore recorded as a canon-policy conflict rather than applied to this component.
+- Historical note corrected 2026-09-20: treating default `App\\` as an owner override was erroneous; Canon018 requires `App\\Relating\\` / `Relation*`.
 - Added canonical first-party dependency wiring, production Composer manifest, standalone bundle registration, PHPStan/PHPUnit/Panther/Playwright tooling, and path-independent production packaging.
 - Restored business-only routing under `config/routes/relation_routes.yaml`; generic CRUD remains owned by Cruding.
 - Replaced committed literal framework secret material with `%env(APP_SECRET)%`, untracked generated `config/reference.php`, and hardened the local archive installer against broad recursive-force deletion.
@@ -55,7 +55,7 @@
 - PHPStan level 8: green with an explicit baseline of 194 legacy findings; new findings remain blocking.
 - Doctrine parity: 79 mapped entities / 118 generated schema statements green; component-local migrations absent.
 - npm/Playwright tooling: green (`playwright test --pass-with-no-tests`).
-- Gating: every applicable hard rule repaired; Canon018 remains the documented `App\\` namespace conflict. Non-blocking maturity warnings remain for PHPDoc coverage, PHP test coverage (46.6% lines / 22.9% methods / 50.3% branches), and absent real browser/UI behavioral coverage evidence.
+- Historical verification at this point still had Canon018 unresolved; the later identity migration supersedes the former default-`App\\` interpretation. Non-blocking maturity warnings remained for PHPDoc, PHP test, and behavioral/UI coverage.
 
 ### Residual growth debt
 - Burn down the PHPStan baseline instead of regenerating it casually.
@@ -71,7 +71,7 @@
 - Growth work remains separate: deeper workflow/forecasting/AI assistance, observability, real behavioral scenarios, and coverage improvement after RC.
 
 ### Canonization mapping consulted
-- Canon018: conflicts with the explicit repository/user default `App\\` namespace contract; preserved `App\\` and recorded the conflict rather than introducing `App\\Relating\\`.
+- Canon018: authoritative identity is `App\\Relating\\` with `Relation*`; the earlier default-`App\\` exception interpretation was incorrect and is superseded.
 - Canon019/020: role-first source topology applies; current Gating evidence passes.
 - Canon021: generic CRUD stays in Cruding; current business-only route surface passes.
 - Canon022/023/024/025/026: standalone baseline, local symlink development, packaged production, dual runtime, and PHP/Symfony baseline apply and pass.
@@ -93,4 +93,4 @@
 - PHPStan level 8 with the existing legacy baseline: green.
 - PHPUnit after dependency refresh: 74 tests / 26,261 assertions green.
 - Doctrine parity: 79 mapped entities / 118 generated schema statements green; host-owned migrations boundary preserved.
-- Gating now has one remaining hard failure only: Canon018, which is intentionally non-applicable because the explicit owner/user contract requires the default `App\\` namespace and forbids an alternative component root namespace. Warnings remain for PHPDoc coverage, HIGH_TEST_DEBT, and missing behavioral/UI evidence.
+- Historical result: Canon018 was then the remaining hard failure. The claimed default-`App\\` exception was incorrect; the subsequent identity migration applies Canon018. Warnings remain for PHPDoc coverage, HIGH_TEST_DEBT, and behavioral/UI evidence.

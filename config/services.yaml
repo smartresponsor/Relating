@@ -4,62 +4,62 @@ services:
         autoconfigure: true
         public: false
 
-    App\Controller\:
+    App\Relating\Controller\:
         resource: '../src/Controller/*Controller.php'
         exclude:
-            - '../src/Controller/BusinessRequestPayload.php'
-            - '../src/Controller/BusinessResultPayload.php'
+            - '../src/Controller/RelationBusinessRequestPayload.php'
+            - '../src/Controller/RelationBusinessResultPayload.php'
         tags: ['controller.service_arguments']
 
-    App\EventSubscriber\BusinessHttpExceptionSubscriber:
+    App\Relating\EventSubscriber\RelationBusinessHttpExceptionSubscriber:
         tags: ['kernel.event_subscriber']
 
-    App\Repository\Debug\:
+    App\Relating\Repository\Debug\:
         resource: '../src/Repository/Debug/'
 
-    App\Repository\Debug\DebugRelatingObjectStore:
+    App\Relating\Repository\Debug\RelationDebugRelatingObjectStore:
         arguments:
             $filePath: '%kernel.project_dir%/var/relating-debug-store.json'
 
-    App\Service\UuidRelatingIdGenerator: ~
+    App\Relating\Service\RelationUuidRelatingIdGenerator: ~
 
-    App\Service\DispatchingRelatingBusinessEventDispatcher:
+    App\Relating\Service\RelationDispatchingRelatingBusinessEventDispatcher:
         arguments:
             $eventDispatcher: '@event_dispatcher'
 
-    App\Repository\RelationshipRepositoryInterface:
-        alias: App\Repository\Debug\DebugRelationshipRepository
+    App\Relating\Repository\RelationshipRepositoryInterface:
+        alias: App\Relating\Repository\Debug\RelationDebugRelationshipRepository
 
-    App\Repository\LeadRepositoryInterface:
-        alias: App\Repository\Debug\DebugLeadRepository
+    App\Relating\Repository\RelationLeadRepositoryInterface:
+        alias: App\Relating\Repository\Debug\RelationDebugLeadRepository
 
-    App\Repository\OpportunityRepositoryInterface:
-        alias: App\Repository\Debug\DebugOpportunityRepository
+    App\Relating\Repository\RelationOpportunityRepositoryInterface:
+        alias: App\Relating\Repository\Debug\RelationDebugOpportunityRepository
 
-    App\Repository\ActivityRepositoryInterface:
-        alias: App\Repository\Debug\DebugActivityRepository
+    App\Relating\Repository\RelationActivityRepositoryInterface:
+        alias: App\Relating\Repository\Debug\RelationDebugActivityRepository
 
-    App\Repository\TimelineRecordRepositoryInterface:
-        alias: App\Repository\Debug\DebugTimelineRecordRepository
+    App\Relating\Repository\RelationTimelineRecordRepositoryInterface:
+        alias: App\Relating\Repository\Debug\RelationDebugTimelineRecordRepository
 
-    App\Repository\AiSuggestionRepositoryInterface:
-        alias: App\Repository\Debug\DebugAiSuggestionRepository
+    App\Relating\Repository\RelationAiSuggestionRepositoryInterface:
+        alias: App\Relating\Repository\Debug\RelationDebugAiSuggestionRepository
 
-    App\Service\RelatingIdGeneratorInterface:
-        alias: App\Service\UuidRelatingIdGenerator
+    App\Relating\Service\RelationRelatingIdGeneratorInterface:
+        alias: App\Relating\Service\RelationUuidRelatingIdGenerator
 
-    App\Service\RelatingBusinessEventRecorderInterface:
-        alias: App\Service\DispatchingRelatingBusinessEventDispatcher
+    App\Relating\Service\RelationRelatingBusinessEventRecorderInterface:
+        alias: App\Relating\Service\RelationDispatchingRelatingBusinessEventDispatcher
 
-    App\Service\VendorLeadReadServiceInterface:
-        alias: App\Service\VendorLeadReadService
+    App\Relating\Service\RelationVendorLeadReadServiceInterface:
+        alias: App\Relating\Service\RelationVendorLeadReadService
 
-    App\Service\Application\StartRelationshipApplicationService: ~
-    App\Service\Application\CaptureLeadApplicationService: ~
-    App\Service\Application\QualifyLeadApplicationService: ~
-    App\Service\Application\ConvertLeadApplicationService: ~
-    App\Service\Application\OpenOpportunityApplicationService: ~
-    App\Service\Application\TransitionOpportunityStageApplicationService: ~
-    App\Service\Application\RecordActivityApplicationService: ~
-    App\Service\Application\ProjectTimelineApplicationService: ~
-    App\Service\Application\ReviewAiSuggestionApplicationService: ~
+    App\Relating\Service\Application\RelationStartRelationshipApplicationService: ~
+    App\Relating\Service\Application\RelationCaptureLeadApplicationService: ~
+    App\Relating\Service\Application\RelationQualifyLeadApplicationService: ~
+    App\Relating\Service\Application\RelationConvertLeadApplicationService: ~
+    App\Relating\Service\Application\RelationOpenOpportunityApplicationService: ~
+    App\Relating\Service\Application\RelationTransitionOpportunityStageApplicationService: ~
+    App\Relating\Service\Application\RelationRecordActivityApplicationService: ~
+    App\Relating\Service\Application\RelationProjectTimelineApplicationService: ~
+    App\Relating\Service\Application\RelationReviewAiSuggestionApplicationService: ~

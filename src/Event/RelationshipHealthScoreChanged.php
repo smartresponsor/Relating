@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\Event;
+namespace App\Relating\Event;
 
-final readonly class RelationshipHealthScoreChanged extends AbstractRelatingEvent
+final readonly class RelationshipHealthScoreChanged extends RelationAbstractRelatingEvent
 {
 }

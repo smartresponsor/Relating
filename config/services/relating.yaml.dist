@@ -17,40 +17,40 @@ services:
         autoconfigure: true
         public: false
 
-    App\Controller\:
+    App\Relating\Controller\:
         resource: '../../src/Controller/*Controller.php'
         exclude:
-            - '../../src/Controller/BusinessRequestPayload.php'
-            - '../../src/Controller/BusinessResultPayload.php'
+            - '../../src/Controller/RelationBusinessRequestPayload.php'
+            - '../../src/Controller/RelationBusinessResultPayload.php'
         tags: ['controller.service_arguments']
 
-    App\Service\Application\:
+    App\Relating\Service\Application\:
         resource: '../../src/Service/Application/'
         tags:
             - { name: 'relating.application_service' }
 
-    App\Service\:
+    App\Relating\Service\:
         resource: '../../src/Service/'
         tags:
             - { name: 'relating.business_service' }
 
-    App\Handler\:
+    App\Relating\Handler\:
         resource: '../../src/Handler/'
         tags:
             - { name: 'relating.business_message_handler' }
 
-    App\DataFixtures\:
+    App\Relating\DataFixtures\:
         resource: '../../src/DataFixtures/'
         tags:
             - { name: 'relating.demo_fixture' }
 
 
-    App\Snapshot\:
+    App\Relating\Snapshot\:
         resource: '../../src/Snapshot/'
         tags:
             - { name: 'relating.read_model' }
 
-    App\Service\ReadModel\:
+    App\Relating\Service\ReadModel\:
         resource: '../../src/Service/ReadModel/'
         tags:
             - { name: 'relating.read_model_projector' }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -46,12 +46,12 @@ final class RelatingPackageInstallBoundaryTest extends TestCase
         }
     }
 
-    public function testComposerAutoloadNotesKeepDefaultAppNamespace(): void
+    public function testComposerAutoloadNotesFollowCanon018Identity(): void
     {
         $content = file_get_contents(\dirname(__DIR__).'/docs/composer-autoload-notes.md');
         self::assertIsString($content);
 
-        self::assertStringContainsString('"App\\\\": "src/"', $content);
+        self::assertStringContainsString('"App\\\\Relating\\\\": "src/"', $content);
         self::assertStringContainsString('src', $content);
         self::assertStringContainsString('RelatingBundle', $content);
     }

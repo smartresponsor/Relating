@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Policy;
+namespace App\Relating\Policy;
 
-use App\Command\StartRelationshipCommand;
+use App\Relating\Command\RelationStartRelationshipCommand;
 
 interface RelationshipStartPolicyInterface
 {
-    public function decideRelationshipStart(StartRelationshipCommand $command): PolicyDecisionResult;
+    public function decideRelationshipStart(RelationStartRelationshipCommand $command): RelationPolicyDecisionResult;
 }

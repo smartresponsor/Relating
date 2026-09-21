@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -10,11 +10,11 @@ final class RelatingAuditTraceBoundaryTest extends TestCase
 {
     public function testTraceLayerExists(): void
     {
-        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/BusinessDecisionTrace.php');
-        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/PolicyDecisionTrace.php');
-        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/AiReviewTrace.php');
-        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/TransitionTrace.php');
-        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/NeighborSignalTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/RelationBusinessDecisionTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/RelationPolicyDecisionTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/RelationAiReviewTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/RelationTransitionTrace.php');
+        self::assertFileExists(__DIR__.'/../src/ValueObject/Trace/RelationNeighborSignalTrace.php');
     }
 
     public function testTraceLayerDoesNotDeclareCrudOrSqlSurface(): void

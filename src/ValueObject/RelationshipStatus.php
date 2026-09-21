@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-namespace App\ValueObject;
+namespace App\Relating\ValueObject;
 
-final readonly class RelationshipStatus extends AbstractStringValue
+final readonly class RelationshipStatus extends RelationAbstractStringValue
 {
 }

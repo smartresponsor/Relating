@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Relating\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'relating_relationship_relation')]
 #[ORM\Index(columns: ['source_relationship_reference'], name: 'idx_relating_relation_source')]
 #[ORM\Index(columns: ['target_relationship_reference'], name: 'idx_relating_relation_target')]
-class RelationshipRelation extends AbstractRelatingEntity
+class RelationshipRelation extends RelationAbstractRelatingEntity
 {
     #[ORM\Column(type: 'string', length: 36)]
     private string $sourceRelationshipReference;

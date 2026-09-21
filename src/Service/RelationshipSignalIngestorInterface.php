@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Service;
+namespace App\Relating\Service;
 
-use App\Entity\RelationshipSignal;
+use App\Relating\Entity\RelationshipSignal;
 
 interface RelationshipSignalIngestorInterface
 {

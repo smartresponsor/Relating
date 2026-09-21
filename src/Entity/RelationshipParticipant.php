@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Relating\Entity;
 
-use App\Enum\RelationshipParticipantRole;
+use App\Relating\Enum\RelationshipParticipantRole;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Index(columns: ['tenant_reference', 'relationship_reference'], name: 'idx_relating_participant_tenant_relationship')]
 #[ORM\Index(columns: ['vendor_reference'], name: 'idx_relating_participant_vendor')]
 #[ORM\Index(columns: ['role'], name: 'idx_relating_participant_role')]
-final class RelationshipParticipant extends AbstractRelatingEntity
+final class RelationshipParticipant extends RelationAbstractRelatingEntity
 {
     #[ORM\Column(type: 'string', length: 128)]
     private string $relationshipReference;

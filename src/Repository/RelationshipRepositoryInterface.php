@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Relating\Repository;
 
-use App\Entity\Relationship;
+use App\Relating\Entity\Relationship;
 
 interface RelationshipRepositoryInterface
 {

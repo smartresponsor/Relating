@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
-use App\Entity\Relationship;
-use App\Enum\RelationshipKind;
+use App\Relating\Entity\Relationship;
+use App\Relating\Enum\RelationshipKind;
 use PHPUnit\Framework\TestCase;
 
 final class RelatingEntityInvariantTest extends TestCase

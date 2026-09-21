@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -13,11 +13,11 @@ final class RelatingFirstWorkingSliceGlueBoundaryTest extends TestCase
         $root = \dirname(__DIR__);
 
         $required = [
-            'src/Repository/DoctrineRelationshipRepository.php',
-            'src/Repository/DoctrineLeadRepository.php',
-            'src/Repository/DoctrineOpportunityRepository.php',
-            'src/Service/UuidRelatingIdGenerator.php',
-            'src/Service/DispatchingRelatingBusinessEventDispatcher.php',
+            'src/Repository/RelationDoctrineRelationshipRepository.php',
+            'src/Repository/RelationDoctrineLeadRepository.php',
+            'src/Repository/RelationDoctrineOpportunityRepository.php',
+            'src/Service/RelationUuidRelatingIdGenerator.php',
+            'src/Service/RelationDispatchingRelatingBusinessEventDispatcher.php',
             'config/services/relating_first_slice.yaml.dist',
             'docs/s18-first-working-slice-glue.md',
         ];
@@ -33,10 +33,10 @@ final class RelatingFirstWorkingSliceGlueBoundaryTest extends TestCase
         self::assertIsString($content);
 
         self::assertStringContainsString('RelationshipRepositoryInterface', $content);
-        self::assertStringContainsString('LeadRepositoryInterface', $content);
-        self::assertStringContainsString('OpportunityRepositoryInterface', $content);
-        self::assertStringContainsString('RelatingIdGeneratorInterface', $content);
-        self::assertStringContainsString('RelatingBusinessEventRecorderInterface', $content);
+        self::assertStringContainsString('RelationLeadRepositoryInterface', $content);
+        self::assertStringContainsString('RelationOpportunityRepositoryInterface', $content);
+        self::assertStringContainsString('RelationRelatingIdGeneratorInterface', $content);
+        self::assertStringContainsString('RelationRelatingBusinessEventRecorderInterface', $content);
     }
 
     public function testFirstSliceDoesNotIntroduceForbiddenInfrastructure(): void

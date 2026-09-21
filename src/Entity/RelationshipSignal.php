@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Relating\Entity;
 
-use App\Enum\RelationshipSignalKind;
+use App\Relating\Enum\RelationshipSignalKind;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Index(columns: ['signal_type'], name: 'idx_relating_signal_type')]
 #[ORM\Index(columns: ['source_component', 'source_reference'], name: 'idx_relating_signal_source')]
 #[ORM\Index(columns: ['occurred_at'], name: 'idx_relating_signal_occurred')]
-final class RelationshipSignal extends AbstractRelatingEntity
+final class RelationshipSignal extends RelationAbstractRelatingEntity
 {
     #[ORM\Column(type: 'string', length: 128)]
     private string $relationshipReference;

@@ -12,43 +12,43 @@
 # - no Bundle layer.
 
 services:
-    App\Repository\DoctrineRelationshipRepository:
+    App\Relating\Repository\RelationDoctrineRelationshipRepository:
         arguments:
             $entityManager: '@doctrine.orm.entity_manager'
 
-    App\Repository\DoctrineLeadRepository:
+    App\Relating\Repository\RelationDoctrineLeadRepository:
         arguments:
             $entityManager: '@doctrine.orm.entity_manager'
 
-    App\Repository\DoctrineOpportunityRepository:
+    App\Relating\Repository\RelationDoctrineOpportunityRepository:
         arguments:
             $entityManager: '@doctrine.orm.entity_manager'
 
-    App\Service\UuidRelatingIdGenerator: ~
+    App\Relating\Service\RelationUuidRelatingIdGenerator: ~
 
-    App\Service\DispatchingRelatingBusinessEventDispatcher:
+    App\Relating\Service\RelationDispatchingRelatingBusinessEventDispatcher:
         arguments:
             $eventDispatcher: '@event_dispatcher'
 
-    App\Service\VendorLeadReadService:
+    App\Relating\Service\RelationVendorLeadReadService:
         arguments:
-            $relationships: '@App\Repository\RelationshipRepositoryInterface'
+            $relationships: '@App\Relating\Repository\RelationshipRepositoryInterface'
             $entityManager: '@doctrine.orm.entity_manager'
 
-    App\Repository\RelationshipRepositoryInterface:
-        alias: App\Repository\DoctrineRelationshipRepository
+    App\Relating\Repository\RelationshipRepositoryInterface:
+        alias: App\Relating\Repository\RelationDoctrineRelationshipRepository
 
-    App\Repository\LeadRepositoryInterface:
-        alias: App\Repository\DoctrineLeadRepository
+    App\Relating\Repository\RelationLeadRepositoryInterface:
+        alias: App\Relating\Repository\RelationDoctrineLeadRepository
 
-    App\Repository\OpportunityRepositoryInterface:
-        alias: App\Repository\DoctrineOpportunityRepository
+    App\Relating\Repository\RelationOpportunityRepositoryInterface:
+        alias: App\Relating\Repository\RelationDoctrineOpportunityRepository
 
-    App\Service\RelatingIdGeneratorInterface:
-        alias: App\Service\UuidRelatingIdGenerator
+    App\Relating\Service\RelationRelatingIdGeneratorInterface:
+        alias: App\Relating\Service\RelationUuidRelatingIdGenerator
 
-    App\Service\RelatingBusinessEventRecorderInterface:
-        alias: App\Service\DispatchingRelatingBusinessEventDispatcher
+    App\Relating\Service\RelationRelatingBusinessEventRecorderInterface:
+        alias: App\Relating\Service\RelationDispatchingRelatingBusinessEventDispatcher
 
-    App\Service\VendorLeadReadServiceInterface:
-        alias: App\Service\VendorLeadReadService
+    App\Relating\Service\RelationVendorLeadReadServiceInterface:
+        alias: App\Relating\Service\RelationVendorLeadReadService

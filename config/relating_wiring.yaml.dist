@@ -22,17 +22,17 @@ relating_wiring:
         - relating_timeline_project
         - relating_ai_suggestion_review
     approved_async_messages:
-        - QualifyLeadMessage
-        - ConvertLeadMessage
-        - DetectLeadDuplicateMessage
-        - BuildRelationshipTimelineMessage
-        - BuildTimelineMessage
-        - RecalculateRelationshipHealthMessage
-        - RecalculateOpportunityForecastMessage
-        - RecalculateOpportunityRiskMessage
-        - RecalculateCaseSlaMessage
-        - CaptureCampaignResponseMessage
-        - RebuildCampaignPerformanceMessage
-        - RaiseAiSuggestionMessage
-        - ReviewAiSuggestionMessage
-        - ApplyAiSuggestionMessage
+        - RelationQualifyLeadMessage
+        - RelationConvertLeadMessage
+        - RelationDetectLeadDuplicateMessage
+        - RelationBuildRelationshipTimelineMessage
+        - RelationBuildTimelineMessage
+        - RelationRecalculateRelationshipHealthMessage
+        - RelationRecalculateOpportunityForecastMessage
+        - RelationRecalculateOpportunityRiskMessage
+        - RelationRecalculateCaseSlaMessage
+        - RelationCaptureCampaignResponseMessage
+        - RelationRebuildCampaignPerformanceMessage
+        - RelationRaiseAiSuggestionMessage
+        - RelationReviewAiSuggestionMessage
+        - RelationApplyAiSuggestionMessage

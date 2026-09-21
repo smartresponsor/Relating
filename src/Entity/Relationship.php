@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Relating\Entity;
 
-use App\Enum\RelationshipKind;
-use App\Enum\RelationshipLifecycleStage;
-use App\Enum\RelationshipStatus;
+use App\Relating\Enum\RelationshipKind;
+use App\Relating\Enum\RelationshipLifecycleStage;
+use App\Relating\Enum\RelationshipStatus;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -17,7 +17,7 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Index(columns: ['lifecycle_stage'], name: 'idx_relating_relationship_lifecycle')]
 #[ORM\Index(columns: ['owner_reference'], name: 'idx_relating_relationship_owner')]
 #[ORM\Index(columns: ['next_action_at'], name: 'idx_relating_relationship_next_action')]
-final class Relationship extends AbstractRelatingEntity
+final class Relationship extends RelationAbstractRelatingEntity
 {
     #[ORM\Column(type: 'string', length: 128)]
     private string $vendorReference;

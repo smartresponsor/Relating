@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Snapshot;
+namespace App\Relating\Snapshot;
 
-use App\Enum\ProjectionStatus;
-use App\Enum\ReadModelKind;
+use App\Relating\Enum\RelationProjectionStatus;
+use App\Relating\Enum\RelationReadModelKind;
 
-final readonly class RelationshipHealthReadModel extends AbstractRelatingReadModel
+final readonly class RelationshipHealthReadModel extends RelationAbstractRelatingReadModel
 {
     /**
      * @param list<string> $signalCodes
@@ -19,10 +19,10 @@ final readonly class RelationshipHealthReadModel extends AbstractRelatingReadMod
         private string $lifecycleStage,
         private array $signalCodes = [],
         private ?\DateTimeImmutable $nextActionAt = null,
-        ProjectionStatus $status = ProjectionStatus::Projected,
+        RelationProjectionStatus $status = RelationProjectionStatus::Projected,
         ?\DateTimeImmutable $projectedAt = null,
     ) {
-        parent::__construct(ReadModelKind::RelationshipHealth, $relationshipReference, $status, $projectedAt);
+        parent::__construct(RelationReadModelKind::RelationshipHealth, $relationshipReference, $status, $projectedAt);
 
         if ($this->healthScore < 0 || $this->healthScore > 100) {
             throw new \InvalidArgumentException('Health score must be between 0 and 100.');

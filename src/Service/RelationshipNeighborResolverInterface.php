@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace App\Service;
+namespace App\Relating\Service;
 
-use App\Enum\NeighborComponent;
-use App\ValueObject\NeighborReference;
+use App\Relating\Enum\RelationNeighborComponent;
+use App\Relating\ValueObject\RelationNeighborReference;
 
 interface RelationshipNeighborResolverInterface
 {
     /**
-     * @return list<NeighborReference>
+     * @return list<RelationNeighborReference>
      */
     public function resolveRelationshipNeighbors(string $relationshipReference): array;
 
-    public function hasNeighbor(string $relationshipReference, NeighborComponent $component): bool;
+    public function hasNeighbor(string $relationshipReference, RelationNeighborComponent $component): bool;
 }

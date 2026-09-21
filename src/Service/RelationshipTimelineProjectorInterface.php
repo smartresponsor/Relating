@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Service;
+namespace App\Relating\Service;
 
-use App\Entity\TimelineRecord;
-use App\Event\AbstractRelatingEvent;
+use App\Relating\Entity\RelationTimelineRecord;
+use App\Relating\Event\RelationAbstractRelatingEvent;
 
 interface RelationshipTimelineProjectorInterface
 {
-    public function projectBusinessEvent(AbstractRelatingEvent $event): TimelineRecord;
+    public function projectBusinessEvent(RelationAbstractRelatingEvent $event): RelationTimelineRecord;
 }

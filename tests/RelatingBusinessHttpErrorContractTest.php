@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
-use App\Kernel;
+use App\Relating\Kernel;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -72,11 +72,11 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
     public function testMissingBusinessReferencesReturnStableJsonErrors(): void
     {
         $cases = [
-            ['/relating/lead/qualify', ['lead_reference' => 'lead-missing', 'score' => 80], 'Lead was not found for reference: lead-missing'],
+            ['/relating/lead/qualify', ['lead_reference' => 'lead-missing', 'score' => 80], 'RelationLead was not found for reference: lead-missing'],
             [
                 '/relating/lead/convert',
                 ['lead_reference' => 'lead-missing', 'vendor_reference' => 'vendor-positive'],
-                'Lead was not found for reference: lead-missing',
+                'RelationLead was not found for reference: lead-missing',
             ],
             [
                 '/relating/opportunity/open',
@@ -91,7 +91,7 @@ final class RelatingBusinessHttpErrorContractTest extends TestCase
             [
                 '/relating/opportunity/stage/transition',
                 ['opportunity_reference' => 'opportunity-missing', 'stage_reference' => 'stage-positive', 'probability' => 50],
-                'Opportunity was not found for reference: opportunity-missing',
+                'RelationOpportunity was not found for reference: opportunity-missing',
             ],
             [
                 '/relating/ai/suggestion/review',

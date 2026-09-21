@@ -2,14 +2,14 @@
 
 Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
-`Relating` exposes a minimal `App\RelatingBundle` composition surface while remaining independently bootable as a standalone Symfony application.
+`Relating` exposes a minimal `App\Relating\RelatingBundle` composition surface while remaining independently bootable as a standalone Symfony application.
 
 ## Why
 
-The component stays under the default Symfony application namespace:
+The component follows the Canon018 namespace derived from `relating/relation`:
 
 ```text
-App
+App\Relating
 ```
 
 The bundle marker exists only for explicit dual-runtime composition. It must not become a second hidden owner of CRUD, persistence, migrations, navigation, or neighboring component behavior.
@@ -27,7 +27,7 @@ config/bundles.php standalone registration
 hidden CRUD route/controller registration
 bundle-owned migrations or direct SQL
 neighbor entity ownership
-alternative namespace roots outside App\
+alternative namespace roots outside App\Relating\
 ```
 
 ## Allowed

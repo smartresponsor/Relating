@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Service;
+namespace App\Relating\Service;
 
-use App\Entity\Relationship;
+use App\Relating\Entity\Relationship;
 
 interface RelationshipStarterInterface
 {

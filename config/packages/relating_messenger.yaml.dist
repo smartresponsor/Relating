@@ -12,20 +12,20 @@
 framework:
     messenger:
         routing:
-            App\Message\QualifyLeadMessage: async
-            App\Message\ConvertLeadMessage: async
-            App\Message\TransitionOpportunityStageMessage: async
-            App\Message\DetectLeadDuplicateMessage: async
-            App\Message\ScoreLeadMessage: async
-            App\Message\BuildRelationshipTimelineMessage: async
-            App\Message\BuildTimelineMessage: async
-            App\Message\RecalculateRelationshipHealthMessage: async
-            App\Message\RecalculateOpportunityForecastMessage: async
-            App\Message\RecalculateOpportunityRiskMessage: async
-            App\Message\RecalculateCaseSlaMessage: async
-            App\Message\CaptureCampaignResponseMessage: async
-            App\Message\RebuildCampaignPerformanceMessage: async
-            App\Message\RunRelatingAutomationMessage: async
-            App\Message\RaiseAiSuggestionMessage: async
-            App\Message\ReviewAiSuggestionMessage: async
-            App\Message\ApplyAiSuggestionMessage: async
+            App\Relating\Message\RelationQualifyLeadMessage: async
+            App\Relating\Message\RelationConvertLeadMessage: async
+            App\Relating\Message\RelationTransitionOpportunityStageMessage: async
+            App\Relating\Message\RelationDetectLeadDuplicateMessage: async
+            App\Relating\Message\RelationScoreLeadMessage: async
+            App\Relating\Message\RelationBuildRelationshipTimelineMessage: async
+            App\Relating\Message\RelationBuildTimelineMessage: async
+            App\Relating\Message\RelationRecalculateRelationshipHealthMessage: async
+            App\Relating\Message\RelationRecalculateOpportunityForecastMessage: async
+            App\Relating\Message\RelationRecalculateOpportunityRiskMessage: async
+            App\Relating\Message\RelationRecalculateCaseSlaMessage: async
+            App\Relating\Message\RelationCaptureCampaignResponseMessage: async
+            App\Relating\Message\RelationRebuildCampaignPerformanceMessage: async
+            App\Relating\Message\RelationRunRelatingAutomationMessage: async
+            App\Relating\Message\RelationRaiseAiSuggestionMessage: async
+            App\Relating\Message\RelationReviewAiSuggestionMessage: async
+            App\Relating\Message\RelationApplyAiSuggestionMessage: async

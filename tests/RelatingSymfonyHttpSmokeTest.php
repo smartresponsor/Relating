@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
-use App\Kernel;
+use App\Relating\Kernel;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -45,7 +45,7 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
         $lead = $this->postJson('/relating/lead/capture', [
             'source_code' => 'website',
             'tenant_reference' => 'tenant-smoke',
-            'display_name' => 'Smoke Lead',
+            'display_name' => 'Smoke RelationLead',
             'company_name' => 'Smoke Company',
             'email' => 'smoke@example.test',
             'payload' => ['source' => 'http-smoke'],
@@ -65,7 +65,7 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
             'vendor_reference' => 'vendor-smoke-001',
             'pipeline_reference' => 'pipeline-smoke',
             'stage_reference' => 'stage-new',
-            'opportunity_name' => 'Smoke Opportunity',
+            'opportunity_name' => 'Smoke RelationOpportunity',
             'context' => ['source' => 'http-smoke'],
         ]);
         $this->assertBusinessResult($converted, 'lead-conversion');
@@ -74,7 +74,7 @@ final class RelatingSymfonyHttpSmokeTest extends TestCase
             'relationship_reference' => $relationship['subject_reference'],
             'pipeline_reference' => 'pipeline-smoke',
             'stage_reference' => 'stage-new',
-            'name' => 'Smoke Direct Opportunity',
+            'name' => 'Smoke Direct RelationOpportunity',
             'tenant_reference' => 'tenant-smoke',
             'currency' => 'USD',
             'amount_minor' => 10000,

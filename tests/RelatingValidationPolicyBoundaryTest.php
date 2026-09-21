@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -10,10 +10,10 @@ final class RelatingValidationPolicyBoundaryTest extends TestCase
 {
     public function testValidationAndPolicyLayersExist(): void
     {
-        self::assertFileExists(__DIR__.'/../src/Validator/ValidationResult.php');
-        self::assertFileExists(__DIR__.'/../src/Policy/PolicyDecisionResult.php');
-        self::assertFileExists(__DIR__.'/../src/Policy/OpportunityStageTransitionPolicyInterface.php');
-        self::assertFileExists(__DIR__.'/../src/Validator/BusinessPayloadValidatorInterface.php');
+        self::assertFileExists(__DIR__.'/../src/Validator/RelationValidationResult.php');
+        self::assertFileExists(__DIR__.'/../src/Policy/RelationPolicyDecisionResult.php');
+        self::assertFileExists(__DIR__.'/../src/Policy/RelationOpportunityStageTransitionPolicyInterface.php');
+        self::assertFileExists(__DIR__.'/../src/Validator/RelationBusinessPayloadValidatorInterface.php');
     }
 
     public function testValidationLayerDoesNotDeclareCrudRouteSurface(): void

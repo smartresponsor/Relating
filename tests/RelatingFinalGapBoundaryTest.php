@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -63,7 +63,7 @@ final class RelatingFinalGapBoundaryTest extends TestCase
         self::assertFileExists($root.'/src/Event/RelationshipParticipantDetached.php');
         self::assertFileDoesNotExist($root.'/src/Event/RelationshipParticipantRemoved.php');
 
-        $viewType = (string) file_get_contents($root.'/src/Enum/ViewType.php');
+        $viewType = (string) file_get_contents($root.'/src/Enum/RelationViewType.php');
         self::assertStringContainsString("case BulkReview = 'bulk_review';", $viewType);
         self::assertStringNotContainsString('MassUpdate', $viewType);
         self::assertStringNotContainsString('mass_update', $viewType);

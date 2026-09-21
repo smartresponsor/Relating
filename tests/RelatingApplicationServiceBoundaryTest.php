@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -46,6 +46,6 @@ final class RelatingApplicationServiceBoundaryTest extends TestCase
         self::assertDirectoryExists($messageDir);
 
         self::assertFileDoesNotExist($messageDir.'/CreateAiSuggestionMessage.php');
-        self::assertFileExists($messageDir.'/RaiseAiSuggestionMessage.php');
+        self::assertFileExists($messageDir.'/RelationRaiseAiSuggestionMessage.php');
     }
 }

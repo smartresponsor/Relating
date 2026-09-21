@@ -2,24 +2,24 @@
 
 Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
-`Relating` uses the default Symfony application namespace only:
+`Relating` uses the Canon018 component namespace derived from `relating/relation`:
 
 ```json
 {
   "autoload": {
     "psr-4": {
-      "App\\": "src/"
+      "App\\Relating\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "App\\Tests\\": "tests/"
+      "App\\Relating\\Tests\\": "tests/"
     }
   }
 }
 ```
 
-The component does not require a custom namespace such as `Relating\\`, `SmartResponsor\\Relating\\`, or `Domain\\`.
+The canonical component namespace is `App\\Relating\\`; `relation` is the canonical PHP subject prefix (`Relation*`).
 
 ## Package rule
 
@@ -42,4 +42,4 @@ Forbidden: Relating\Relationship
 src
 ```
 
-The first production repository may later add package metadata, but the code namespace must remain `App\\` while this component is developed inside the default Symfony app namespace.
+Development and production manifests must preserve the Canon018 identity: `App\\Relating\\ => src/` with `Relation*` component-owned PHP types.

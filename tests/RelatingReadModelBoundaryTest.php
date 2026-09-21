@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Tests;
+namespace App\Relating\Tests;
 
 use PHPUnit\Framework\TestCase;
 
@@ -53,7 +53,7 @@ final class RelatingReadModelBoundaryTest extends TestCase
 
         foreach ($files as $file) {
             $contents = (string) file_get_contents($file);
-            self::assertStringNotContainsString('App\\Entity', $contents, basename($file));
+            self::assertStringNotContainsString('App\Relating\\Entity', $contents, basename($file));
         }
     }
 }
