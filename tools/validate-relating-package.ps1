@@ -85,15 +85,15 @@ foreach ($file in $phpFiles) {
         throw "PHP lint failed for $($file.FullName): $result"
     }
 
-    Assert-ContentDoesNotContain -Path $file.FullName -Forbidden @('App\Relating\', 'App\Tests\Relating\')
+    Assert-ContentDoesNotContain -Path $file.FullName -Forbidden @('namespace App;', 'namespace App\Tests;')
 }
 
-Assert-PathExists (Join-Path $rootPath 'src/EventSubscriber/BusinessHttpExceptionSubscriber.php') 'Missing business HTTP error contract subscriber.'
+Assert-PathExists (Join-Path $rootPath 'src/EventSubscriber/RelationBusinessHttpExceptionSubscriber.php') 'Missing business HTTP error contract subscriber.'
 Assert-PathExists (Join-Path $rootPath 'tests/RelatingBusinessHttpErrorContractTest.php') 'Missing business HTTP error contract test.'
 Assert-PathExists (Join-Path $rootPath 'tools/smoke-relating-business-http.ps1') 'Missing live business HTTP smoke wrapper.'
 Assert-PathExists (Join-Path $rootPath 'tools/smoke-relating-business-http-curl.ps1') 'Missing live business HTTP curl smoke.'
 
-$businessErrorSubscriber = Get-Content -Raw -Path (Join-Path $rootPath 'src/EventSubscriber/BusinessHttpExceptionSubscriber.php')
+$businessErrorSubscriber = Get-Content -Raw -Path (Join-Path $rootPath 'src/EventSubscriber/RelationBusinessHttpExceptionSubscriber.php')
 if ($businessErrorSubscriber -notmatch [regex]::Escape('business_reference_not_found') -or $businessErrorSubscriber -notmatch [regex]::Escape('HTTP_NOT_FOUND')) {
     throw 'Missing stable business reference-not-found HTTP subscriber contract.'
 }
