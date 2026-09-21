@@ -1,0 +1,36 @@
+= Product Capability Audit: Relating
+:revdate: 2026-09-20
+
+== Boundary verdict
+
+Relating owns CRM-oriented relationship lifecycle and relationship-derived business state, not party master data or generic CRUD. Vendor/customer/account identity stays with the corresponding owner component.
+
+== Capability matrix
+
+[cols="3,1,4",options="header"]
+|===
+|Capability |Status |Audit
+|Relationship identity |PARITY |Explicit business relationship boundary exists.
+|Relationship lifecycle/transitions |AHEAD |Dedicated lifecycle is richer than the relationship surface of typical commerce cores.
+|Relationship timeline/history |AHEAD |Explicitly part of the business boundary.
+|Scoring |AHEAD |CRM-oriented scoring is outside most commerce-core baselines.
+|Conversion/progression |AHEAD |Explicit lifecycle capability.
+|Relationship type/role |PARITY |Needed to express vendor/customer/partner/etc. links without owning their identities.
+|Bidirectional links |PARTIAL |Directionality and reciprocal semantics should be explicit.
+|Effective dates |PARTIAL |Useful for temporal relationships.
+|Evidence/source/provenance |PARTIAL |Important when relationships are derived/imported.
+|Merge/deduplication references |PARTIAL |Identity merge belongs to identity owner; relationship rewiring belongs here.
+|===
+
+== Boundary risks
+
+* Vendor, customer, account and other party identities are external references.
+* Generic CRUD remains Cruding.
+* Avoid turning relationship scoring into generic analytics ownership.
+
+== Milestone direction
+
+M1: relationship type/direction/effective-date invariants.
+M2: provenance, timeline and reciprocal-link semantics.
+M3: identity-merge/relink acceptance with owning party components.
+
