@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository;
 
-use App\Relating\Entity\RelationOpportunity;
+use App\Relating\Entity\RelationOpportunityEntity;
 use App\Relating\Enum\RelationOpportunityStatus;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -15,41 +15,41 @@ final readonly class RelationDoctrineOpportunityRepository implements RelationOp
     ) {
     }
 
-    public function rememberOpened(RelationOpportunity $opportunity): void
+    public function rememberOpened(RelationOpportunityEntity $opportunity): void
     {
         $this->persistAndFlush($opportunity);
     }
 
-    public function rememberStageChanged(RelationOpportunity $opportunity): void
+    public function rememberStageChanged(RelationOpportunityEntity $opportunity): void
     {
         $this->persistAndFlush($opportunity);
     }
 
-    public function rememberForecastRecalculated(RelationOpportunity $opportunity): void
+    public function rememberForecastRecalculated(RelationOpportunityEntity $opportunity): void
     {
         $this->persistAndFlush($opportunity);
     }
 
-    public function rememberWon(RelationOpportunity $opportunity): void
+    public function rememberWon(RelationOpportunityEntity $opportunity): void
     {
         $this->persistAndFlush($opportunity);
     }
 
-    public function rememberLost(RelationOpportunity $opportunity): void
+    public function rememberLost(RelationOpportunityEntity $opportunity): void
     {
         $this->persistAndFlush($opportunity);
     }
 
-    public function opportunityOf(string $opportunityReference): ?RelationOpportunity
+    public function opportunityOf(string $opportunityReference): ?RelationOpportunityEntity
     {
-        $opportunity = $this->entityManager->find(RelationOpportunity::class, $opportunityReference);
+        $opportunity = $this->entityManager->find(RelationOpportunityEntity::class, $opportunityReference);
 
-        return $opportunity instanceof RelationOpportunity ? $opportunity : null;
+        return $opportunity instanceof RelationOpportunityEntity ? $opportunity : null;
     }
 
     public function activeOpportunitiesForRelationship(string $relationshipReference): array
     {
-        $opportunities = $this->entityManager->getRepository(RelationOpportunity::class)
+        $opportunities = $this->entityManager->getRepository(RelationOpportunityEntity::class)
             ->createQueryBuilder('opportunity')
             ->andWhere('opportunity.relationshipReference = :relationshipReference')
             ->andWhere('opportunity.status IN (:activeStatuses)')
@@ -62,10 +62,10 @@ final readonly class RelationDoctrineOpportunityRepository implements RelationOp
             ->getQuery()
             ->getResult();
 
-        return array_values(array_filter($opportunities, static fn (mixed $item): bool => $item instanceof RelationOpportunity));
+        return array_values(array_filter($opportunities, static fn (mixed $item): bool => $item instanceof RelationOpportunityEntity));
     }
 
-    private function persistAndFlush(RelationOpportunity $opportunity): void
+    private function persistAndFlush(RelationOpportunityEntity $opportunity): void
     {
         $this->entityManager->persist($opportunity);
         $this->entityManager->flush();

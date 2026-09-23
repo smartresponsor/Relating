@@ -33,7 +33,7 @@ services:
     App\Relating\Service\RelationVendorLeadReadService:
         arguments:
             $relationships: '@App\Relating\Repository\RelationshipRepositoryInterface'
-            $entityManager: '@doctrine.orm.entity_manager'
+            $leads: '@App\Relating\Repository\RelationLeadRepositoryInterface'
 
     App\Relating\Repository\RelationshipRepositoryInterface:
         alias: App\Relating\Repository\RelationDoctrineRelationshipRepository

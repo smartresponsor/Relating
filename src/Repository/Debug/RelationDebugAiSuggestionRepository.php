@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository\Debug;
 
-use App\Relating\Entity\RelationAiSuggestion;
+use App\Relating\Entity\RelationAiSuggestionEntity;
 use App\Relating\Repository\RelationAiSuggestionRepositoryInterface;
 
 final readonly class RelationDebugAiSuggestionRepository implements RelationAiSuggestionRepositoryInterface
@@ -16,37 +16,37 @@ final readonly class RelationDebugAiSuggestionRepository implements RelationAiSu
     ) {
     }
 
-    public function rememberRaised(RelationAiSuggestion $suggestion): void
+    public function rememberRaised(RelationAiSuggestionEntity $suggestion): void
     {
         $this->remember($suggestion);
     }
 
-    public function rememberReviewed(RelationAiSuggestion $suggestion): void
+    public function rememberReviewed(RelationAiSuggestionEntity $suggestion): void
     {
         $this->remember($suggestion);
     }
 
-    public function rememberApplied(RelationAiSuggestion $suggestion): void
+    public function rememberApplied(RelationAiSuggestionEntity $suggestion): void
     {
         $this->remember($suggestion);
     }
 
-    public function suggestionOf(string $suggestionReference): ?RelationAiSuggestion
+    public function suggestionOf(string $suggestionReference): ?RelationAiSuggestionEntity
     {
         $suggestion = $this->store->one(self::BUCKET, $suggestionReference);
 
-        return $suggestion instanceof RelationAiSuggestion ? $suggestion : null;
+        return $suggestion instanceof RelationAiSuggestionEntity ? $suggestion : null;
     }
 
     public function pendingSuggestionsForTarget(string $targetType, string $targetReference): array
     {
         return array_values(array_filter(
             $this->store->all(self::BUCKET),
-            static fn (mixed $item): bool => $item instanceof RelationAiSuggestion,
+            static fn (mixed $item): bool => $item instanceof RelationAiSuggestionEntity,
         ));
     }
 
-    private function remember(RelationAiSuggestion $suggestion): void
+    private function remember(RelationAiSuggestionEntity $suggestion): void
     {
         $this->store->remember(self::BUCKET, $suggestion->id(), $suggestion);
     }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Relating\Service\Application;
 
 use App\Relating\Command\RelationOpenOpportunityCommand;
-use App\Relating\Entity\RelationOpportunity;
+use App\Relating\Entity\RelationOpportunityEntity;
 use App\Relating\Event\RelationOpportunityOpened;
 use App\Relating\Exception\RelationRelatingApplicationException;
 use App\Relating\Repository\RelationOpportunityRepositoryInterface;
@@ -32,7 +32,7 @@ final readonly class RelationOpenOpportunityApplicationService
             throw RelationRelatingApplicationException::missingReference('Relationship', $command->relationshipReference);
         }
 
-        $opportunity = new RelationOpportunity(
+        $opportunity = new RelationOpportunityEntity(
             $this->ids->nextOpportunityId(),
             $command->relationshipReference,
             $command->pipelineReference,

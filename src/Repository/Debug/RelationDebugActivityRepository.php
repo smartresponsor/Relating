@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository\Debug;
 
-use App\Relating\Entity\RelationActivity;
+use App\Relating\Entity\RelationActivityEntity;
 use App\Relating\Repository\RelationActivityRepositoryInterface;
 
 final readonly class RelationDebugActivityRepository implements RelationActivityRepositoryInterface
@@ -16,21 +16,21 @@ final readonly class RelationDebugActivityRepository implements RelationActivity
     ) {
     }
 
-    public function rememberRecorded(RelationActivity $activity): void
+    public function rememberRecorded(RelationActivityEntity $activity): void
     {
         $this->remember($activity);
     }
 
-    public function rememberCompleted(RelationActivity $activity): void
+    public function rememberCompleted(RelationActivityEntity $activity): void
     {
         $this->remember($activity);
     }
 
-    public function activityOf(string $activityReference): ?RelationActivity
+    public function activityOf(string $activityReference): ?RelationActivityEntity
     {
         $activity = $this->store->one(self::BUCKET, $activityReference);
 
-        return $activity instanceof RelationActivity ? $activity : null;
+        return $activity instanceof RelationActivityEntity ? $activity : null;
     }
 
     public function activitiesForTarget(string $targetType, string $targetReference): array
@@ -43,16 +43,16 @@ final readonly class RelationDebugActivityRepository implements RelationActivity
         return $this->all();
     }
 
-    /** @return list<RelationActivity> */
+    /** @return list<RelationActivityEntity> */
     private function all(): array
     {
         return array_values(array_filter(
             $this->store->all(self::BUCKET),
-            static fn (mixed $item): bool => $item instanceof RelationActivity,
+            static fn (mixed $item): bool => $item instanceof RelationActivityEntity,
         ));
     }
 
-    private function remember(RelationActivity $activity): void
+    private function remember(RelationActivityEntity $activity): void
     {
         $this->store->remember(self::BUCKET, $activity->id(), $activity);
     }

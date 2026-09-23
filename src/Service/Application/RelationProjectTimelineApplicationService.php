@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Relating\Service\Application;
 
 use App\Relating\Command\RelationProjectTimelineCommand;
-use App\Relating\Entity\RelationTimelineRecord;
+use App\Relating\Entity\RelationTimelineRecordEntity;
 use App\Relating\Enum\RelationTimelineRecordKind;
 use App\Relating\Event\RelationTimelineRecordProjected;
 use App\Relating\Repository\RelationTimelineRecordRepositoryInterface;
@@ -25,7 +25,7 @@ final readonly class RelationProjectTimelineApplicationService
     public function projectTimeline(RelationProjectTimelineCommand $command): RelationRelatingActionResult
     {
         $kind = RelationTimelineRecordKind::tryFrom($command->eventKind) ?? RelationTimelineRecordKind::NeighborSignalCaptured;
-        $event = new RelationTimelineRecord(
+        $event = new RelationTimelineRecordEntity(
             $this->ids->nextTimelineRecordId(),
             $command->targetType,
             $command->targetReference,

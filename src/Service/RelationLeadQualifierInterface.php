@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Relating\Service;
 
-use App\Relating\Entity\RelationLead;
-use App\Relating\Entity\RelationLeadQualification;
+use App\Relating\Entity\RelationLeadEntity;
+use App\Relating\Entity\RelationLeadQualificationEntity;
 
 interface RelationLeadQualifierInterface
 {
     /**
      * @param array<string, mixed> $context
      */
-    public function qualifyLeadForRelationship(RelationLead $lead, array $context = []): RelationLeadQualification;
+    public function qualifyLeadForRelationship(RelationLeadEntity $lead, array $context = []): RelationLeadQualificationEntity;
 }

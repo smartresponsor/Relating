@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository;
 
-use App\Relating\Entity\RelationLead;
+use App\Relating\Entity\RelationLeadEntity;
 use App\Relating\Enum\RelationLeadStatus;
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -15,41 +15,41 @@ final readonly class RelationDoctrineLeadRepository implements RelationLeadRepos
     ) {
     }
 
-    public function rememberCaptured(RelationLead $lead): void
+    public function rememberCaptured(RelationLeadEntity $lead): void
     {
         $this->persistAndFlush($lead);
     }
 
-    public function rememberEnriched(RelationLead $lead): void
+    public function rememberEnriched(RelationLeadEntity $lead): void
     {
         $this->persistAndFlush($lead);
     }
 
-    public function rememberQualified(RelationLead $lead): void
+    public function rememberQualified(RelationLeadEntity $lead): void
     {
         $this->persistAndFlush($lead);
     }
 
-    public function rememberRejected(RelationLead $lead): void
+    public function rememberRejected(RelationLeadEntity $lead): void
     {
         $this->persistAndFlush($lead);
     }
 
-    public function rememberConverted(RelationLead $lead): void
+    public function rememberConverted(RelationLeadEntity $lead): void
     {
         $this->persistAndFlush($lead);
     }
 
-    public function leadOf(string $leadReference): ?RelationLead
+    public function leadOf(string $leadReference): ?RelationLeadEntity
     {
-        $lead = $this->entityManager->find(RelationLead::class, $leadReference);
+        $lead = $this->entityManager->find(RelationLeadEntity::class, $leadReference);
 
-        return $lead instanceof RelationLead ? $lead : null;
+        return $lead instanceof RelationLeadEntity ? $lead : null;
     }
 
     public function activeLeadsForRelationship(string $relationshipReference): array
     {
-        $leads = $this->entityManager->getRepository(RelationLead::class)
+        $leads = $this->entityManager->getRepository(RelationLeadEntity::class)
             ->createQueryBuilder('lead')
             ->andWhere('lead.relationshipReference = :relationshipReference')
             ->andWhere('lead.status IN (:activeStatuses)')
@@ -63,7 +63,21 @@ final readonly class RelationDoctrineLeadRepository implements RelationLeadRepos
             ->getQuery()
             ->getResult();
 
-        return array_values(array_filter($leads, static fn (mixed $item): bool => $item instanceof RelationLead));
+        return array_values(array_filter($leads, static fn (mixed $item): bool => $item instanceof RelationLeadEntity));
+    }
+
+    public function leadsForRelationship(string $relationshipReference): array
+    {
+        $leads = $this->entityManager->getRepository(RelationLeadEntity::class)
+            ->createQueryBuilder('lead')
+            ->andWhere('lead.relationshipReference = :relationshipReference')
+            ->setParameter('relationshipReference', $relationshipReference)
+            ->orderBy('lead.updatedAt', 'DESC')
+            ->addOrderBy('lead.createdAt', 'DESC')
+            ->getQuery()
+            ->getResult();
+
+        return array_values(array_filter($leads, static fn (mixed $item): bool => $item instanceof RelationLeadEntity));
     }
 
     public function duplicateCandidatesForSignal(string $signalKind, string $signalValue): array
@@ -78,7 +92,7 @@ final readonly class RelationDoctrineLeadRepository implements RelationLeadRepos
             return [];
         }
 
-        $leads = $this->entityManager->getRepository(RelationLead::class)
+        $leads = $this->entityManager->getRepository(RelationLeadEntity::class)
             ->createQueryBuilder('lead')
             ->andWhere(\sprintf('lead.%s = :signalValue', $field))
             ->setParameter('signalValue', trim($signalValue))
@@ -86,10 +100,10 @@ final readonly class RelationDoctrineLeadRepository implements RelationLeadRepos
             ->getQuery()
             ->getResult();
 
-        return array_values(array_filter($leads, static fn (mixed $item): bool => $item instanceof RelationLead));
+        return array_values(array_filter($leads, static fn (mixed $item): bool => $item instanceof RelationLeadEntity));
     }
 
-    private function persistAndFlush(RelationLead $lead): void
+    private function persistAndFlush(RelationLeadEntity $lead): void
     {
         $this->entityManager->persist($lead);
         $this->entityManager->flush();

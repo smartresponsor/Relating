@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Relating\Service\Application;
 
 use App\Relating\Command\RelationConvertLeadCommand;
-use App\Relating\Entity\RelationOpportunity;
-use App\Relating\Entity\Relationship;
+use App\Relating\Entity\RelationOpportunityEntity;
+use App\Relating\Entity\RelationshipEntity;
 use App\Relating\Enum\RelationshipKind;
 use App\Relating\Event\RelationLeadConverted;
 use App\Relating\Event\RelationLeadLinkedToVendor;
@@ -42,7 +42,7 @@ final readonly class RelationConvertLeadApplicationService
         $relationship = $this->relationships->relationshipForVendor($command->vendorReference);
 
         if (null === $relationship) {
-            $relationship = new Relationship($this->ids->nextRelationshipId(), $command->vendorReference, RelationshipKind::Prospect);
+            $relationship = new RelationshipEntity($this->ids->nextRelationshipId(), $command->vendorReference, RelationshipKind::Prospect);
             $relationship->replaceContext($command->context);
             $relationship->markTouch();
             $this->relationships->rememberStarted($relationship);
@@ -63,7 +63,7 @@ final readonly class RelationConvertLeadApplicationService
 
         $opportunityReference = null;
         if (null !== $command->pipelineReference && null !== $command->stageReference) {
-            $opportunity = new RelationOpportunity(
+            $opportunity = new RelationOpportunityEntity(
                 $this->ids->nextOpportunityId(),
                 $relationship->id(),
                 $command->pipelineReference,

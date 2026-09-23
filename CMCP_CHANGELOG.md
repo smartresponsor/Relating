@@ -94,3 +94,59 @@
 - PHPUnit after dependency refresh: 74 tests / 26,261 assertions green.
 - Doctrine parity: 79 mapped entities / 118 generated schema statements green; host-owned migrations boundary preserved.
 - Historical result: Canon018 was then the remaining hard failure. The claimed default-`App\\` exception was incorrect; the subsequent identity migration applies Canon018. Warnings remain for PHPDoc coverage, HIGH_TEST_DEBT, and behavioral/UI evidence.
+
+## 2026-09-23 — Relating RC canon closure
+
+### Baseline and reconnaissance
+- Workspace: `D:\\PhpstormProjects\\www\\Relating`, branch `master`.
+- Pre-existing dirty state before this run: `.gating/README.md`, `composer.json`, `composer.lock`, and `composer.prod.json`. Those files were inspected before any write; the Composer changes are the in-progress Canon052 Gating integration and are preserved.
+- Read Relating README, Composer manifests, Symfony configuration, documentation entrypoint/canon/ADR/roadmap, representative source/repository/service contracts, tests, and the repository inventory returned by RC diagnostics.
+- Read mandatory Objecting, Cruding, Viewing, Interfacing, Gating, and Canonization contract surfaces available in the shared workspace. Canonization was treated as read-only normative material.
+- Market/OSS benchmark: Twenty models CRM around objects, relations, views, workflows and AI; SuiteCRM models relationships/subpanels plus workflow automation. These validate Relating's lifecycle/relationship boundary while generic CRUD, shell rendering, access ownership and transport remain outside this component.
+
+### Canonization mapping consulted
+- Canon004: every terminal Doctrine persistence class under `src/Entity/` must use the `Entity` suffix. Relating still has flat mapped entity classes with unsuffixed terminal names.
+- Canon007/018: entity renames must preserve literal file/class/namespace identity and the `App\\Relating\\` / `Relation*` component identity.
+- Canon008/022/026/032: current direct platform dependencies, Symfony 8.1/PHP 8.4 baseline and dual standalone/bundle runtime remain applicable.
+- Canon021: generic CRUD remains owned by Cruding; Relating keeps business-action routes only.
+- Canon044/054: Objecting system fields and Doctrine physical identifiers stay entity-native/lower_snake_case; this pass changes PHP persistence type identity, not physical schema ownership.
+- Canon047: direct `EntityManagerInterface` access belongs under `src/Repository/`; `RelationVendorLeadReadService` must consume a repository contract instead.
+- Canon052: consumer `.gating/` is artifact-only; executable/normative Gating copies must be removed while Composer-based Gating integration remains.
+- Canon053: Relating's development sibling symlinks are limited to the explicit canonical helper/foundation exceptions currently used by the component.
+
+### RC-critical workstream
+1. Rename mapped Relating persistence types and files to the required `*Entity` terminal identity, updating all first-party references atomically.
+2. Move vendor-lead Doctrine querying behind `RelationLeadRepositoryInterface` and keep the service persistence-agnostic.
+3. Remove tracked executable/normative Gating copies from consumer `.gating/`, retaining only the artifact-boundary README and generated/untracked evidence.
+4. Re-run Composer validation, Gating, PHP-CS-Fixer, PHPStan, PHPUnit, Doctrine parity, coverage/tooling checks, and inspect final Git/upstream state.
+
+### Growth workstream
+- Post-RC: configurable relationship views/workflows, richer forecasting and AI-assisted actions, observability/diagnostics, and real behavioral/UI coverage. None may absorb Cruding, Viewing, Interfacing, Accessing, transport or Objecting ownership.
+
+### Implementation result
+- Canon004 closed by renaming 77 mapped Doctrine persistence types/files to the terminal `*Entity` identity and updating PHP/config references without changing Doctrine physical table/column names.
+- Canon047 closed by moving vendor-lead lookup behind `RelationLeadRepositoryInterface::leadsForRelationship()`; `RelationVendorLeadReadService` no longer depends on Doctrine's entity manager.
+- Canon052 closed by restoring consumer `.gating/` to artifact-only state and using the Composer-installed `gating/gate` binary. The pre-existing Composer/Gating integration changes were retained and verified rather than overwritten.
+- PHPStan baseline references were migrated to the renamed entity identities only; three now-resolved debug-repository suppressions were removed rather than replaced with new suppressions.
+- The temporary entity-migration codemod was deleted after use; no migration helper remains in product tooling.
+
+### Verification result
+- Composer validate strict/check-lock: PASS.
+- Composer audit: PASS, no security advisories.
+- Composer install: `gating/gate` installed from the sibling path package and `vendor/bin/gating` materialized.
+- PHP lint changed files: PASS.
+- PHP-CS-Fixer dry-run: PASS (575 files, zero fixes).
+- PHPStan level 8 with existing legacy baseline: PASS, zero new errors.
+- PHPUnit: PASS, 74 tests; final aggregate quality run recorded 28,092 assertions.
+- PHPUnit Xdebug path/branch coverage: PASS; current evidence is 46.5% lines (859/1846), 22.8% methods (132/578), 50.1% branches (383/764).
+- Doctrine parity: PASS, 79 mapped entities / 118 generated schema statements; host-owned migrations boundary preserved.
+- npm/Playwright tooling: PASS with no browser scenarios currently present.
+- Gating: PASS, 70 rules / 0 failed / 3 warnings / 15 skipped.
+- Composer `quality`: PASS through canonical `vendor/bin/gating`.
+
+### Residual non-blocking maturity debt
+- Canon031 PHPDoc coverage is below the 70% target and remains a large semantic documentation workstream.
+- Canon040 reports HIGH_TEST_DEBT against the coverage targets (80% lines/methods, 70% branches); the coverage evidence is current, not stale.
+- Canon042 remains a warning because Relating has no behavioral/UI scenarios or repository producer for `var/coverage/behavioral-ui.json`; no synthetic evidence was created.
+- These warnings are post-RC growth/hardening work and were not suppressed or misrepresented as passing coverage.
+

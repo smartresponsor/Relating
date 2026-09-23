@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Relating\Service\Application;
 
 use App\Relating\Command\RelationCaptureLeadCommand;
-use App\Relating\Entity\RelationLead;
+use App\Relating\Entity\RelationLeadEntity;
 use App\Relating\Event\RelationLeadCaptured;
 use App\Relating\Repository\RelationLeadRepositoryInterface;
 use App\Relating\Service\RelationRelatingBusinessEventRecorderInterface;
@@ -23,7 +23,7 @@ final readonly class RelationCaptureLeadApplicationService
 
     public function captureLead(RelationCaptureLeadCommand $command): RelationRelatingActionResult
     {
-        $lead = new RelationLead($this->ids->nextLeadId(), $command->payload);
+        $lead = new RelationLeadEntity($this->ids->nextLeadId(), $command->payload);
         $lead->assignTenant($command->tenantReference);
         $lead->identify($command->displayName, $command->companyName, $command->email, $command->phone);
         $lead->setSourceReference($command->sourceCode);

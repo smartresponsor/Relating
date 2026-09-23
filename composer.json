@@ -9,32 +9,72 @@
     {
       "type": "path",
       "url": "../Cruding",
-      "options": { "symlink": true, "versions": { "cruding/crud": "dev-master" } }
+      "options": {
+        "symlink": true,
+        "versions": {
+          "cruding/crud": "dev-master"
+        }
+      }
     },
     {
       "type": "path",
       "url": "../Collectioning",
-      "options": { "symlink": true, "versions": { "collectioning/collection": "dev-master" } }
+      "options": {
+        "symlink": true,
+        "versions": {
+          "collectioning/collection": "dev-master"
+        }
+      }
     },
     {
       "type": "path",
       "url": "../Tabling",
-      "options": { "symlink": true, "versions": { "tabling/table": "dev-master" } }
+      "options": {
+        "symlink": true,
+        "versions": {
+          "tabling/table": "dev-master"
+        }
+      }
     },
     {
       "type": "path",
       "url": "../Viewing",
-      "options": { "symlink": true, "versions": { "viewing/view": "dev-master" } }
+      "options": {
+        "symlink": true,
+        "versions": {
+          "viewing/view": "dev-master"
+        }
+      }
     },
     {
       "type": "path",
       "url": "../Interfacing",
-      "options": { "symlink": true, "versions": { "interfacing/interface": "dev-master" } }
+      "options": {
+        "symlink": true,
+        "versions": {
+          "interfacing/interface": "dev-master"
+        }
+      }
     },
     {
       "type": "path",
       "url": "../Objecting",
-      "options": { "symlink": true, "versions": { "objecting/object": "dev-master" } }
+      "options": {
+        "symlink": true,
+        "versions": {
+          "objecting/object": "dev-master"
+        }
+      }
+    },
+    {
+      "type": "path",
+      "url": "../Gating",
+      "options": {
+        "symlink": true,
+        "versions": {
+          "gating/gate": "dev-master"
+        }
+      }
     }
   ],
   "require": {
@@ -59,7 +99,8 @@
     "phpstan/phpstan": "^2.2",
     "phpunit/phpunit": "^12.0",
     "symfony/panther": "^2.4",
-    "symfony/test-pack": "^1.2"
+    "symfony/test-pack": "^1.2",
+    "gating/gate": "dev-master"
   },
   "autoload": {
     "psr-4": {
@@ -82,6 +123,13 @@
     "test:coverage": [
       "@php -r \"if (!is_dir('var/coverage')) { mkdir('var/coverage', 0777, true); }\"",
       "@php -d xdebug.mode=coverage vendor/bin/phpunit --path-coverage --coverage-text=var/coverage/summary.txt"
+    ],
+    "gate": "@php vendor/bin/gating check --target=.",
+    "quality": [
+      "@cs:check",
+      "@phpstan",
+      "@test",
+      "@gate"
     ]
   },
   "extra": {

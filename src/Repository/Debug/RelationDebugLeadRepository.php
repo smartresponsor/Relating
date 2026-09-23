@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository\Debug;
 
-use App\Relating\Entity\RelationLead;
+use App\Relating\Entity\RelationLeadEntity;
 use App\Relating\Repository\RelationLeadRepositoryInterface;
 
 final readonly class RelationDebugLeadRepository implements RelationLeadRepositoryInterface
@@ -16,39 +16,44 @@ final readonly class RelationDebugLeadRepository implements RelationLeadReposito
     ) {
     }
 
-    public function rememberCaptured(RelationLead $lead): void
+    public function rememberCaptured(RelationLeadEntity $lead): void
     {
         $this->remember($lead);
     }
 
-    public function rememberEnriched(RelationLead $lead): void
+    public function rememberEnriched(RelationLeadEntity $lead): void
     {
         $this->remember($lead);
     }
 
-    public function rememberQualified(RelationLead $lead): void
+    public function rememberQualified(RelationLeadEntity $lead): void
     {
         $this->remember($lead);
     }
 
-    public function rememberRejected(RelationLead $lead): void
+    public function rememberRejected(RelationLeadEntity $lead): void
     {
         $this->remember($lead);
     }
 
-    public function rememberConverted(RelationLead $lead): void
+    public function rememberConverted(RelationLeadEntity $lead): void
     {
         $this->remember($lead);
     }
 
-    public function leadOf(string $leadReference): ?RelationLead
+    public function leadOf(string $leadReference): ?RelationLeadEntity
     {
         $lead = $this->store->one(self::BUCKET, $leadReference);
 
-        return $lead instanceof RelationLead ? $lead : null;
+        return $lead instanceof RelationLeadEntity ? $lead : null;
     }
 
     public function activeLeadsForRelationship(string $relationshipReference): array
+    {
+        return $this->allLeads();
+    }
+
+    public function leadsForRelationship(string $relationshipReference): array
     {
         return $this->allLeads();
     }
@@ -58,16 +63,17 @@ final readonly class RelationDebugLeadRepository implements RelationLeadReposito
         return '' === trim($signalValue) ? [] : $this->allLeads();
     }
 
-    private function remember(RelationLead $lead): void
+    private function remember(RelationLeadEntity $lead): void
     {
         $this->store->remember(self::BUCKET, $lead->id(), $lead);
     }
 
+    /** @return list<RelationLeadEntity> */
     private function allLeads(): array
     {
         return array_values(array_filter(
             $this->store->all(self::BUCKET),
-            static fn (mixed $item): bool => $item instanceof RelationLead,
+            static fn (mixed $item): bool => $item instanceof RelationLeadEntity,
         ));
     }
 }

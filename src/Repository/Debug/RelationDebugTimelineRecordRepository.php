@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository\Debug;
 
-use App\Relating\Entity\RelationTimelineRecord;
+use App\Relating\Entity\RelationTimelineRecordEntity;
 use App\Relating\Repository\RelationTimelineRecordRepositoryInterface;
 
 final readonly class RelationDebugTimelineRecordRepository implements RelationTimelineRecordRepositoryInterface
@@ -16,23 +16,23 @@ final readonly class RelationDebugTimelineRecordRepository implements RelationTi
     ) {
     }
 
-    public function rememberProjected(RelationTimelineRecord $event): void
+    public function rememberProjected(RelationTimelineRecordEntity $event): void
     {
         $this->store->remember(self::BUCKET, $event->id(), $event);
     }
 
-    public function timelineEventOf(string $eventReference): ?RelationTimelineRecord
+    public function timelineEventOf(string $eventReference): ?RelationTimelineRecordEntity
     {
         $event = $this->store->one(self::BUCKET, $eventReference);
 
-        return $event instanceof RelationTimelineRecord ? $event : null;
+        return $event instanceof RelationTimelineRecordEntity ? $event : null;
     }
 
     public function timelineForTarget(string $targetType, string $targetReference, int $limit = 100): array
     {
         return \array_slice(array_values(array_filter(
             $this->store->all(self::BUCKET),
-            static fn (mixed $item): bool => $item instanceof RelationTimelineRecord,
+            static fn (mixed $item): bool => $item instanceof RelationTimelineRecordEntity,
         )), 0, $limit);
     }
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository\Debug;
 
-use App\Relating\Entity\Relationship;
+use App\Relating\Entity\RelationshipEntity;
 use App\Relating\Repository\RelationshipRepositoryInterface;
 
 final readonly class RelationDebugRelationshipRepository implements RelationshipRepositoryInterface
@@ -16,37 +16,37 @@ final readonly class RelationDebugRelationshipRepository implements Relationship
     ) {
     }
 
-    public function rememberStarted(Relationship $relationship): void
+    public function rememberStarted(RelationshipEntity $relationship): void
     {
         $this->remember($relationship);
     }
 
-    public function rememberLinkedToVendor(Relationship $relationship): void
+    public function rememberLinkedToVendor(RelationshipEntity $relationship): void
     {
         $this->remember($relationship);
     }
 
-    public function rememberLifecycleStageChanged(Relationship $relationship): void
+    public function rememberLifecycleStageChanged(RelationshipEntity $relationship): void
     {
         $this->remember($relationship);
     }
 
-    public function rememberHealthScoreChanged(Relationship $relationship): void
+    public function rememberHealthScoreChanged(RelationshipEntity $relationship): void
     {
         $this->remember($relationship);
     }
 
-    public function relationshipOf(string $relationshipReference): ?Relationship
+    public function relationshipOf(string $relationshipReference): ?RelationshipEntity
     {
         $relationship = $this->store->one(self::BUCKET, $relationshipReference);
 
-        return $relationship instanceof Relationship ? $relationship : null;
+        return $relationship instanceof RelationshipEntity ? $relationship : null;
     }
 
-    public function relationshipForVendor(string $vendorReference): ?Relationship
+    public function relationshipForVendor(string $vendorReference): ?RelationshipEntity
     {
         foreach ($this->store->all(self::BUCKET) as $relationship) {
-            if ($relationship instanceof Relationship && $relationship->vendorReference() === $vendorReference) {
+            if ($relationship instanceof RelationshipEntity && $relationship->vendorReference() === $vendorReference) {
                 return $relationship;
             }
         }
@@ -58,11 +58,11 @@ final readonly class RelationDebugRelationshipRepository implements Relationship
     {
         return array_values(array_filter(
             $this->store->all(self::BUCKET),
-            static fn (mixed $item): bool => $item instanceof Relationship,
+            static fn (mixed $item): bool => $item instanceof RelationshipEntity,
         ));
     }
 
-    private function remember(Relationship $relationship): void
+    private function remember(RelationshipEntity $relationship): void
     {
         $this->store->remember(self::BUCKET, $relationship->id(), $relationship);
     }

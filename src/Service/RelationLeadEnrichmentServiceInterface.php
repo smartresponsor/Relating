@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Relating\Service;
 
-use App\Relating\Entity\RelationLead;
+use App\Relating\Entity\RelationLeadEntity;
 
 interface RelationLeadEnrichmentServiceInterface
 {
     /**
      * @param array<string, mixed> $enrichment
      */
-    public function enrichLeadWithVerifiedSignals(RelationLead $lead, array $enrichment): RelationLead;
+    public function enrichLeadWithVerifiedSignals(RelationLeadEntity $lead, array $enrichment): RelationLeadEntity;
 }

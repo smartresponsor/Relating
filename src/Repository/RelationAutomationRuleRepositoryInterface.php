@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository;
 
-use App\Relating\Entity\RelationAutomationRule;
+use App\Relating\Entity\RelationAutomationRuleEntity;
 
 interface RelationAutomationRuleRepositoryInterface
 {
-    public function rememberPublished(RelationAutomationRule $rule): void;
+    public function rememberPublished(RelationAutomationRuleEntity $rule): void;
 
-    public function ruleOf(string $ruleReference): ?RelationAutomationRule;
+    public function ruleOf(string $ruleReference): ?RelationAutomationRuleEntity;
 
-    /** @return list<RelationAutomationRule> */
+    /** @return list<RelationAutomationRuleEntity> */
     public function activeRulesForTrigger(string $triggerKind): array;
 
-    /** @return list<RelationAutomationRule> */
+    /** @return list<RelationAutomationRuleEntity> */
     public function rulesForSafetyLevel(string $safetyLevel): array;
 }

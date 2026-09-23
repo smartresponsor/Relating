@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Relating\Tests;
 
-use App\Relating\Entity\Relationship;
+use App\Relating\Entity\RelationshipEntity;
 use App\Relating\Enum\RelationshipKind;
 use PHPUnit\Framework\TestCase;
 
@@ -14,12 +14,12 @@ final class RelatingEntityInvariantTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        new Relationship('relationship-1', '   ', RelationshipKind::Prospect);
+        new RelationshipEntity('relationship-1', '   ', RelationshipKind::Prospect);
     }
 
     public function testRelationshipScoreMustStayInsideBusinessRange(): void
     {
-        $relationship = new Relationship('relationship-1', 'vendor-1', RelationshipKind::Prospect);
+        $relationship = new RelationshipEntity('relationship-1', 'vendor-1', RelationshipKind::Prospect);
 
         $this->expectException(\InvalidArgumentException::class);
 

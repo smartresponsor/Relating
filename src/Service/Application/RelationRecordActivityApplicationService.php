@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Relating\Service\Application;
 
 use App\Relating\Command\RelationRecordActivityCommand;
-use App\Relating\Entity\RelationActivity;
+use App\Relating\Entity\RelationActivityEntity;
 use App\Relating\Enum\RelationActivityDirection;
 use App\Relating\Enum\RelationActivityType;
 use App\Relating\Event\RelationActivityRecorded;
@@ -27,7 +27,7 @@ final readonly class RelationRecordActivityApplicationService
     {
         $type = RelationActivityType::tryFrom($command->activityType) ?? RelationActivityType::Task;
         $direction = RelationActivityDirection::tryFrom($command->direction) ?? RelationActivityDirection::Internal;
-        $activity = new RelationActivity($this->ids->nextActivityId(), $type, $command->targetType, $command->targetReference, $direction);
+        $activity = new RelationActivityEntity($this->ids->nextActivityId(), $type, $command->targetType, $command->targetReference, $direction);
         $activity->attachRelationship($command->relationshipReference);
         $activity->assignOwner($command->ownerReference);
         $activity->describe($command->subject, $command->body);

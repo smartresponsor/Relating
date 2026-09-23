@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Relating\Factory;
 
-use App\Relating\Entity\RelationActivity;
-use App\Relating\Entity\RelationLead;
-use App\Relating\Entity\RelationOpportunity;
-use App\Relating\Entity\RelationPipeline;
-use App\Relating\Entity\RelationPipelineStage;
-use App\Relating\Entity\Relationship;
-use App\Relating\Entity\RelationTimelineRecord;
+use App\Relating\Entity\RelationActivityEntity;
+use App\Relating\Entity\RelationLeadEntity;
+use App\Relating\Entity\RelationOpportunityEntity;
+use App\Relating\Entity\RelationPipelineEntity;
+use App\Relating\Entity\RelationPipelineStageEntity;
+use App\Relating\Entity\RelationshipEntity;
+use App\Relating\Entity\RelationTimelineRecordEntity;
 use App\Relating\Enum\RelationActivityDirection;
 use App\Relating\Enum\RelationActivityType;
 use App\Relating\Enum\RelationForecastCategory;
@@ -21,16 +21,16 @@ use App\Relating\Enum\RelationTimelineRecordKind;
 final class RelationRelatingDemoEntityFactory
 {
     /**
-     * @return array{relationship: Relationship, timeline: RelationTimelineRecord, activity: RelationActivity}
+     * @return array{relationship: RelationshipEntity, timeline: RelationTimelineRecordEntity, activity: RelationActivityEntity}
      */
     public function relationshipStart(): array
     {
-        $relationship = new Relationship('relationship_demo_001', 'vendor_demo_001', RelationshipKind::Prospect);
+        $relationship = new RelationshipEntity('relationship_demo_001', 'vendor_demo_001', RelationshipKind::Prospect);
         $relationship->assignTenant('tenant_demo');
         $relationship->assignOwner('user_demo_owner');
         $relationship->markTouch();
 
-        $timeline = new RelationTimelineRecord(
+        $timeline = new RelationTimelineRecordEntity(
             'timeline_demo_relationship_started',
             'relationship',
             $relationship->id(),
@@ -39,7 +39,7 @@ final class RelationRelatingDemoEntityFactory
         );
         $timeline->attachRelationship($relationship->id());
 
-        $activity = new RelationActivity(
+        $activity = new RelationActivityEntity(
             'activity_demo_follow_up',
             RelationActivityType::Task,
             'relationship',
@@ -57,11 +57,11 @@ final class RelationRelatingDemoEntityFactory
     }
 
     /**
-     * @return array{lead: RelationLead, timeline: RelationTimelineRecord}
+     * @return array{lead: RelationLeadEntity, timeline: RelationTimelineRecordEntity}
      */
     public function qualifiedLead(): array
     {
-        $lead = new RelationLead('lead_demo_001', [
+        $lead = new RelationLeadEntity('lead_demo_001', [
             'source' => 'web_form',
             'business_operation' => 'capture_lead',
         ]);
@@ -70,7 +70,7 @@ final class RelationRelatingDemoEntityFactory
         $lead->setSourceReference('source_demo_web_form');
         $lead->qualify(82, RelationLeadTemperature::Hot);
 
-        $timeline = new RelationTimelineRecord(
+        $timeline = new RelationTimelineRecordEntity(
             'timeline_demo_lead_qualified',
             'lead',
             $lead->id(),
@@ -85,15 +85,15 @@ final class RelationRelatingDemoEntityFactory
     }
 
     /**
-     * @return array{pipeline: RelationPipeline, discoveryStage: RelationPipelineStage, proposalStage: RelationPipelineStage, opportunity: RelationOpportunity, timeline: RelationTimelineRecord}
+     * @return array{pipeline: RelationPipelineEntity, discoveryStage: RelationPipelineStageEntity, proposalStage: RelationPipelineStageEntity, opportunity: RelationOpportunityEntity, timeline: RelationTimelineRecordEntity}
      */
     public function opportunityFlow(): array
     {
-        $pipeline = new RelationPipeline('pipeline_demo_sales', 'sales_pipeline', 'Demo Sales RelationPipeline');
+        $pipeline = new RelationPipelineEntity('pipeline_demo_sales', 'sales_pipeline', 'Demo Sales RelationPipeline');
         $pipeline->assignTenant('tenant_demo');
         $pipeline->markDefault(true);
 
-        $discoveryStage = new RelationPipelineStage(
+        $discoveryStage = new RelationPipelineStageEntity(
             'stage_demo_discovery',
             $pipeline->id(),
             'discovery',
@@ -103,7 +103,7 @@ final class RelationRelatingDemoEntityFactory
             RelationForecastCategory::Pipeline,
         );
 
-        $proposalStage = new RelationPipelineStage(
+        $proposalStage = new RelationPipelineStageEntity(
             'stage_demo_proposal',
             $pipeline->id(),
             'proposal',
@@ -113,7 +113,7 @@ final class RelationRelatingDemoEntityFactory
             RelationForecastCategory::BestCase,
         );
 
-        $opportunity = new RelationOpportunity(
+        $opportunity = new RelationOpportunityEntity(
             'opportunity_demo_001',
             'relationship_demo_001',
             $pipeline->id(),
@@ -125,7 +125,7 @@ final class RelationRelatingDemoEntityFactory
         $opportunity->setPrimaryProductReference('product_demo_001');
         $opportunity->moveToStage($proposalStage->id(), 55, RelationForecastCategory::BestCase);
 
-        $timeline = new RelationTimelineRecord(
+        $timeline = new RelationTimelineRecordEntity(
             'timeline_demo_opportunity_stage_changed',
             'opportunity',
             $opportunity->id(),

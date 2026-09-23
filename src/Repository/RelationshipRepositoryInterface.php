@@ -4,22 +4,22 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository;
 
-use App\Relating\Entity\Relationship;
+use App\Relating\Entity\RelationshipEntity;
 
 interface RelationshipRepositoryInterface
 {
-    public function rememberStarted(Relationship $relationship): void;
+    public function rememberStarted(RelationshipEntity $relationship): void;
 
-    public function rememberLinkedToVendor(Relationship $relationship): void;
+    public function rememberLinkedToVendor(RelationshipEntity $relationship): void;
 
-    public function rememberLifecycleStageChanged(Relationship $relationship): void;
+    public function rememberLifecycleStageChanged(RelationshipEntity $relationship): void;
 
-    public function rememberHealthScoreChanged(Relationship $relationship): void;
+    public function rememberHealthScoreChanged(RelationshipEntity $relationship): void;
 
-    public function relationshipOf(string $relationshipReference): ?Relationship;
+    public function relationshipOf(string $relationshipReference): ?RelationshipEntity;
 
-    public function relationshipForVendor(string $vendorReference): ?Relationship;
+    public function relationshipForVendor(string $vendorReference): ?RelationshipEntity;
 
-    /** @return list<Relationship> */
+    /** @return list<RelationshipEntity> */
     public function relationshipsNeedingActionBefore(\DateTimeImmutable $deadline): array;
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Relating\Service\Application;
 
 use App\Relating\Command\RelationStartRelationshipCommand;
-use App\Relating\Entity\Relationship;
+use App\Relating\Entity\RelationshipEntity;
 use App\Relating\Enum\RelationshipKind;
 use App\Relating\Event\RelationshipOwnerAssigned;
 use App\Relating\Event\RelationshipStarted;
@@ -26,7 +26,7 @@ final readonly class RelationStartRelationshipApplicationService
     public function startRelationship(RelationStartRelationshipCommand $command): RelationRelatingActionResult
     {
         $kind = RelationshipKind::tryFrom($command->relationshipKind) ?? RelationshipKind::Prospect;
-        $relationship = new Relationship($this->ids->nextRelationshipId(), $command->vendorReference, $kind);
+        $relationship = new RelationshipEntity($this->ids->nextRelationshipId(), $command->vendorReference, $kind);
         $relationship->assignTenant($command->tenantReference);
         $relationship->assignOwner($command->ownerReference);
         $relationship->setSourceReference($command->sourceReference);

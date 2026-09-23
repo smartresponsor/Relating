@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace App\Relating\Repository;
 
-use App\Relating\Entity\RelationCampaign;
+use App\Relating\Entity\RelationCampaignEntity;
 
 interface RelationCampaignRepositoryInterface
 {
-    public function rememberStarted(RelationCampaign $campaign): void;
+    public function rememberStarted(RelationCampaignEntity $campaign): void;
 
-    public function rememberResponseCaptured(RelationCampaign $campaign): void;
+    public function rememberResponseCaptured(RelationCampaignEntity $campaign): void;
 
-    public function rememberAttributionRecalculated(RelationCampaign $campaign): void;
+    public function rememberAttributionRecalculated(RelationCampaignEntity $campaign): void;
 
-    public function campaignOf(string $campaignReference): ?RelationCampaign;
+    public function campaignOf(string $campaignReference): ?RelationCampaignEntity;
 
-    /** @return list<RelationCampaign> */
+    /** @return list<RelationCampaignEntity> */
     public function activeCampaignsForRelationship(string $relationshipReference): array;
 }

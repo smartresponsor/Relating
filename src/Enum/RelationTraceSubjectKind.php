@@ -6,7 +6,7 @@ namespace App\Relating\Enum;
 
 enum RelationTraceSubjectKind: string
 {
-    case Relationship = 'relationship';
+    case RelationshipEntity = 'relationship';
     case Lead = 'lead';
     case Opportunity = 'opportunity';
     case Activity = 'activity';
