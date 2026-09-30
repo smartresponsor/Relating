@@ -2,7 +2,7 @@
 
 Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
-This matrix normalizes CRM objects discovered from open-source CRM references into the SmartResponsor `Relating` canon.
+This matrix normalizes CRM objects discovered from open-source CRM references into the platform `Relating` canon.
 
 The matrix is intentionally not a CRUD plan. It is an object and boundary map for EntityFirst design, ViewObject design, business routes, workflow events, and neighbor references.
 
@@ -18,7 +18,7 @@ CRUD policy: never create CRUD controllers, CRUD YAML, CRUD route attributes, or
 
 ## Canonical source transformation
 
-| Source family | Source object | SmartResponsor canonical result | Owner | Relating responsibility |
+| Source family | Source object | Platform canonical result | Owner | Relating responsibility |
 |---|---|---|---|---|
 | Twenty | People | VendorReference + RelationshipParticipant | Vendoring + Relating | Keep relationship role, lifecycle, participation, engagement signal |
 | Twenty | Companies | VendorReference + Relationship | Vendoring + Relating | Keep relationship profile and timeline around vendor |

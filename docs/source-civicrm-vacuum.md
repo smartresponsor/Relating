@@ -8,7 +8,7 @@ CiviCRM is used as a relationship/nonprofit/community CRM reference. Relating do
 
 CiviCRM is valuable because it treats CRM as a broader relationship system, not only as sales pipeline. Its contact screen exposes relationship-oriented tabs and histories such as relationships, activities, mailings, contributions, memberships, events, groups, notes, tags, and change log.
 
-For SmartResponsor this is important because Relating should support sales, vendor/customer relationship lifecycle, nonprofit/community relationship memory, case workflows, and donor/member/event references without becoming ERP or accounting.
+For the platform this is important because Relating should support sales, vendor/customer relationship lifecycle, nonprofit/community relationship memory, case workflows, and donor/member/event references without becoming ERP or accounting.
 
 ## Canonical mapping
 

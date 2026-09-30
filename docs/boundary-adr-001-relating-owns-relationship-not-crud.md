@@ -8,9 +8,9 @@ Accepted.
 
 ## Context
 
-Open-source CRM systems usually expose modules as CRUD-first resources: Accounts, Contacts, Leads, Opportunities, Tasks, Notes, Campaigns, Cases, Reports, and many adjacent objects. That model is useful for discovery, but it is not the SmartResponsor architecture.
+Open-source CRM systems usually expose modules as CRUD-first resources: Accounts, Contacts, Leads, Opportunities, Tasks, Notes, Campaigns, Cases, Reports, and many adjacent objects. That model is useful for discovery, but it is not the platform architecture.
 
-SmartResponsor already has a CRUD mechanism. `Relating` must not recreate it.
+The platform already has a CRUD mechanism. `Relating` must not recreate it.
 
 ## Decision
 
@@ -114,7 +114,7 @@ They must not declare entity collection/item routes such as:
 
 ## Consequences
 
-1. CRUD remains centralized in the existing SmartResponsor CRUD mechanism.
+1. CRUD remains centralized in the platform CRUD mechanism.
 2. Relating remains a business lifecycle component.
 3. Open-source CRM legacy module names are transformed into Symfony business capabilities.
 4. EntityFirst design remains separate from route exposure.

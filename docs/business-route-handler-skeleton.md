@@ -21,4 +21,4 @@ Relating exposes only business HTTP route handlers. These handlers map JSON requ
 
 The controller layer must not provide generic entity operations. The route names and paths must stay business-named and must not include index, create, read, update, delete, list, show, edit, store, patch, or remove actions.
 
-CRUD remains owned by the existing SmartResponsor CRUD mechanism. Relating only publishes lifecycle/business operations.
+CRUD remains owned by the platform CRUD mechanism. Relating only publishes lifecycle/business operations.

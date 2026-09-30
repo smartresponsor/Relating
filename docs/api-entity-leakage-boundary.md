@@ -19,4 +19,4 @@ Relating API/business routes must not expose Doctrine entities.
 
 ## Reason
 
-The Relating surface is a business relationship lifecycle boundary. CRUD is handled by the existing SmartResponsor CRUD mechanism, while Relating owns business actions, timelines, transitions, scoring, conversion and review views.
+The Relating surface is a business relationship lifecycle boundary. CRUD is handled by the platform CRUD mechanism, while Relating owns business actions, timelines, transitions, scoring, conversion and review views.

@@ -10,7 +10,7 @@ Relating uses open-source CRM projects as business and product references only.
 
 Relating must not copy foreign architecture, SQL-first design, fat controllers, module legacy, route conventions, table names, UI state conventions, or framework-specific patterns.
 
-Relating keeps the SmartResponsor Symfony canon:
+Relating keeps the platform Symfony canon:
 
 ```text
 Namespace: App
@@ -30,7 +30,7 @@ Do not create CRUD controllers.
 Do not create CRUD YAML route declarations.
 Do not create route attributes for CRUD actions.
 Do not declare index/create/read/update/delete action routes.
-Do not re-own CRUD behavior already owned by the SmartResponsor CRUD mechanism.
+Do not re-own CRUD behavior already owned by the platform CRUD mechanism.
 ```
 
 Relating may create only business route surface:

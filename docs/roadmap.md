@@ -152,7 +152,7 @@ S2 ViewObject/API contract expansion
 
 Status: complete in `docs/canonical-object-matrix.md`.
 
-Purpose: normalize Twenty/EspoCRM/SuiteCRM/OroCRM/Krayin/CiviCRM object names into SmartResponsor Relating/Vendoring/Accessing/Producting/Ordering/Payment/Shipment boundaries.
+Purpose: normalize Twenty/EspoCRM/SuiteCRM/OroCRM/Krayin/CiviCRM object names into platform Relating/Vendoring/Accessing/Producting/Ordering/Payment/Shipment boundaries.
 
 ### A2 Boundary ADR
 

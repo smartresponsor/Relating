@@ -1,6 +1,6 @@
 # Relating Boundary Map
 
-Relating is the CRM capability of SmartResponsor.
+Relating is the CRM capability of the multi-domain SaaS platform.
 
 ## Owned by Relating
 

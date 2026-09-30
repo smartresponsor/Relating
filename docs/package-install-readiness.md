@@ -65,7 +65,7 @@ The active route file is limited to the approved business route surface:
 /relating/ai/suggestion/review
 ```
 
-No CRUD route is part of this package. CRUD remains the responsibility of the existing SmartResponsor CRUD mechanism.
+No CRUD route is part of this package. CRUD remains the responsibility of the platform CRUD mechanism.
 
 ## Install sequence
 

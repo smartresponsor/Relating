@@ -2,7 +2,7 @@
 
 ## Purpose
 
-OroCRM is used as a Symfony-near CRM/business reference only. Relating does not import Oro bundles, controllers, routes, grids, workflows, or database layout. Every useful object is translated into the SmartResponsor Symfony canon.
+OroCRM is used as a Symfony-near CRM/business reference only. Relating does not import Oro bundles, controllers, routes, grids, workflows, or database layout. Every useful object is translated into the platform Symfony canon.
 
 ## What Oro contributes
 

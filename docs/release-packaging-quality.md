@@ -29,7 +29,7 @@ node_modules
 neighbor-owned entities
 ```
 
-Relating remains a CRM-oriented business lifecycle component. CRUD remains owned by the existing SmartResponsor CRUD mechanism.
+Relating remains a CRM-oriented business lifecycle component. CRUD remains owned by the platform CRUD mechanism.
 
 ## Release artifacts
 

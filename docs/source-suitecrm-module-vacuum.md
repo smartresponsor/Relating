@@ -6,7 +6,7 @@ Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
 SuiteCRM is used as a broad legacy CRM object checklist. Its value is the width of mature CRM modules, not its implementation style.
 
-Relating does not copy SuiteCRM module architecture, controllers, SQL patterns, route names, CRUD actions, or legacy naming where it conflicts with SmartResponsor canon.
+Relating does not copy SuiteCRM module architecture, controllers, SQL patterns, route names, CRUD actions, or legacy naming where it conflicts with platform canon.
 
 ## Core module normalization
 

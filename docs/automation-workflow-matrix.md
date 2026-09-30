@@ -2,7 +2,7 @@
 
 Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
-This document converts open-source CRM workflow ideas into the SmartResponsor `Relating` canon.
+This document converts open-source CRM workflow ideas into the platform `Relating` canon.
 
 Relating automation is business-lifecycle automation. It is not CRUD automation.
 

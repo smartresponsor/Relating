@@ -16,7 +16,7 @@ persist
 flush
 ```
 
-They also must not define CRUD route responsibilities. CRUD remains owned by the existing SmartResponsor CRUD mechanism.
+They also must not define CRUD route responsibilities. CRUD remains owned by the platform CRUD mechanism.
 
 ## Required vocabulary
 

@@ -1,6 +1,6 @@
 # Neighbor Contract Catalog
 
-Relating is a CRM-oriented relationship lifecycle component. It works next to neighboring SmartResponsor components through explicit reference value objects and business signals.
+Relating is a CRM-oriented relationship lifecycle component. It works next to neighboring platform components through explicit reference value objects and business signals.
 
 ## Hard ownership rule
 

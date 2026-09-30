@@ -35,7 +35,7 @@ php bin/phpunit tests
 
 ## Route boundary
 
-Relating does not recreate CRUD routing. CRUD remains owned by the existing SmartResponsor CRUD mechanism.
+Relating does not recreate CRUD routing. CRUD remains owned by the platform CRUD mechanism.
 
 Relating may declare only business routes: lifecycle transitions, qualification, conversion, timeline building, scoring, duplicate review, automation runs, AI suggestion review, object catalog and dashboard/business read models.
 

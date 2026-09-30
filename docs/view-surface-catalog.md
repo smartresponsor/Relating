@@ -1,6 +1,6 @@
 # Relating view surface catalog
 
-This catalog maps CRM/open-source UI ideas into SmartResponsor business surfaces without recreating CRUD screens.
+This catalog maps CRM/open-source UI ideas into the platform's business surfaces without recreating CRUD screens.
 
 | Surface | Purpose | Inspired by | CRUD? |
 |---|---|---|---|

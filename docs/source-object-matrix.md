@@ -2,7 +2,7 @@
 
 Copyright (c) 2025 Oleksandr Tishchenko / Marketing America Corp
 
-This matrix maps open-source CRM terminology into the SmartResponsor Relating canon.
+This matrix maps open-source CRM terminology into the platform Relating canon.
 
 ## Canonical ownership rule
 
@@ -22,7 +22,7 @@ Relating   owns relationship lifecycle, lead, opportunity, activity, timeline, c
 
 ## Source-to-canon mapping
 
-| Source term | Source family | SmartResponsor canonical target | Owner | Notes |
+| Source term | Source family | Platform canonical target | Owner | Notes |
 |---|---|---|---|---|
 | People | Twenty | VendorReference / Relationship participant | Vendoring + Relating | People become vendor/person references; Relating stores lifecycle context only. |
 | Companies | Twenty | VendorReference / Relationship organization | Vendoring + Relating | Company data belongs to Vendoring; Relating attaches relationship state. |
@@ -121,7 +121,7 @@ CaseQueue           -> CaseQueueView
 
 ## Wave D2 additions
 
-| Source term | Source family | SmartResponsor canonical target | Owner | Notes |
+| Source term | Source family | Platform canonical target | Owner | Notes |
 |---|---|---|---|---|
 | Relation to multiple object types | Twenty | TimelineTarget / RelationshipSignal | Relating | Typed target tuple, not unbounded ORM polymorphism. |
 | AI Agents | Twenty | AiSuggestion / AiDecisionLog | Relating | Agents produce suggestions and reviewable outputs only. |

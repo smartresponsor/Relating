@@ -12,7 +12,7 @@ Symfony component: Relating
 Root object: Relationship
 ```
 
-Reason: CRM means Customer Relationship Management, but `CRM` is too broad and too market-shaped for the canonical namespace. `Relating` captures the relationship lifecycle while fitting SmartResponsor component naming.
+Reason: CRM means Customer Relationship Management, but `CRM` is too broad and too market-shaped for the canonical namespace. `Relating` captures the relationship lifecycle while fitting platform component naming.
 
 ## Decision 002 - Account and Contact are not recreated
 

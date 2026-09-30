@@ -90,7 +90,7 @@ AI risk review
 
 ### D8: AI-native Relating profile
 
-Define SmartResponsor-specific leadership surfaces:
+Define platform-specific leadership surfaces:
 
 ```text
 next best action

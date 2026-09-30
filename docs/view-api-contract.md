@@ -39,7 +39,7 @@ CRUD is outside Relating.
 | QuoteIntentView | Commercial intent before order | Suite/Krayin quotes | Safe if final order owned elsewhere |
 | DuplicateCandidateView | Duplicate review | Espo/Suite duplicate/conversion practice | Business review surface |
 | AiSuggestionReviewView | Human review of AI output | Twenty agents + governance | Business review surface |
-| AiDecisionLogView | Audit of AI suggestion lifecycle | SmartResponsor addition | Safe audit view |
+| AiDecisionLogView | Audit of AI suggestion lifecycle | Platform addition | Safe audit view |
 | NextBestActionView | Recommended action | AI-native extension | Safe if suggestion-only |
 | RelatingDashboardView | CRM command center | Suite/Oro dashboards | Safe read model |
 | RelatingObjectSchemaView | Metadata schema display | Twenty/Espo/Krayin metadata | Safe catalog view |

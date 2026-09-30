@@ -150,3 +150,50 @@
 - Canon042 remains a warning because Relating has no behavioral/UI scenarios or repository producer for `var/coverage/behavioral-ui.json`; no synthetic evidence was created.
 - These warnings are post-RC growth/hardening work and were not suppressed or misrepresented as passing coverage.
 
+## 2026-09-30 — engine-20260930141839-relating-223cc1
+
+### Baseline and evidence
+- Workspace `D:\\PhpstormProjects\\www\\Relating`, branch `master`, HEAD `8d9c22fc4a77d922f78b9702bc684c153aa9a0c8`, upstream `origin/master`, initially ahead/behind `0/0`.
+- Preserved pre-existing worktree changes: deleted `.gating/README.md`, modified `composer.json` license, untracked `LICENSE`, and untracked `NOTICE`.
+- Consumed upstream CanonScanning RED evidence and Inspecting evidence before rerunning verifiers. The supplied fingerprint was stale after the current worktree mutations.
+- Current standard `gate` and `gating:check` both reproduced only Canon055 as a hard failure before remediation.
+- Inspecting baseline contained six medium, non-autofixable design observations on entity cohesion/public API; no speculative entity decomposition was selected.
+
+### Canonization mapping consulted
+- Canon022: standalone Symfony baseline dependencies and Failing bundle registration apply when standalone boot surfaces exist.
+- Canon045: root development Composer must expose complete reachable local first-party path-repository closure.
+- Canon052: Gating is installed as `gating/gate`, locally symlinked in development, packaged by identity in production, invoked by aggregate quality, and consumer `.gating/` is artifact-only. Owner Gating trees must not be mirrored into consumer `.gating/`.
+- Canon055: SmartResponsor is a consumer/domain identity and must not name the shared platform, architecture, canon, repository family, or component ecosystem.
+
+### Market / maturity reconnaissance
+- Existing Relating source research covers Twenty, EspoCRM, SuiteCRM, OroCRM, Krayin, and CiviCRM.
+- Mature CRM expectations represented in the repository include lead qualification/conversion, opportunity pipeline and stage workflow, relationship/activity timelines, campaign/case context, dashboards/read models, duplicate review, metadata-driven layouts, automation, and guarded AI suggestions.
+- Relating safeguards remain business-lifecycle-only routes, typed view boundaries, explicit neighbor references, transition/audit traces, policy validation, deterministic tests, and failure transparency.
+- Generic CRUD, vendor/product/order/payment/shipment master data, message transport, shared presentation shell ownership, and platform-wide canon/tooling remain outside Relating.
+
+### Selected RC-critical work
+- Remediate Canon055 in current human-facing package metadata and documentation with neutral multi-domain platform terminology.
+- Preserve the current Composer/Gating package integration and do not recreate a consumer-local Gating policy mirror.
+- Re-run deterministic gates, static analysis/tests, and Inspecting after repository mutation.
+
+### Growth workstream
+- Post-RC only: richer metadata-driven relationship UX, forecasting, automation diagnostics, semantic PHPDoc, test coverage, and behavioral evidence without expanding CRUD or neighboring-domain ownership.
+
+### Implementation result
+- Canon055 remediation replaced umbrella consumer branding in current human-facing Relating documentation and Composer descriptions with neutral platform terminology while leaving technical locators and explicit consumer/domain evidence intact.
+- Canon052 topology remains package/symlink based; the pre-existing deletion of the consumer `.gating/README.md` was preserved and no Gating owner tree was copied into Relating.
+- The pre-existing PolyForm Noncommercial licensing change was classified as coherent repository packaging work: `LICENSE` and `NOTICE` match `composer.json`, and `composer.prod.json` was aligned to the same SPDX identifier.
+- No PHP source, route, UI, navigation, persistence, or behavioral flow changed.
+
+### Verification result
+- Composer strict validation with lock check: PASS.
+- Composer audit: PASS, no security vulnerability advisories.
+- PHP-CS-Fixer: PASS, 575 files / zero fixes.
+- PHPStan: PASS, zero errors.
+- PHPUnit: PASS, 74 tests / 28,266 assertions in the final aggregate run.
+- Standard `composer gate`: PASS; Canon055 green.
+- Explicit sibling-policy `composer gating:check`: PASS; Canon055 green.
+- Aggregate `composer quality`: PASS.
+- Post-mutation Inspecting execution was attempted; the long run exceeded the connector execution window, and a bounded 45-second retry returned `INSPECTING_FAILED` without findings. Because this task changed only Markdown/Composer metadata and did not change the PHP-structure scope analyzed by the supplied Inspecting report, its six medium non-autofixable design observations remain the applicable structural baseline rather than an RC regression.
+- Behavioral/UI verification and screenshots are not applicable: no browser/mobile UI, navigation, form, interaction, or user flow changed.
+
